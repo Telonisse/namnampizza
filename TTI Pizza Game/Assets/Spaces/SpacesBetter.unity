@@ -639,6 +639,7 @@ MonoBehaviour:
   RoomRemovedEvent:
     m_PersistentCalls:
       m_Calls: []
+  EnableWorldLock: 1
   SceneSettings:
     DataSource: 2
     RoomIndex: -1
@@ -3440,6 +3441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d14e43228043c04db9e374568cb89a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnOnStart: 2
   SpawnObject: {fileID: 8240749116634132180, guid: 7cab184fcd1d83f42bed80f9db3e36ee, type: 3}
   SpawnAmount: 3
   MaxIterations: 1000
@@ -5147,14 +5149,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76943ac7e7394f3e969f0c048b26639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnOnStart: 2
   MeshMaterial: {fileID: 2100000, guid: 599b01c5f1d17436c89b88cc04257314, type: 2}
   BorderSize: 0.2
   Colliders: 0
+  CutHoles: 0
   castShadows: 1
   hideMesh: 0
   textureCoordinateModes:
-  - U: 0
-    V: 0
+  - WallU: 0
+    WallV: 0
+    AnchorUV: 0
   Labels: -1
 --- !u!114 &1055045533
 MonoBehaviour:

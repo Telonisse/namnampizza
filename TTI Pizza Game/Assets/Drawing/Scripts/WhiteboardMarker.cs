@@ -7,9 +7,9 @@ public class WhiteboardMarker : MonoBehaviour
 {
     [SerializeField] private Transform tip;
     [SerializeField] private int _penSize = 5;
+    [SerializeField] private Texture2D _paintTexture;
 
     private Renderer _renderer;
-    private Color[] _colors;
     private float _tipHeight;
 
     private RaycastHit _touch;
@@ -17,11 +17,14 @@ public class WhiteboardMarker : MonoBehaviour
     private Whiteboard _whiteboard;
     private bool _touchedLastFrame;
     private Quaternion _lastTouchRot;
+
     void Start()
     {
         _renderer = tip.GetComponent<Renderer>();
-        _colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
         _tipHeight = tip.localScale.y;
+
+        Texture2D texture = Instantiate(_renderer.material.mainTexture) as Texture2D;
+        _renderer.material.mainTexture = texture;
     }
 
     void Update()
@@ -31,7 +34,7 @@ public class WhiteboardMarker : MonoBehaviour
 
     private void Draw()
     {
-        if (Physics.Raycast(tip.position, transform.up, out _touch, _tipHeight))
+        if (Physics.Raycast(tip.position - transform.up * _tipHeight, transform.up, out _touch, _tipHeight * 2))
         {
             if (_touch.transform.CompareTag("Whiteboard"))
             {
@@ -40,28 +43,23 @@ public class WhiteboardMarker : MonoBehaviour
                     _whiteboard = _touch.transform.GetComponent<Whiteboard>();
                 }
 
-                _touchPos = new Vector2(_touch.textureCoord.x , _touch.textureCoord.y);
+                _touchPos = new Vector2(_touch.textureCoord.x, _touch.textureCoord.y);
 
-                var x = (int) (_touchPos.x * _whiteboard.textureSize.x - (_penSize /2));
-                var y = (int) (_touchPos.y * _whiteboard.textureSize.y - (_penSize /2));
+                var x = (int)(_touchPos.x * _whiteboard.textureSize.x - (_penSize / 2));
+                var y = (int)(_touchPos.y * _whiteboard.textureSize.y - (_penSize / 2));
 
-                if (y < 0|| y > _whiteboard.textureSize.y || x < 0 || x > _whiteboard.textureSize.x)
+                if (y < 0 || y > _whiteboard.textureSize.y || x < 0 || x > _whiteboard.textureSize.x)
                 {
                     return;
                 }
 
                 if (_touchedLastFrame)
                 {
-                    _whiteboard.texture.SetPixels(x, y, _penSize, _penSize, _colors);
+                    // Get the texture's pixels
+                    Color[] texturePixels = _paintTexture.GetPixels(_paintTexture.width / 2 - _penSize / 2, _paintTexture.height / 2 - _penSize / 2, _penSize, _penSize);
 
-                    for (float f = 0.01f; f < 1.00f; f += 0.15f)
-                    {
-                        var lerpX = (int)Mathf.Lerp(_lastTouchPos.x, x, f);
-                        var lerpY = (int)Mathf.Lerp(_lastTouchPos.y, y, f);
-                        _whiteboard.texture.SetPixels(lerpX, lerpY, _penSize, _penSize, _colors);
-                    }
-
-                    transform.rotation = _lastTouchRot;
+                    // Set the whiteboard's texture pixels to match
+                    _whiteboard.texture.SetPixels(x, y, _penSize, _penSize, texturePixels);
 
                     _whiteboard.texture.Apply();
                 }
@@ -77,3 +75,4 @@ public class WhiteboardMarker : MonoBehaviour
         _touchedLastFrame = false;
     }
 }
+

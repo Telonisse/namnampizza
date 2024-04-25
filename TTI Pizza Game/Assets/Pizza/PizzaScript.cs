@@ -74,6 +74,7 @@ public class PizzaScript : MonoBehaviour
 
                 transform.parent.rotation = Quaternion.identity;
                 other.transform.rotation = Quaternion.identity;
+                //other.transform.localScale = new Vector3(1,1,1); pls scale work
             }
         }
     }

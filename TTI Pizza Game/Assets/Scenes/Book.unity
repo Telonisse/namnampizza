@@ -3706,7 +3706,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!1 &245239793
 GameObject:
@@ -32678,7 +32678,7 @@ HingeJoint:
   m_GameObject: {fileID: 2097970703}
   m_ConnectedBody: {fileID: 244149967}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0.5, y: 0, z: 0}
+  m_Anchor: {x: -0.5, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0.50000036, y: -0.000000020542446, z: 0.5550003}
@@ -32697,8 +32697,8 @@ HingeJoint:
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: 0
-    max: 90
+    min: -90
+    max: 0
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0

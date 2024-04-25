@@ -1,36 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class IngredientScript : MonoBehaviour
 {
-    [SerializeField] Material doneMaterial;
-    [SerializeField] Material burnedMaterial;
-
-    private MeshRenderer render;
+    [SerializeField] Material material;
+    [SerializeField] Texture rawTexture;
+    [SerializeField] Texture doneTexture;
+    [SerializeField] Texture burnedTexture;
 
     private void Start()
     {
-        render = GetComponent<MeshRenderer>();
+        material.mainTexture = rawTexture;
+    }
 
-        if (render = null)
-        {
-            Debug.LogWarning("Renderer not found");
-        }
+    private void Update()
+    {
+
     }
 
     public void ChangeMaterialDone()
     {
-        if (doneMaterial != null)
-        {
-            render.material = doneMaterial;
-        }
+        material.mainTexture = doneTexture;
     }
     public void ChangeMaterialBurned()
     {
-        if(burnedMaterial != null)
-        {
-            render.material = burnedMaterial;
-        }
+        material.mainTexture = burnedTexture;
     }
 }

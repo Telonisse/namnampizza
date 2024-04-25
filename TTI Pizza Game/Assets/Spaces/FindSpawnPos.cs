@@ -1,10 +1,9 @@
 using Meta.XR.MRUtilityKit;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using static Meta.XR.MRUtilityKit.MRUK;
-using static Unity.VisualScripting.Metadata;
 
 public class FindSpawnPos : MonoBehaviour
 {
@@ -50,12 +49,11 @@ public class FindSpawnPos : MonoBehaviour
             }
         }
 
-        //spawn fridge on random wall
-        int randomWall = Random.Range(0, numOfWalls);
-        spawnPos = roomObjects[randomWall].transform.position;
-        spawnPos.y = roomObjects[randomWall].transform.position.y - (spawnPrefab.transform.localScale.y / 2);
-        spawnPos.z = roomObjects[randomWall].transform.position.z - (spawnPrefab.transform.localScale.z / 2);
-        spawnRot = roomObjects[randomWall].transform.rotation * Quaternion.Euler(0, 90, 0);
-        Instantiate(fridge, spawnPos, spawnRot, transform);
+        //spawn fridge and check walls until it doesnt collide with any other object
+        spawnPos = roomObjects[0].transform.position;
+        spawnPos.y = roomObjects[0].transform.position.y - (spawnPrefab.transform.localScale.y / 2);
+        spawnPos.z = roomObjects[0].transform.position.z - (spawnPrefab.transform.localScale.z / 2);
+        spawnRot = roomObjects[0].transform.rotation * Quaternion.Euler(0, 90, 0);
+        GameObject fridgeSpawned = Instantiate(fridge, spawnPos, spawnRot, transform);
     }
 }

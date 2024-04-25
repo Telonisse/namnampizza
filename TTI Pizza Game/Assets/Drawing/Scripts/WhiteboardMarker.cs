@@ -55,10 +55,8 @@ public class WhiteboardMarker : MonoBehaviour
 
                 if (_touchedLastFrame)
                 {
-                    // Get the texture's pixels
                     Color[] texturePixels = _paintTexture.GetPixels(_paintTexture.width / 2 - _penSize / 2, _paintTexture.height / 2 - _penSize / 2, _penSize, _penSize);
 
-                    // Set the whiteboard's texture pixels to match
                     _whiteboard.texture.SetPixels(x, y, _penSize, _penSize, texturePixels);
 
                     _whiteboard.texture.Apply();

@@ -12,12 +12,13 @@ public struct pizzaToppings
 public class PizzaScript : MonoBehaviour
 {
     [SerializeField] pizzaToppings[] pizzaToppingsArray;
+    [SerializeField] GameObject pizzaObject;
 
     //Timer in oven
     [SerializeField] float minTimeDone = 0;
     [SerializeField] float minTimeBurned = 0;
 
-    private float timer = 0;
+    public float timer = 0;
     private bool isRunning = false;
 
     private enum pizzaStates
@@ -60,7 +61,6 @@ public class PizzaScript : MonoBehaviour
     {
         if (other.CompareTag("Oven"))
         {
-            timer = 0f;
             isRunning = true;
         }
         for (int i = 0; i < pizzaToppingsArray.Length; i++)
@@ -69,11 +69,10 @@ public class PizzaScript : MonoBehaviour
             {
                 other.GetComponent<Rigidbody>().isKinematic = true;
                 pizzaToppingsArray[i].isOnPizza = true;
-                other.transform.position = new Vector3(other.transform.position.x, transform.parent.position.y + 0.05f, other.transform.position.z); //change 0.05f to whatever half of the scale is cus that shit isnt fucking working and idk why
+                other.transform.position = new Vector3(other.transform.position.x, transform.parent.position.y + 0.1f, other.transform.position.z); //change 0.05f to whatever half of the scale is cus that shit isnt fucking working and idk why
                 other.transform.SetParent(transform);
 
-                //so object no go stretch
-                other.transform.localScale = new Vector3(0.1f, 10, 0.1f); 
+                transform.parent.rotation = Quaternion.identity;
                 other.transform.rotation = Quaternion.identity;
             }
         }
@@ -91,18 +90,19 @@ public class PizzaScript : MonoBehaviour
         switch (currentState)
         {
             case pizzaStates.uncooked:
-                Debug.Log("undone");
                 break;
             case pizzaStates.done:
+                pizzaObject.transform.GetComponent<IngredientScript>().ChangeMaterialDone();
                 for (int i = 0; i < transform.childCount; i++)
                 {
-                    //transform.GetChild(i).GetComponent<IngredientScript>().ChangeMaterialDone();
+                    transform.GetChild(i).GetComponent<IngredientScript>().ChangeMaterialDone();
                 }
                 break;
             case pizzaStates.burned:
+                pizzaObject.transform.GetComponent<IngredientScript>().ChangeMaterialBurned();
                 for (int i = 0; i < transform.childCount; i++)
                 {
-                    //transform.GetChild(i).GetComponent<IngredientScript>().ChangeMaterialBurned();
+                    transform.GetChild(i).GetComponent<IngredientScript>().ChangeMaterialBurned();
                 }
                 break;
             default:

@@ -18,6 +18,10 @@ public class PizzaScript : MonoBehaviour
     [SerializeField] float minTimeDone = 0;
     [SerializeField] float minTimeBurned = 0;
 
+    float timeInOven;
+    float maxTimeInOven;
+    float ratio;
+
     public float timer = 0;
     private bool isRunning = false;
 
@@ -32,6 +36,10 @@ public class PizzaScript : MonoBehaviour
 
     private void Update()
     {
+        ratio = timeInOven / maxTimeInOven;
+        ratio = Mathf.Clamp01(ratio);
+
+
         if (isRunning)
         {
             timer += Time.deltaTime;

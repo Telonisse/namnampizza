@@ -15,14 +15,14 @@ public class FindSpawnPos : MonoBehaviour
     private Quaternion spawnRot;
     private MRUKRoom room;
     int numOfWalls = 0;
-    private bool fridgeSpawned = false;
 
-    public void SpawnObject()
-    {
-        FindSpawnPosOnSurface();
-    }
+    //spawn fridge
+    private GameObject spawnedFridge = null;
 
-    private void FindSpawnPosOnSurface()
+    [SerializeField] Vector3 boxCenter;
+    [SerializeField] Vector3 boxSize;
+
+    public void FindSpawnPosOnSurface()
     {
         room = FindObjectOfType<MRUKRoom>();
 
@@ -54,6 +54,20 @@ public class FindSpawnPos : MonoBehaviour
         spawnPos.y = roomObjects[0].transform.position.y - (spawnPrefab.transform.localScale.y / 2);
         spawnPos.z = roomObjects[0].transform.position.z - (spawnPrefab.transform.localScale.z / 2);
         spawnRot = roomObjects[0].transform.rotation * Quaternion.Euler(0, 90, 0);
-        GameObject fridgeSpawned = Instantiate(fridge, spawnPos, spawnRot, transform);
+        spawnedFridge = Instantiate(fridge, spawnPos, spawnRot, transform);
+
+        boxCenter = spawnedFridge.transform.position;
+        boxSize = spawnedFridge.transform.localScale;
+        Collider[] colliders = Physics.OverlapBox(boxCenter, boxSize / 2f);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw the overlap box in the Scene view for visualization
+        Matrix4x4 rotationMatrix = Matrix4x4.TRS(boxCenter, spawnedFridge.transform.rotation, boxSize);
+        Gizmos.matrix = rotationMatrix;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
     }
 }

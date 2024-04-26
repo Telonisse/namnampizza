@@ -19,6 +19,8 @@ public class FindSpawnPos : MonoBehaviour
     //spawn fridge
     private GameObject spawnedFridge = null;
 
+    public bool fridgeUnObstructed = false;
+
     [SerializeField] Vector3 boxCenter;
     [SerializeField] Vector3 boxSize;
 
@@ -58,7 +60,28 @@ public class FindSpawnPos : MonoBehaviour
 
         boxCenter = spawnedFridge.transform.position;
         boxSize = spawnedFridge.transform.localScale;
-        Collider[] colliders = Physics.OverlapBox(boxCenter, boxSize / 2f);
+    }
+    private void Update()
+    {
+        Collider[] colliders = null;
+        if (fridgeUnObstructed == false)
+        {
+            colliders = Physics.OverlapBox(boxCenter, boxSize / 2f, spawnedFridge.transform.rotation);
+            fridgeUnObstructed = true;
+        }
+
+        if (colliders.Length > 0)
+        {
+            Debug.Log(colliders.Length);
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                Debug.Log(colliders[i].ToString());
+                if (colliders[i].GetComponentInParent<MRUKAnchor>() != null)
+                {
+                    
+                }
+            }
+        }
     }
 
     void OnDrawGizmosSelected()

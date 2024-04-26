@@ -8,6 +8,9 @@ TagManager:
   - Sausage
   - Strawberry
   - Oven
+  - Whiteboard
+  - Tomatosauce
+  - TomatoSauceCan
   layers:
   - Default
   - TransparentFX

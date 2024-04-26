@@ -32,19 +32,19 @@ public class PourDetector : MonoBehaviour
 
     private void StartPour()
     {
-        print("Start");
         currentStream = CreateStream();
         currentStream.Begin();
     }
 
     private void EndPour()
     {
-        print("End");
+        currentStream.End();
+        currentStream = null;
     }
 
     private float CalculatePourAngle()
     {
-        //foward or up
+        //foward or up, i think up good
         return transform.up.y * Mathf.Rad2Deg;
     }
 

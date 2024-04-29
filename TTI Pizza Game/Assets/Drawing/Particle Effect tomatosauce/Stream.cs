@@ -6,18 +6,15 @@ public class Stream : MonoBehaviour
 {
     private LineRenderer lineRenderer = null;
     private ParticleSystem splashParticle = null;
-    //private Animator animator;
-
 
     private Coroutine pourRoutine = null;
     private Vector3 targetPosition = Vector3.zero;
+
 
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
         splashParticle = GetComponentInChildren<ParticleSystem>();
-        //Animator animator = GetComponent<Animator>();
-
     }
 
     private void Start()

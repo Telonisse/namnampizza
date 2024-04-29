@@ -1,43 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class PourDetector : MonoBehaviour
+public class CheeseGrater : MonoBehaviour
 {
     public int pourThreshold = 45;
     public Transform origin = null;
-    public GameObject streamPrefab= null;
+    public GameObject streamPrefab = null;
 
-    [SerializeField] private Animator myAnimationController; 
+    [SerializeField] private Animator myAnimationController;
     public string collisionTag = "Tomatosauce";
 
 
-    private bool IsPouring = false;
+    private bool IsGrating = false;
     private Stream currentStream = null;
-
-
 
     private void Update()
     {
         bool pourCheck = CalculatePourAngle() < pourThreshold;
 
-        if(IsPouring != pourCheck)
+        if (IsGrating != pourCheck)
         {
-            IsPouring = pourCheck;
+            IsGrating = pourCheck;
 
-            if (IsPouring)
+            if (IsGrating)
             {
-                StartPour();
+                StartGrating();
             }
             else
             {
-                EndPour();
+                EndGrating();
                 myAnimationController.SetFloat("PourValue", 0.0f);
             }
         }
 
-        if (IsPouring)
+        if (IsGrating)
         {
             RaycastHit hit;
             if (Physics.Raycast(origin.position, Vector3.down, out hit, Mathf.Infinity))
@@ -54,20 +51,21 @@ public class PourDetector : MonoBehaviour
         }
     }
 
-    private void StartPour()
+    private void StartGrating()
     {
         currentStream = CreateStream();
         currentStream.Begin();
-        
+
     }
 
-    private void EndPour()
+    private void EndGrating()
     {
         currentStream.End();
         currentStream = null;
 
     }
 
+    // I dont think i need 
     private float CalculatePourAngle()
     {
         //foward or up, i think up good
@@ -75,12 +73,11 @@ public class PourDetector : MonoBehaviour
 
     }
 
+    //Need it to create the particlesystem
     private Stream CreateStream()
     {
-        GameObject streamObject = Instantiate(streamPrefab, origin.position, Quaternion.identity, transform );
+        GameObject streamObject = Instantiate(streamPrefab, origin.position, Quaternion.identity, transform);
         return streamObject.GetComponent<Stream>();
-   
-    }
 
- 
+    }
 }

@@ -12,8 +12,10 @@ public class PlayMyAnimation : MonoBehaviour
         myParticleSystem = GetComponent<ParticleSystem>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnParticleCollision(GameObject other)
     {
+        Debug.Log("Touched");
+
         if (other.CompareTag("TomatoSauceCan"))
         {
             Debug.Log("PLEASETOUCH");

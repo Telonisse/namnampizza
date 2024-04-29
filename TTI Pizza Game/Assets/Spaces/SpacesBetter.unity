@@ -3693,8 +3693,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e88c56ae986d664ca598594ec6e3c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 2082830695331453119, guid: 83f75ae1ce0027e48863bccff8f83fcd, type: 3}
-  fridge: {fileID: 3990519270229790797, guid: 9f46f6749006fbd4ab40abe9bfa18bf1, type: 3}
+  table: {fileID: 681415566623279107, guid: 83f75ae1ce0027e48863bccff8f83fcd, type: 3}
+  fridge: {fileID: 2210883522043882581, guid: 9f46f6749006fbd4ab40abe9bfa18bf1, type: 3}
   roomObjects: []
   currentWall: 0
   boxCenter: {x: 0, y: 0, z: 0}
@@ -8760,7 +8760,7 @@ MonoBehaviour:
   SpawnOnStart: 2
   MeshMaterial: {fileID: 2100000, guid: 599b01c5f1d17436c89b88cc04257314, type: 2}
   BorderSize: 0.2
-  Colliders: 0
+  Colliders: 1
   CutHoles: 0
   castShadows: 1
   hideMesh: 0

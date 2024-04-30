@@ -11,6 +11,7 @@ TagManager:
   - Whiteboard
   - Tomatosauce
   - TomatoSauceCan
+  - Cheese
   layers:
   - Default
   - TransparentFX

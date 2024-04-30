@@ -6,7 +6,7 @@ using UnityEngine;
 public class Fridge : MonoBehaviour
 {
     private HingeJoint joint;
-    [SerializeField] bool open = false;
+    [SerializeField] bool open;
 
     private void Start()
     {
@@ -17,13 +17,25 @@ public class Fridge : MonoBehaviour
         var motor = joint.motor;
         if (!open)
         {
-            joint.useMotor = true;
-            open = true;
+            motor.targetVelocity = -200;
+            joint.motor = motor;
         }
         if (open)
         {
             motor.targetVelocity = 200;
+            joint.motor = motor;
+        }
+    }
+
+    public void CloseFridge()
+    {
+        if (open)
+        {
             open = false;
+        }
+        else
+        {
+            open = true;
         }
     }
 }

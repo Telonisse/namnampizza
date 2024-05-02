@@ -9,7 +9,9 @@ public class FindSpawnPos : MonoBehaviour
 {
     [SerializeField] GameObject table;
     [SerializeField] GameObject fridge;
+    [SerializeField] GameObject oven;
     [SerializeField] Transform[] roomObjects;
+    [SerializeField] Transform floor;
 
     private Vector3 spawnPos;
     private Quaternion spawnRot;
@@ -20,11 +22,20 @@ public class FindSpawnPos : MonoBehaviour
     //spawn fridge
     private GameObject spawnedFridge = null;
 
-    [SerializeField] Vector3 boxCenter;
-    [SerializeField] Vector3 boxSize;
-    private float moved = 0;
-    private float maxMove = 0;
-    private bool moveOnce = false;
+    private Vector3 boxCenterFridge;
+    private Vector3 boxSizeFridge;
+    private float movedFridge = 0;
+    private float maxMoveFridge = 0;
+    private bool moveOnceFridge = false;
+
+    //spawn oven
+    private GameObject spawnedOven = null;
+
+    private Vector3 boxCenterOven;
+    private Vector3 boxSizeOven;
+    private float movedOven = 0;
+    private float maxMoveOven = 0;
+    private bool moveOnceOven = false;
 
     public void FindSpawnPosOnSurface()
     {
@@ -54,61 +65,107 @@ public class FindSpawnPos : MonoBehaviour
         }
 
         //spawn fridge and check walls until it doesnt collide with any other object
-        maxMove = roomObjects[0].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
+        maxMoveFridge = roomObjects[0].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
         spawnPos.x = roomObjects[0].transform.position.x;
         spawnPos.y = roomObjects[0].transform.position.y;
         spawnPos.z = roomObjects[0].transform.position.z;
         spawnRot = roomObjects[0].transform.rotation;
         spawnedFridge = Instantiate(fridge, spawnPos, spawnRot, transform);
-        if (!moveOnce)
+        if (!moveOnceFridge)
         {
-            spawnedFridge.transform.Translate(-maxMove, 0, 0.5f, Space.Self);
-            moveOnce = true;
+            spawnedFridge.transform.Translate(-maxMoveFridge, 0, 0.5f, Space.Self);
+            moveOnceFridge = true;
+        }
+        //spawn oven
+        maxMoveOven = roomObjects[0].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
+        spawnPos.x = roomObjects[0].transform.position.x;
+        spawnPos.y = roomObjects[0].transform.position.y;
+        spawnPos.z = roomObjects[0].transform.position.z;
+        spawnRot = roomObjects[0].transform.rotation;
+        spawnedOven = Instantiate(oven, spawnPos, spawnRot, transform);
+        if (!moveOnceOven)
+        {
+            spawnedOven.transform.Translate(-maxMoveOven, 0, 0.5f, Space.Self);
+            moveOnceOven = true;
         }
     }
     private void Update()
     {
-        boxCenter = spawnedFridge.transform.position;
-        boxSize = spawnedFridge.transform.GetChild(0).localScale;
-        Collider[] colliders = Physics.OverlapBox(boxCenter, boxSize / 2f, spawnedFridge.transform.rotation);
+        //FIND POS FRIDGE
+        boxCenterFridge = new Vector3(spawnedFridge.transform.position.x, spawnedFridge.transform.position.y + 0.6f, spawnedFridge.transform.position.z);
+        boxSizeFridge = new Vector3(0.7f, 1.2f, 0.7f);
+        Collider[] collidersFridge = Physics.OverlapBox(boxCenterFridge, boxSizeFridge / 2f, spawnedFridge.transform.rotation);
 
-        RaycastHit hit;
-        Vector3 rayVec = new Vector3(spawnedFridge.transform.position.x, spawnedFridge.transform.position.y - 1, spawnedFridge.transform.position.y);
-        if (Physics.Raycast(rayVec, -Vector3.up, out hit, 10f))
-        {
-            // If the ray hits something, log the name of the object it hits
-            Debug.Log("Hit object: " + hit.collider.gameObject.name);
-            spawnedFridge.transform.position = new Vector3(spawnedFridge.transform.position.x, hit.collider.transform.position.y + 1.00001f, spawnedFridge.transform.position.z);
-        }
+        spawnedFridge.transform.position = new Vector3(spawnedFridge.transform.position.x, 0, spawnedFridge.transform.position.z);
 
-        if (colliders.Length > 0)
+        if (collidersFridge.Length > 0)
         {
-            Debug.Log(colliders.Length);
-            for (int i = 0; i < colliders.Length; i++)
+            Debug.Log(collidersFridge.Length);
+            for (int i = 0; i < collidersFridge.Length; i++)
             {
-                MRUKAnchor anchor = colliders[i].GetComponentInParent<MRUKAnchor>();
+                MRUKAnchor anchor = collidersFridge[i].GetComponentInParent<MRUKAnchor>();
                 if (anchor != null)
                 {
-                    maxMove = roomObjects[currentWall].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
+                    maxMoveFridge = roomObjects[currentWall].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
                 }
                 if (anchor != null && !anchor.HasLabel("WALL_FACE"))
                 {
                     spawnedFridge.transform.Translate(0.01f, 0, 0, Space.Self);
-                    moved += 0.01f;
+                    movedFridge += 0.01f;
                 }
-                if (anchor != null && maxMove < moved)
+                if (anchor != null && maxMoveFridge < movedFridge)
                 {
-                    moved = 0;
+                    movedFridge = 0;
                     currentWall++;
-                    moved = 0;
-                    moveOnce = false;
-                    maxMove = roomObjects[currentWall].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
+                    movedFridge = 0;
+                    moveOnceFridge = false;
+                    maxMoveFridge = roomObjects[currentWall].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
                     spawnedFridge.transform.position = new Vector3(roomObjects[currentWall].transform.position.x, roomObjects[currentWall].transform.position.y, roomObjects[currentWall].transform.position.z);
                     spawnedFridge.transform.rotation = roomObjects[currentWall].transform.rotation * Quaternion.Euler(0, 0, 0);
-                    if (!moveOnce)
+                    if (!moveOnceFridge)
                     {
-                        spawnedFridge.transform.Translate(-maxMove, 0, 0.5f, Space.Self);
-                        moveOnce = true;
+                        spawnedFridge.transform.Translate(-maxMoveFridge, 0, 0.5f, Space.Self);
+                        moveOnceFridge = true;
+                    }
+                }
+            }
+        }
+
+        //FIND POS OVEN
+        boxCenterOven = new Vector3(spawnedOven.transform.position.x, spawnedOven.transform.position.y + 0.6f, spawnedOven.transform.position.z);
+        boxSizeOven = new Vector3(0.8f, 1.2f, 0.8f);
+        Collider[] collidersOven = Physics.OverlapBox(boxCenterOven, boxSizeOven / 2f, spawnedOven.transform.rotation);
+
+        spawnedOven.transform.position = new Vector3(spawnedOven.transform.position.x, 0 + 0.0001f, spawnedOven.transform.position.z);
+
+        if (collidersOven.Length > 0)
+        {
+            Debug.Log(collidersOven.Length);
+            for (int i = 0; i < collidersOven.Length; i++)
+            {
+                MRUKAnchor anchor = collidersOven[i].GetComponentInParent<MRUKAnchor>();
+                if (anchor != null)
+                {
+                    maxMoveOven = roomObjects[currentWall].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
+                }
+                if (anchor != null && !anchor.HasLabel("WALL_FACE"))
+                {
+                    spawnedOven.transform.Translate(0.01f, 0, 0, Space.Self);
+                    movedOven += 0.01f;
+                }
+                if (anchor != null && maxMoveOven < movedOven)
+                {
+                    movedOven = 0;
+                    currentWall++;
+                    movedOven = 0;
+                    moveOnceOven = false;
+                    maxMoveOven = roomObjects[currentWall].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
+                    spawnedOven.transform.position = new Vector3(roomObjects[currentWall].transform.position.x, roomObjects[currentWall].transform.position.y, roomObjects[currentWall].transform.position.z);
+                    spawnedOven.transform.rotation = roomObjects[currentWall].transform.rotation * Quaternion.Euler(0, 0, 0);
+                    if (!moveOnceOven)
+                    {
+                        spawnedOven.transform.Translate(-maxMoveOven, 0, 0.5f, Space.Self);
+                        moveOnceOven = true;
                     }
                 }
             }
@@ -118,7 +175,7 @@ public class FindSpawnPos : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         // Draw the overlap box in the Scene view for visualization
-        Matrix4x4 rotationMatrix = Matrix4x4.TRS(boxCenter, spawnedFridge.transform.rotation, boxSize);
+        Matrix4x4 rotationMatrix = Matrix4x4.TRS(boxCenterOven, spawnedOven.transform.rotation, boxSizeOven);
         Gizmos.matrix = rotationMatrix;
 
         Gizmos.color = Color.red;

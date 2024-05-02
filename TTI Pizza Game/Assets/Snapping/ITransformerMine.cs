@@ -25,6 +25,7 @@ namespace Oculus.Interaction
 {
     public interface ITransformerMine
     {
+
         void Initialize(IGrabbable grabbable);
         void BeginTransform();
         void UpdateTransform();

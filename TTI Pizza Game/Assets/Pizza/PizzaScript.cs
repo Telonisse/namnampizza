@@ -104,14 +104,20 @@ public class PizzaScript : MonoBehaviour
                 pizzaObject.transform.GetComponent<IngredientScript>().ChangeMaterialDone();
                 for (int i = 0; i < transform.childCount; i++)
                 {
-                    transform.GetChild(i).GetComponent<IngredientScript>().ChangeMaterialDone();
+                    if (transform.GetChild(i).GetComponent<IngredientScript>() != null)
+                    {
+                        transform.GetChild(i).GetComponent<IngredientScript>().ChangeMaterialDone();
+                    }
                 }
                 break;
             case pizzaStates.burned:
                 pizzaObject.transform.GetComponent<IngredientScript>().ChangeMaterialBurned();
                 for (int i = 0; i < transform.childCount; i++)
                 {
-                    transform.GetChild(i).GetComponent<IngredientScript>().ChangeMaterialBurned();
+                    if (transform.GetChild(i).GetComponent<IngredientScript>() != null)
+                    {
+                        transform.GetChild(i).GetComponent<IngredientScript>().ChangeMaterialBurned();
+                    }
                 }
                 break;
             default:

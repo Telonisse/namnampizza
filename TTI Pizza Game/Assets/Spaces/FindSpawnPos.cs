@@ -59,7 +59,7 @@ public class FindSpawnPos : MonoBehaviour
             {
                 spawnPos = child.transform.position;
                 spawnPos.y = 0;
-                spawnRot = Quaternion.Euler(table.transform.rotation.x, child.transform.rotation.y, table.transform.rotation.z);
+                spawnRot = table.transform.rotation;
                 Instantiate(table, spawnPos, spawnRot, transform);
             }
         }

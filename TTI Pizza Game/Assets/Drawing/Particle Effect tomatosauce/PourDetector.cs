@@ -7,11 +7,10 @@ public class PourDetector : MonoBehaviour
 {
     public int pourThreshold = 45;
     public Transform origin = null;
-    public GameObject streamPrefab= null;
+    public GameObject streamPrefab = null;
 
     [SerializeField] private Animator myAnimationController; 
     public string collisionTag = "Tomatosauce";
-
 
     private bool IsPouring = false;
     private Stream currentStream = null;

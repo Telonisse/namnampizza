@@ -1,6 +1,7 @@
 using Meta.XR.MRUtilityKit;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using static Meta.XR.MRUtilityKit.MRUK;
@@ -18,6 +19,11 @@ public class FindSpawnPos : MonoBehaviour
     private MRUKRoom room;
     int numOfWalls = 0;
     public int currentWall = 0;
+
+    //spawn counters
+    private GameObject spawnedCounters = null;
+    bool countersSpawned = false;
+    private int currentTable = 0;
 
     //spawn fridge
     private GameObject spawnedFridge = null;
@@ -57,10 +63,15 @@ public class FindSpawnPos : MonoBehaviour
         {
             if (child.GetComponent<MRUKAnchor>().HasLabel("TABLE") || child.GetComponent<MRUKAnchor>().HasLabel("OTHER"))
             {
-                spawnPos = child.transform.position;
-                spawnPos.y = 0;
-                spawnRot = table.transform.rotation;
-                Instantiate(table, spawnPos, spawnRot, transform);
+                if (countersSpawned == false)
+                {
+                    spawnPos = child.transform.position;
+                    spawnPos.y = 0;
+                    spawnRot = Quaternion.LookRotation(room.GetFacingDirection(child.GetComponent<MRUKAnchor>()));
+                    spawnedCounters = Instantiate(table, spawnPos, spawnRot, transform);
+                    currentTable++;
+                    countersSpawned = true;
+                }
             }
         }
 
@@ -91,6 +102,32 @@ public class FindSpawnPos : MonoBehaviour
     }
     private void Update()
     {
+        //FIND POS COUNTERS
+        BoxCollider boxcoll = spawnedCounters.GetComponentInChildren<BoxCollider>();
+        Vector3 vector3 = new Vector3(boxcoll.transform.position.x, boxcoll.transform.position.y + 0.6f, boxcoll.transform.position.z);
+        Collider[] colliders = Physics.OverlapBox(vector3, boxcoll.size / 2f, spawnedCounters.transform.rotation);
+        int table = 0;
+
+        foreach (Collider collider in colliders)
+        {
+            Debug.Log(collider.name);
+            if (collider.transform.name == "Fridge" || collider.transform.name == "Furnace")
+            {
+                foreach(Transform trans in roomObjects)
+                {
+                    if (trans.GetComponent<MRUKAnchor>().HasLabel("TABLE") || trans.GetComponent<MRUKAnchor>().HasLabel("OTHER"))
+                    {
+                        table++;
+                        if (table == currentTable + 1)
+                        {
+                            spawnedCounters.transform.position = new Vector3(trans.transform.position.x, 0, trans.transform.position.z);
+                            spawnedCounters.transform.rotation = Quaternion.LookRotation(room.GetFacingDirection(trans.GetComponent<MRUKAnchor>()));
+                        }
+                    }
+                }
+            }
+        }
+
         //FIND POS FRIDGE
         boxCenterFridge = new Vector3(spawnedFridge.transform.position.x, spawnedFridge.transform.position.y + 0.6f, spawnedFridge.transform.position.z);
         boxSizeFridge = new Vector3(0.7f, 1.2f, 0.7f);
@@ -141,7 +178,6 @@ public class FindSpawnPos : MonoBehaviour
         {
             for (int i = 0; i < collidersOven.Length; i++)
             {
-                Debug.Log(collidersOven[i].name);
                 MRUKAnchor anchor = collidersOven[i].GetComponentInParent<MRUKAnchor>();
                 if (anchor != null)
                 {

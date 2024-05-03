@@ -17,6 +17,7 @@ public class Fridge : MonoBehaviour
     [SerializeField] toppingInFridge[] toppingInFridgeArray;
     private HingeJoint joint;
     [SerializeField] bool open;
+    private bool movedDone = false;
 
     private void Start()
     {
@@ -24,33 +25,40 @@ public class Fridge : MonoBehaviour
     }
     private void Update()
     {
-        bool isDone = false;
-        if (!open)
+        if (movedDone == true)
         {
-            Collider[] colliders = Physics.OverlapBox(new Vector3(transform.parent.position.x, transform.parent.position.y + 1, transform.parent.position.z), new Vector3(0.7f / 2 , 1.2f / 2, 0.7f / 2), Quaternion.identity);
-            for (int i = 0; i < colliders.Length; i++)
+            bool isDone = false;
+            if (!open)
             {
-                for (int j = 0; j < toppingInFridgeArray.Length; j++)
+                Collider[] colliders = Physics.OverlapBox(new Vector3(transform.parent.position.x, transform.parent.position.y + 1, transform.parent.position.z), new Vector3(0.7f / 2, 1.2f / 2, 0.7f / 2), Quaternion.identity);
+                for (int i = 0; i < colliders.Length; i++)
                 {
-                    if (colliders[i].tag == toppingInFridgeArray[j].toppingTag)
+                    for (int j = 0; j < toppingInFridgeArray.Length; j++)
                     {
-                        toppingInFridgeArray[j].isInFridge = true;
+                        if (colliders[i].tag == toppingInFridgeArray[j].toppingTag)
+                        {
+                            toppingInFridgeArray[j].isInFridge = true;
+                        }
+                    }
+                    isDone = true;
+                }
+            }
+            if (!open && isDone)
+            {
+                for (int i = 0; i < toppingInFridgeArray.Length; i++)
+                {
+                    if (toppingInFridgeArray[i].isInFridge == false)
+                    {
+                        Instantiate(toppingInFridgeArray[i].toppingGameObject, toppingInFridgeArray[i].objectSpawnPos.transform.position, toppingInFridgeArray[i].toppingGameObject.transform.rotation);
+                        toppingInFridgeArray[i].isInFridge = true;
                     }
                 }
-                isDone = true;
             }
         }
-        if (!open && isDone)
-        {
-            for (int i = 0; i < toppingInFridgeArray.Length; i++)
-            {
-                if (toppingInFridgeArray[i].isInFridge == false)
-                {
-                    Instantiate(toppingInFridgeArray[i].toppingGameObject, toppingInFridgeArray[i].objectSpawnPos.transform.TransformPoint(toppingInFridgeArray[i].objectSpawnPos.transform.localPosition), toppingInFridgeArray[i].objectSpawnPos.transform.rotation);
-                    toppingInFridgeArray[i].isInFridge = true;
-                }
-            }
-        }
+    }
+    public void MovedDone()
+    {
+        movedDone = true;
     }
     public void OpenFridge()
     {

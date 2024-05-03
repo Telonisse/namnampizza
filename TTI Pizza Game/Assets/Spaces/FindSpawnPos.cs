@@ -17,12 +17,12 @@ public class FindSpawnPos : MonoBehaviour
     private Vector3 spawnPos;
     private Quaternion spawnRot;
     private MRUKRoom room;
-    int numOfWalls = 0;
-    public int currentWall = 0;
+    private int numOfWalls = 0;
+    private int currentWall = 0;
 
     //spawn counters
     private GameObject spawnedCounters = null;
-    bool countersSpawned = false;
+    private bool countersSpawned = false;
     private int currentTable = 0;
 
     //spawn fridge
@@ -33,6 +33,9 @@ public class FindSpawnPos : MonoBehaviour
     private float movedFridge = 0;
     private float maxMoveFridge = 0;
     private bool moveOnceFridge = false;
+    private bool fridgeDone = false;
+    private Vector3 prevPosFridge;
+    private float lastTimeMovedFridge;
 
     //spawn oven
     private GameObject spawnedOven = null;
@@ -42,6 +45,9 @@ public class FindSpawnPos : MonoBehaviour
     private float movedOven = 0;
     private float maxMoveOven = 0;
     private bool moveOnceOven = false;
+    private bool ovenDone = false;
+    private Vector3 prevPosOven;
+    private float lastTimeMovedOven;
 
     public void FindSpawnPosOnSurface()
     {
@@ -74,6 +80,12 @@ public class FindSpawnPos : MonoBehaviour
                 }
             }
         }
+        if (spawnedCounters == null)
+        {
+            spawnPos = Vector3.zero;
+            spawnRot = Quaternion.identity;
+            spawnedCounters = Instantiate(table, spawnPos, spawnRot, transform);
+        }
 
         //spawn fridge and check walls until it doesnt collide with any other object
         maxMoveFridge = roomObjects[0].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
@@ -99,6 +111,12 @@ public class FindSpawnPos : MonoBehaviour
             spawnedOven.transform.Translate(-maxMoveOven + 0.2f, 0, 0.5f, Space.Self);
             moveOnceOven = true;
         }
+
+        prevPosFridge = spawnedFridge.transform.position;
+        lastTimeMovedFridge = Time.time;
+
+        prevPosOven = spawnedOven.transform.position;
+        lastTimeMovedOven = Time.time;
     }
     private void Update()
     {
@@ -107,21 +125,22 @@ public class FindSpawnPos : MonoBehaviour
         Vector3 vector3 = new Vector3(boxcoll.transform.position.x, boxcoll.transform.position.y + 0.6f, boxcoll.transform.position.z);
         Collider[] colliders = Physics.OverlapBox(vector3, boxcoll.size / 2f, spawnedCounters.transform.rotation);
         int table = 0;
-
-        foreach (Collider collider in colliders)
+        if (ovenDone == true && fridgeDone == true)
         {
-            Debug.Log(collider.name);
-            if (collider.transform.name == "Fridge" || collider.transform.name == "Furnace")
+            foreach (Collider collider in colliders)
             {
-                foreach(Transform trans in roomObjects)
+                if (collider.transform.name == "Fridge" || collider.transform.name == "Furnace")
                 {
-                    if (trans.GetComponent<MRUKAnchor>().HasLabel("TABLE") || trans.GetComponent<MRUKAnchor>().HasLabel("OTHER"))
+                    foreach (Transform trans in roomObjects)
                     {
-                        table++;
-                        if (table == currentTable + 1)
+                        if (trans.GetComponent<MRUKAnchor>().HasLabel("TABLE") || trans.GetComponent<MRUKAnchor>().HasLabel("OTHER"))
                         {
-                            spawnedCounters.transform.position = new Vector3(trans.transform.position.x, 0, trans.transform.position.z);
-                            spawnedCounters.transform.rotation = Quaternion.LookRotation(room.GetFacingDirection(trans.GetComponent<MRUKAnchor>()));
+                            table++;
+                            if (table == currentTable + 1)
+                            {
+                                spawnedCounters.transform.position = new Vector3(trans.transform.position.x, 0, trans.transform.position.z);
+                                spawnedCounters.transform.rotation = Quaternion.LookRotation(room.GetFacingDirection(trans.GetComponent<MRUKAnchor>()));
+                            }
                         }
                     }
                 }
@@ -130,7 +149,7 @@ public class FindSpawnPos : MonoBehaviour
 
         //FIND POS FRIDGE
         boxCenterFridge = new Vector3(spawnedFridge.transform.position.x, spawnedFridge.transform.position.y + 0.6f, spawnedFridge.transform.position.z);
-        boxSizeFridge = new Vector3(0.7f, 1.2f, 0.7f);
+        boxSizeFridge = new Vector3(0.8f, 1.2f, 0.8f);
         Collider[] collidersFridge = Physics.OverlapBox(boxCenterFridge, boxSizeFridge / 2f, spawnedFridge.transform.rotation);
 
         spawnedFridge.transform.position = new Vector3(spawnedFridge.transform.position.x, 0, spawnedFridge.transform.position.z);
@@ -140,6 +159,10 @@ public class FindSpawnPos : MonoBehaviour
             for (int i = 0; i < collidersFridge.Length; i++)
             {
                 MRUKAnchor anchor = collidersFridge[i].GetComponentInParent<MRUKAnchor>();
+                if (anchor != null && anchor.HasLabel("WALL_FACE"))
+                {
+                    fridgeDone = true;
+                }
                 if (anchor != null)
                 {
                     maxMoveFridge = roomObjects[currentWall].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
@@ -209,6 +232,26 @@ public class FindSpawnPos : MonoBehaviour
                     }
                 }
             }
+        }
+
+        if (spawnedFridge.transform.position != prevPosFridge)
+        {
+            prevPosFridge = spawnedFridge.transform.position;
+            lastTimeMovedFridge = Time.time;
+        }
+        else if (Time.time - lastTimeMovedFridge > 1f)
+        {
+            fridgeDone = true;
+            spawnedFridge.GetComponentInChildren<Fridge>().MovedDone();
+        }
+        if (spawnedOven.transform.position != prevPosOven)
+        {
+            prevPosOven = spawnedOven.transform.position;
+            lastTimeMovedOven = Time.time;
+        }
+        else if (Time.time - lastTimeMovedOven > 1f)
+        {
+            ovenDone = true;
         }
     }
 }

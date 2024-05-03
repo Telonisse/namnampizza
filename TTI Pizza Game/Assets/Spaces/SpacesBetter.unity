@@ -6158,7 +6158,6 @@ MonoBehaviour:
   oven: {fileID: 4625572203522266324, guid: ea648d0619e364d4b9840623a9df09ed, type: 3}
   roomObjects: []
   floor: {fileID: 0}
-  currentWall: 0
 --- !u!1 &454229894
 GameObject:
   m_ObjectHideFlags: 0

@@ -171,14 +171,4 @@ public class FindSpawnPos : MonoBehaviour
             }
         }
     }
-
-    void OnDrawGizmosSelected()
-    {
-        // Draw the overlap box in the Scene view for visualization
-        Matrix4x4 rotationMatrix = Matrix4x4.TRS(boxCenterOven, spawnedOven.transform.rotation, boxSizeOven);
-        Gizmos.matrix = rotationMatrix;
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
-    }
 }

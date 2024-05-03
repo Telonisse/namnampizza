@@ -12,6 +12,7 @@ TagManager:
   - Tomatosauce
   - TomatoSauceCan
   - Cheese
+  - Fridge
   layers:
   - Default
   - TransparentFX

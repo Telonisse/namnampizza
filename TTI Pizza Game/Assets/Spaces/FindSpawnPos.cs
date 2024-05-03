@@ -93,7 +93,7 @@ public class FindSpawnPos : MonoBehaviour
     {
         //FIND POS FRIDGE
         boxCenterFridge = new Vector3(spawnedFridge.transform.position.x, spawnedFridge.transform.position.y + 0.6f, spawnedFridge.transform.position.z);
-        boxSizeFridge = new Vector3(0.7f, 1.2f, 0.7f);
+        boxSizeFridge = new Vector3(0.8f, 1.2f, 0.8f);
         Collider[] collidersFridge = Physics.OverlapBox(boxCenterFridge, boxSizeFridge / 2f, spawnedFridge.transform.rotation);
 
         spawnedFridge.transform.position = new Vector3(spawnedFridge.transform.position.x, 0, spawnedFridge.transform.position.z);

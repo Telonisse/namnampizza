@@ -53,16 +53,16 @@ public class FindSpawnPos : MonoBehaviour
             }
         }
         //check what type of object and spawn object on it
-        //foreach (Transform child in roomObjects)
-        //{
-        //    if (child.GetComponent<MRUKAnchor>().HasLabel("TABLE") || child.GetComponent<MRUKAnchor>().HasLabel("OTHER"))
-        //    {
-        //        spawnPos = child.transform.position;
-        //        spawnPos.y = child.transform.position.y - (table.transform.localScale.y / 2);
-        //        spawnRot = child.transform.rotation;
-        //        Instantiate(table, spawnPos, spawnRot, transform);
-        //    }
-        //}
+        foreach (Transform child in roomObjects)
+        {
+            if (child.GetComponent<MRUKAnchor>().HasLabel("TABLE") || child.GetComponent<MRUKAnchor>().HasLabel("OTHER"))
+            {
+                spawnPos = child.transform.position;
+                spawnPos.y = 0;
+                spawnRot = Quaternion.Euler(table.transform.rotation.x, child.transform.rotation.y, table.transform.rotation.z);
+                Instantiate(table, spawnPos, spawnRot, transform);
+            }
+        }
 
         //spawn fridge and check walls until it doesnt collide with any other object
         maxMoveFridge = roomObjects[0].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;

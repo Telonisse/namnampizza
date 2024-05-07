@@ -21,7 +21,7 @@ public class FindSpawnPos : MonoBehaviour
     private int numOfWalls = 0;
     [SerializeField] Transform[] walls;
     public List<Transform> wallsList;
-    private int currentWall = 0;
+    private int currentWall = 1;
 
     //spawn counters
     private GameObject spawnedCounters = null;
@@ -240,7 +240,7 @@ public class FindSpawnPos : MonoBehaviour
                     currentWall++;
                     if (currentWall > walls.Length)
                     {
-                        currentWall = 1;
+                        currentWall = 0;
                     }
                     movedOven = 0;
                     moveOnceOven = false;

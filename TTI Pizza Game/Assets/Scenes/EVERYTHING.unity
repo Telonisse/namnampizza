@@ -5478,8 +5478,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.31846407, y: 0.030783713, z: 0.3211974}
-  m_Center: {x: -0.008844003, y: 0.0023970902, z: -0.0061423182}
+  m_Size: {x: 0.31846407, y: 0.010195076, z: 0.3211974}
+  m_Center: {x: -0.008844003, y: 0.0037926733, z: -0.0061423182}
 --- !u!1 &563914480
 GameObject:
   m_ObjectHideFlags: 0
@@ -13201,98 +13201,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1474728353}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1345731353
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1345731356}
-  - component: {fileID: 1345731355}
-  - component: {fileID: 1345731354}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &1345731354
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345731353}
-  m_Enabled: 0
---- !u!20 &1345731355
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345731353}
-  m_Enabled: 0
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1345731356
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345731353}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1352677613
 GameObject:
   m_ObjectHideFlags: 0
@@ -20728,6 +20636,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractablePizza
       objectReference: {fileID: 0}
+    - target: {fileID: 7841957806458932055, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2595806
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841957806458932055, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+      propertyPath: m_Size.z
+      value: 3.0959775
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841957806458932055, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+      propertyPath: m_Center.y
+      value: 0.008735657
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841957806458932055, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+      propertyPath: m_Center.z
+      value: 0.045520216
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20849,6 +20773,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7736571411342530203, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7736571411342530203, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20858,7 +20790,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1345731356}
   - {fileID: 436905375}
   - {fileID: 1983579704}
   - {fileID: 223271562}

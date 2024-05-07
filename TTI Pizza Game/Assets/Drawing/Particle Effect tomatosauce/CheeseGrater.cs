@@ -11,6 +11,7 @@ public class CheeseGrater : MonoBehaviour
     [SerializeField] private Animator myAnimationController;
     public string collisionTag = "Tomatosauce";
 
+    [SerializeField] private ParticleSystem myParticleSystem;
 
 
     private void OnTriggerStay(Collider other)
@@ -26,6 +27,7 @@ public class CheeseGrater : MonoBehaviour
                 {
                     Debug.Log("Collision detected with tag: " + collisionTag);
                     myAnimationController.SetBool("IsGrating", true);
+                    myParticleSystem.Play();
                     myAnimationController.SetFloat("GrateValue", 1.0f);
 
 
@@ -37,5 +39,7 @@ public class CheeseGrater : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         myAnimationController.SetFloat("GrateValue", 0.0f);
+        myParticleSystem.Stop();
+
     }
 }

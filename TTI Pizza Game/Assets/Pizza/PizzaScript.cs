@@ -125,4 +125,9 @@ public class PizzaScript : MonoBehaviour
 
         }
     }
+
+    public void GetToppings(int index, out bool isOnPizza)
+    {
+        isOnPizza = pizzaToppingsArray[index].isOnPizza;
+    }
 }

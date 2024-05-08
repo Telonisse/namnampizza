@@ -2291,7 +2291,7 @@ MonoBehaviour:
       m_Calls: []
   EnableWorldLock: 1
   SceneSettings:
-    DataSource: 0
+    DataSource: 2
     RoomIndex: 2
     RoomPrefabs:
     - {fileID: 5618556046422172173, guid: 4b454e8ccd6764ccdbcd91586969863f, type: 3}

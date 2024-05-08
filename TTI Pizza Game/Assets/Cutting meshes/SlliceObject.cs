@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EzySlice;
+using Oculus.Interaction;
+
 public class SlliceObject : MonoBehaviour
 {
     public Transform startSlicePoint;
@@ -11,12 +13,6 @@ public class SlliceObject : MonoBehaviour
 
     public Material crossSectionMaterial;
     public float cutForce = 2000;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
    
     void FixedUpdate()
@@ -54,8 +50,17 @@ public class SlliceObject : MonoBehaviour
     {
         Rigidbody rb = slicedObject.AddComponent<Rigidbody>();
         MeshCollider collider = slicedObject.AddComponent<MeshCollider>();
-        slicedObject.layer = LayerMask.NameToLayer("Sliceable");
+        BoxCollider colliderbox = slicedObject.GetComponent<BoxCollider>();
+        slicedObject.AddComponent<Grabbable>();
+        slicedObject.AddComponent<PhysicsGrabbable>();
+        slicedObject.AddComponent<TouchHandGrabInteractable>();
 
+        slicedObject.layer = LayerMask.NameToLayer("Sliceable");
+        slicedObject.gameObject.tag = "Sausage";
+
+        //colliderbox.isTrigger = true;
+
+        //slicedObject.GetComponent<PhysicsGrabbable>().;
 
         collider.convex = true;
         rb.AddExplosionForce(cutForce, slicedObject.transform.position, 1);

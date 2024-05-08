@@ -10,22 +10,28 @@ public class IngredientScript : MonoBehaviour
     [SerializeField] Texture doneTexture;
     [SerializeField] Texture burnedTexture;
 
+    //[SerializeField] Material myTomatoSauceMaterial;
+    //[SerializeField] Texture rawTextureTomatoSauce;
+    //[SerializeField] Texture doneTextureTomatoSauce;
+    //[SerializeField] Texture burnedTextureTomatoSauce;
+
     private void Start()
     {
         material.mainTexture = rawTexture;
-    }
-
-    private void Update()
-    {
+       // myTomatoSauceMaterial.mainTexture = rawTextureTomatoSauce;
 
     }
 
     public void ChangeMaterialDone()
     {
         material.mainTexture = doneTexture;
+        //myTomatoSauceMaterial.mainTexture = doneTextureTomatoSauce;
+
     }
     public void ChangeMaterialBurned()
     {
         material.mainTexture = burnedTexture;
+        //myTomatoSauceMaterial.mainTexture = doneTextureTomatoSauce;
+
     }
 }

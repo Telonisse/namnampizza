@@ -111,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 2973769742813336974}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.9, z: 0}
+  m_LocalPosition: {x: 0, y: 2.2, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -145,7 +145,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d593822217421aa4e8f0382e32dd624d, type: 2}
+  - {fileID: 2100000, guid: 28befc3a29e4d9d47a8aa0ae232bf64e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -262,12 +262,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 4.488826, z: 1}
-  m_Center: {x: 0, y: -2.3944974, z: 0}
+  m_Size: {x: 1, y: 6.0335875, z: 1}
+  m_Center: {x: 0, y: -1.6221166, z: 0}
 --- !u!1 &7460313573764383874
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3775900161263642102}
+  - component: {fileID: 6472742172285547278}
   m_Layer: 0
   m_Name: Pizza
   m_TagString: Tomatosauce
@@ -301,6 +302,27 @@ Transform:
   - {fileID: 3637591181978458343}
   m_Father: {fileID: 5289517227518281304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6472742172285547278
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7460313573764383874}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.31846407, y: 0.010195076, z: 0.3211974}
+  m_Center: {x: -0.008844003, y: 0.0037926733, z: -0.0061423182}
 --- !u!1 &7573113877087141109
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,8 +498,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.8452775, y: 0.47350645, z: 3.0238318}
-  m_Center: {x: 0.06438345, y: 0.115698576, z: 0.081593096}
+  m_Size: {x: 2.8452775, y: 0.2595806, z: 3.0959775}
+  m_Center: {x: 0.06438345, y: 0.008735657, z: 0.045520216}
 --- !u!54 &680102082929155897
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -657,4 +679,4 @@ MonoBehaviour:
   _pointableElement: {fileID: 1721976346179199147}
   _boundsCollider: {fileID: 7841957806458932055}
   _colliders:
-  - {fileID: 2315313259435963591}
+  - {fileID: 6472742172285547278}

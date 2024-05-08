@@ -5454,32 +5454,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1149697277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &554064786 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7460313573764383874, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-  m_PrefabInstance: {fileID: 4886381448722139110}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &554064788
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554064786}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.31846407, y: 0.010195076, z: 0.3211974}
-  m_Center: {x: -0.008844003, y: 0.0037926733, z: -0.0061423182}
 --- !u!1 &563914480
 GameObject:
   m_ObjectHideFlags: 0
@@ -20520,7 +20494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755887321551958288, guid: 4888dd6d388c91d43b1ae2b2fbd0ffbf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.87200004
+      value: 0.898
       objectReference: {fileID: 0}
     - target: {fileID: 5755887321551958288, guid: 4888dd6d388c91d43b1ae2b2fbd0ffbf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20576,22 +20550,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2315313259435963591, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: m_Size.y
-      value: 6.0335875
-      objectReference: {fileID: 0}
-    - target: {fileID: 2315313259435963591, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: m_Center.y
-      value: -1.6221166
-      objectReference: {fileID: 0}
-    - target: {fileID: 2315313259435963591, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: m_IsTrigger
+    - target: {fileID: 680102082929155897, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+      propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2487505727967227396, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: _colliders.Array.data[0]
-      value: 
-      objectReference: {fileID: 554064788}
+    - target: {fileID: 680102082929155897, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5289517227518281304, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.066
@@ -20632,34 +20598,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6321183001167908948, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+      propertyPath: tomatoSauce
+      value: 
+      objectReference: {fileID: 4886381448722139111}
+    - target: {fileID: 6321183001167908948, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+      propertyPath: tomatoSauceObject
+      value: 
+      objectReference: {fileID: 4886381448722139111}
+    - target: {fileID: 7316434111565195696, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+      propertyPath: myTomatoSauceMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c28c47792c362c4e8cbbf5c0e6438c6, type: 2}
+    - target: {fileID: 7316434111565195696, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+      propertyPath: rawTextureTomatoSauce
+      value: 
+      objectReference: {fileID: 2800000, guid: fe1807f5c7f014b4c832918ab2380624, type: 3}
+    - target: {fileID: 7316434111565195696, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+      propertyPath: doneTextureTomatoSauce
+      value: 
+      objectReference: {fileID: 2800000, guid: fe1807f5c7f014b4c832918ab2380624, type: 3}
+    - target: {fileID: 7316434111565195696, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+      propertyPath: burnedTextureTomatoSauce
+      value: 
+      objectReference: {fileID: 2800000, guid: ae93ba7aa96d8f74b9dbd672994edbe3, type: 3}
     - target: {fileID: 7692728054829486326, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
       propertyPath: m_Name
       value: InteractablePizza
       objectReference: {fileID: 0}
-    - target: {fileID: 7841957806458932055, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: m_Size.y
-      value: 0.2595806
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841957806458932055, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: m_Size.z
-      value: 3.0959775
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841957806458932055, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: m_Center.y
-      value: 0.008735657
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841957806458932055, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: m_Center.z
-      value: 0.045520216
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7460313573764383874, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 554064788}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+--- !u!1 &4886381448722139111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7573113877087141109, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+  m_PrefabInstance: {fileID: 4886381448722139110}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5872994593460200420
 PrefabInstance:
   m_ObjectHideFlags: 0

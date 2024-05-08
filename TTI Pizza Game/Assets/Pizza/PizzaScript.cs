@@ -13,6 +13,7 @@ public class PizzaScript : MonoBehaviour
 {
     [SerializeField] pizzaToppings[] pizzaToppingsArray;
     [SerializeField] GameObject pizzaObject;
+    
 
     //Timer in oven
     [SerializeField] float minTimeDone = 0;
@@ -112,6 +113,7 @@ public class PizzaScript : MonoBehaviour
                 break;
             case pizzaStates.burned:
                 pizzaObject.transform.GetComponent<IngredientScript>().ChangeMaterialBurned();
+
                 for (int i = 0; i < transform.childCount; i++)
                 {
                     if (transform.GetChild(i).GetComponent<IngredientScript>() != null)

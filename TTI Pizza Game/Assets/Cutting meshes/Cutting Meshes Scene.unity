@@ -504,7 +504,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 20609539}
-  _boundsCollider: {fileID: 20609542}
+  _boundsCollider: {fileID: 20609538}
   _colliders:
   - {fileID: 20609538}
 --- !u!1 &21165346
@@ -15385,8 +15385,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970003824}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.64, y: 0.859, z: 0}
+  m_LocalRotation: {x: -0.68469584, y: -0, z: -0, w: 0.7288289}
+  m_LocalPosition: {x: 0.957, y: 0.76, z: -0.218}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15395,7 +15395,7 @@ Transform:
   - {fileID: 1595441426}
   - {fileID: 511269142}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -86.423, y: 0, z: 0}
 --- !u!114 &970003831
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,8 +14,9 @@ public class SlliceObject : MonoBehaviour
 
     public Material crossSectionMaterial;
     public float cutForce = 2000;
+    
+    List<Collider> collist;
 
-   
     void FixedUpdate()
     {
         bool hasHit = Physics.Linecast(startSlicePoint.position, endSlicePoint.position, out RaycastHit hit, sliceableLayer);
@@ -51,7 +52,7 @@ public class SlliceObject : MonoBehaviour
     {
         Rigidbody rb = slicedObject.AddComponent<Rigidbody>();
         MeshCollider collider = slicedObject.AddComponent<MeshCollider>();
-        BoxCollider colliderbox = slicedObject.GetComponent<BoxCollider>();
+        BoxCollider colliderbox = slicedObject.AddComponent<BoxCollider>();
         slicedObject.AddComponent<Grabbable>();
         slicedObject.AddComponent<PhysicsGrabbable>();
         slicedObject.AddComponent<TouchHandGrabInteractable>();
@@ -59,19 +60,21 @@ public class SlliceObject : MonoBehaviour
         slicedObject.layer = LayerMask.NameToLayer("Sliceable");
         slicedObject.gameObject.tag = "Sausage";
 
+        //slicedObject.GetComponent<PhysicsGrabbable>().InjectAllPhysicsGrabbable(IPointable pointable, rb);
+
+        collist.Add(collider);
+
         colliderbox.isTrigger = true;
 
         //slicedObject.GetComponent<PhysicsGrabbable>().InjectPointable(IPointable pointable);
 
-        slicedObject.GetComponent<PhysicsGrabbable>().InjectRigidbody(rb);
+        //slicedObject.GetComponent<PhysicsGrabbable>().
 
-        //slicedObject.GetComponent<TouchHandGrabInteractable>().InjectAllTouchHandGrabInteractable(collider, colliderbox);
+        //slicedObject.GetComponent<TouchHandGrabInteractable>().InjectAllTouchHandGrabInteractable(collider, collist);
         
+        //GetComponent<Collider>().convex = true;
 
-        collider.convex = true;
-  
-
-        rb.AddExplosionForce(cutForce, slicedObject.transform.position, 1);
+        //rb.AddExplosionForce(cutForce, slicedObject.transform.position, 1);
     }
   
 }

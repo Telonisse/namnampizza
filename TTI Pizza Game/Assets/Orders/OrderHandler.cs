@@ -13,26 +13,30 @@ public class OrderHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PizzaScript pizza = other.GetComponentInChildren<PizzaScript>();
-
-        for (int i = 0; i < orders.Length; i++)
+        if (other != null )
         {
-            matchesOrder = true;
-            if (orders[i].IsOffline() == false)
+            PizzaScript pizza = other.GetComponentInChildren<PizzaScript>();
+            for (int i = 0; i < orders.Length; i++)
             {
-                for (int j = 0; j < numOfToppings; j++)
+                matchesOrder = true;
+                if (orders[i].IsOffline() == false && other != null)
                 {
-                    pizza.GetToppings(j, out isOnPizza);
-                    orders[i].GetToppings(j, out isOnOrder);
-                    if (isOnOrder != isOnPizza)
+                    for (int j = 0; j < numOfToppings; j++)
                     {
-                        matchesOrder = false;
+                        pizza.GetToppings(j, out isOnPizza);
+                        orders[i].GetToppings(j, out isOnOrder);
+                        if (isOnOrder != isOnPizza)
+                        {
+                            matchesOrder = false;
+                        }
                     }
-                }
-                if (matchesOrder)
-                {
-                    orders[i].ResetOrder();
-                    Destroy(other.transform.parent.gameObject);
+                    if (matchesOrder && other != null)
+                    {
+                        orders[i].ResetOrder();
+                        Debug.Log(other.name);
+                        Destroy(other.transform.parent.gameObject);
+                        other = null;
+                    }
                 }
             }
         }

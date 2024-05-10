@@ -17,18 +17,20 @@ public class Order : MonoBehaviour
     private int randomTopping;
     [SerializeField] TextMeshPro textObjectOrder;
     [SerializeField] GameObject graphics;
+    [SerializeField] int maxToppingPerOrder;
     private string orderText;
 
     //Timer
-    public float timer = 0f;
-    bool isRunning = false;
+    private float timer = 0f;
+    [SerializeField] bool isRunning = false;
     [SerializeField] float maxTimer;
+    private int randomTime;
 
     bool offline = false;
 
     private void Start()
     {
-        NewOrder(2);
+        NewOrder(maxToppingPerOrder);
     }
     private void Update()
     {
@@ -43,7 +45,7 @@ public class Order : MonoBehaviour
             timer = 0f;
             offline = false;
             graphics.SetActive(true);
-            NewOrder(2);
+            NewOrder(maxToppingPerOrder);
         }
     }
     public void NewOrder(int maxToppings)
@@ -76,6 +78,7 @@ public class Order : MonoBehaviour
             offline = true;
             orderArray[i].onOrder = false;
             isRunning = true;
+            //randomTime = Random.Range();
         }
     }
     public bool IsOffline()

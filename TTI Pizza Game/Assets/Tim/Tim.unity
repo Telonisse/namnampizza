@@ -217,63 +217,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &507977525
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8461224986097564394, guid: 36b2be39c85b2834f83c00e37f5d8ee1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.009911858
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461224986097564394, guid: 36b2be39c85b2834f83c00e37f5d8ee1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461224986097564394, guid: 36b2be39c85b2834f83c00e37f5d8ee1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.037850447
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461224986097564394, guid: 36b2be39c85b2834f83c00e37f5d8ee1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461224986097564394, guid: 36b2be39c85b2834f83c00e37f5d8ee1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461224986097564394, guid: 36b2be39c85b2834f83c00e37f5d8ee1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461224986097564394, guid: 36b2be39c85b2834f83c00e37f5d8ee1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461224986097564394, guid: 36b2be39c85b2834f83c00e37f5d8ee1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461224986097564394, guid: 36b2be39c85b2834f83c00e37f5d8ee1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461224986097564394, guid: 36b2be39c85b2834f83c00e37f5d8ee1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9090410187485962320, guid: 36b2be39c85b2834f83c00e37f5d8ee1, type: 3}
-      propertyPath: m_Name
-      value: StrawBerry
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 36b2be39c85b2834f83c00e37f5d8ee1, type: 3}
 --- !u!1 &1556094228
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,4 +315,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 382031401}
   - {fileID: 1556094231}
-  - {fileID: 507977525}

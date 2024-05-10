@@ -19,6 +19,7 @@ public class CheeseGrater : MonoBehaviour
         if (other.gameObject.CompareTag("Cheese"))
         {
             Debug.Log("touched");
+            myParticleSystem.Play();
 
             RaycastHit hit;
             if (Physics.Raycast(cheeseOrigin.position, Vector3.down, out hit, Mathf.Infinity))
@@ -27,7 +28,6 @@ public class CheeseGrater : MonoBehaviour
                 {
                     Debug.Log("Collision detected with tag: " + collisionTag);
                     myAnimationController.SetBool("IsGrating", true);
-                    myParticleSystem.Play();
                     myAnimationController.SetFloat("GrateValue", 1.0f);
 
 

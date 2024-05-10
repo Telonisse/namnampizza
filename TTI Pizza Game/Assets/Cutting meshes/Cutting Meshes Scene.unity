@@ -504,7 +504,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 20609539}
-  _boundsCollider: {fileID: 20609538}
+  _boundsCollider: {fileID: 20609542}
   _colliders:
   - {fileID: 20609538}
 --- !u!1 &21165346

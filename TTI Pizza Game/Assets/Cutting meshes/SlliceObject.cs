@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EzySlice;
 using Oculus.Interaction;
+using Meta;
 
 public class SlliceObject : MonoBehaviour
 {
@@ -58,11 +59,19 @@ public class SlliceObject : MonoBehaviour
         slicedObject.layer = LayerMask.NameToLayer("Sliceable");
         slicedObject.gameObject.tag = "Sausage";
 
-        //colliderbox.isTrigger = true;
+        colliderbox.isTrigger = true;
 
-        //slicedObject.GetComponent<PhysicsGrabbable>().;
+        //slicedObject.GetComponent<PhysicsGrabbable>().InjectPointable(IPointable pointable);
+
+        slicedObject.GetComponent<PhysicsGrabbable>().InjectRigidbody(rb);
+
+        //slicedObject.GetComponent<TouchHandGrabInteractable>().InjectAllTouchHandGrabInteractable(collider, colliderbox);
+        
 
         collider.convex = true;
+  
+
         rb.AddExplosionForce(cutForce, slicedObject.transform.position, 1);
     }
+  
 }

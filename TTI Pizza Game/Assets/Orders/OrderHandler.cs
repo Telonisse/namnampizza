@@ -32,6 +32,7 @@ public class OrderHandler : MonoBehaviour
                 if (matchesOrder)
                 {
                     orders[i].ResetOrder();
+                    Destroy(other.transform.parent.gameObject);
                 }
             }
         }

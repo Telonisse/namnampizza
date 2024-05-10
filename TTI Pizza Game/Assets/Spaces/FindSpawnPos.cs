@@ -130,7 +130,7 @@ public class FindSpawnPos : MonoBehaviour
         //spawn oven
         maxMoveOven = walls[0].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
         room.GenerateRandomPositionOnSurface(SurfaceType.FACING_UP, 0f, LabelFilter.FromEnum(MRUKAnchor.SceneLabels.FLOOR), out Vector3 pos, out Vector3 normal);
-        spawnRot = Quaternion.LookRotation(room.GetFacingDirection());
+        //spawnRot = Quaternion.LookRotation(room.GetFacingDirection());
         spawnedOven = Instantiate(oven, pos, spawnRot);
         if (!moveOnceOven)
         {

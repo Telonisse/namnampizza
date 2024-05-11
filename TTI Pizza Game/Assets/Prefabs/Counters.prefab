@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7756804449937267790}
+  - component: {fileID: 2001045244116218251}
   m_Layer: 0
   m_Name: Counters
   m_TagString: Untagged
@@ -38,6 +39,21 @@ Transform:
   - {fileID: 450120363611964056}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2001045244116218251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7047548193653855166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825444a0ce02499459783dd4e44c2882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knife: {fileID: 6488970274551302069}
+  tomatoSauce: {fileID: 6663004899470914741}
+  rivjarn: {fileID: 2339163019954835917}
 --- !u!1001 &953002477461420862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -390,6 +406,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractableTomatoSauce
       objectReference: {fileID: 0}
+    - target: {fileID: 1968436194604876447, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
+      propertyPath: instanceId
+      value: d9379496-1dce-4b61-9bd6-22e773b3ee63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821302655663166681, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
+      propertyPath: instanceId
+      value: f4fd877f-0194-4cc0-af7f-fc764a9e1fba
+      objectReference: {fileID: 0}
     - target: {fileID: 5330799923013369648, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.926
@@ -440,6 +464,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5330799923013369648, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
   m_PrefabInstance: {fileID: 5748255984340893096}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6663004899470914741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1419293571629992221, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
+  m_PrefabInstance: {fileID: 5748255984340893096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6770850902166776910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -448,6 +477,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7756804449937267790}
     m_Modifications:
+    - target: {fileID: 1807229979715597139, guid: 4888dd6d388c91d43b1ae2b2fbd0ffbf, type: 3}
+      propertyPath: instanceId
+      value: c4121b3c-b55e-4e13-8f24-9376f7f1c345
+      objectReference: {fileID: 0}
     - target: {fileID: 5755887321551958288, guid: 4888dd6d388c91d43b1ae2b2fbd0ffbf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7243663
@@ -488,6 +521,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7114932901624284005, guid: 4888dd6d388c91d43b1ae2b2fbd0ffbf, type: 3}
+      propertyPath: instanceId
+      value: 6a3d90b6-f8be-4ed3-8fa3-2f3ab4925a73
+      objectReference: {fileID: 0}
     - target: {fileID: 9043374674140724611, guid: 4888dd6d388c91d43b1ae2b2fbd0ffbf, type: 3}
       propertyPath: m_Name
       value: InteractableCheeseGrater
@@ -500,6 +537,11 @@ PrefabInstance:
 --- !u!4 &1303756908868394334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5755887321551958288, guid: 4888dd6d388c91d43b1ae2b2fbd0ffbf, type: 3}
+  m_PrefabInstance: {fileID: 6770850902166776910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2339163019954835917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9043374674140724611, guid: 4888dd6d388c91d43b1ae2b2fbd0ffbf, type: 3}
   m_PrefabInstance: {fileID: 6770850902166776910}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7799216550960833510
@@ -653,6 +695,11 @@ PrefabInstance:
 --- !u!4 &3204063944254113706 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6797329684740964286, guid: b8a8968d4b0d8a44f8d0c179c411aba9, type: 3}
+  m_PrefabInstance: {fileID: 8224672963024435220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6488970274551302069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2895423608826871713, guid: b8a8968d4b0d8a44f8d0c179c411aba9, type: 3}
   m_PrefabInstance: {fileID: 8224672963024435220}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8673756085252417254

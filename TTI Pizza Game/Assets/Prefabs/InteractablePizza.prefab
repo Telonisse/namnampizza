@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6493086637541477762}
   m_Layer: 0
   m_Name: Pizza
-  m_TagString: Untagged
+  m_TagString: Pizza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 5672918496599544386}
   m_Layer: 0
   m_Name: GratedCheese
-  m_TagString: Untagged
+  m_TagString: Pizza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 2315313259435963591}
   m_Layer: 0
   m_Name: PizzaScript
-  m_TagString: Untagged
+  m_TagString: Pizza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,7 +216,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.005, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3775900161263642102}
@@ -264,8 +264,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 6.0335875, z: 1}
-  m_Center: {x: 0, y: -1.6221166, z: 0}
+  m_Size: {x: 0.3, y: 0.005, z: 0.3}
+  m_Center: {x: 0, y: 0.015, z: 0}
 --- !u!1 &7460313573764383874
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 6472742172285547278}
   m_Layer: 0
   m_Name: Pizza
-  m_TagString: Tomatosauce
+  m_TagString: Pizza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 2318635027473829688}
   m_Layer: 0
   m_Name: TomatoSauce
-  m_TagString: Untagged
+  m_TagString: Pizza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 680102082929155897}
   m_Layer: 0
   m_Name: InteractablePizza
-  m_TagString: Tomatosauce
+  m_TagString: Pizza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 7358e191-33b7-43ca-b066-b2f00531ac66
-  instanceId: 67af0497-a584-428c-9221-75b1ddee9d76
+  instanceId: 72dc42e3-7f31-4738-beb1-314cde397f37
   version: 1
 --- !u!65 &7841957806458932055
 BoxCollider:
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 7316434111565195696}
   m_Layer: 0
   m_Name: PizzaObject
-  m_TagString: Untagged
+  m_TagString: Pizza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 2487505727967227396}
   m_Layer: 0
   m_Name: PickupPizza
-  m_TagString: Untagged
+  m_TagString: Pizza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -631,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 4e14e0ba-51f2-4a5c-a822-e304bf36d48c
-  instanceId: ff5b6829-8075-42ec-bbfd-fc83e14e5d41
+  instanceId: 64dc34ca-bec3-4b25-a223-d22e65be4b71
   version: 1
 --- !u!114 &1721976346179199147
 MonoBehaviour:

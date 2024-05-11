@@ -5333,7 +5333,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 996681235}
+  - component: {fileID: 996681238}
   - component: {fileID: 996681236}
+  - component: {fileID: 996681237}
   m_Layer: 0
   m_Name: OVRRightHandVisual
   m_TagString: Untagged
@@ -5400,6 +5402,39 @@ MonoBehaviour:
   - {fileID: 1314996942}
   - {fileID: 1538051052}
   - {fileID: 897541977}
+--- !u!114 &996681237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996681234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e477b940c8a084ab4f2dda703b49ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _handVisual: {fileID: 0}
+  _hand: {fileID: 159324516}
+  _jointsRadiusFeature: {fileID: 355426715}
+  _asTriggers: 0
+  _useLayer: 0
+  _mask: 3674108
+--- !u!114 &996681238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996681234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockId: 316c5b1d-a5e4-49f2-a663-15fd22dbcba9
+  instanceId: fa9d3d98-fb3a-49f0-9c2c-15adc281b794
+  version: 1
 --- !u!1 &1002815607
 GameObject:
   m_ObjectHideFlags: 0
@@ -8408,7 +8443,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1704021667}
+  - component: {fileID: 1704021670}
   - component: {fileID: 1704021668}
+  - component: {fileID: 1704021669}
   m_Layer: 0
   m_Name: OVRLeftHandVisual
   m_TagString: Untagged
@@ -8475,6 +8512,39 @@ MonoBehaviour:
   - {fileID: 1187763257}
   - {fileID: 153745564}
   - {fileID: 1474343601}
+--- !u!114 &1704021669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704021666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e477b940c8a084ab4f2dda703b49ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _handVisual: {fileID: 0}
+  _hand: {fileID: 631704434}
+  _jointsRadiusFeature: {fileID: 355426715}
+  _asTriggers: 0
+  _useLayer: 0
+  _mask: 3674108
+--- !u!114 &1704021670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704021666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockId: 316c5b1d-a5e4-49f2-a663-15fd22dbcba9
+  instanceId: 3f65c390-24e1-4190-8ae0-fcbb47977604
+  version: 1
 --- !u!1 &1717215024
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,6 @@ public class Order : MonoBehaviour
     private float timer = 0f;
     [SerializeField] bool isRunning = false;
     [SerializeField] float maxTimer;
-    private int randomTime;
 
     bool offline = false;
 
@@ -37,6 +36,7 @@ public class Order : MonoBehaviour
         if (isRunning == true)
         {
             timer += Time.deltaTime;
+            ResetOrder();
         }
         if (timer >= maxTimer)
         {
@@ -50,6 +50,7 @@ public class Order : MonoBehaviour
     }
     public void NewOrder(int maxToppings)
     {
+
         orderText = null;
         for (int i = 0; i < maxToppings; i++)
         {
@@ -78,7 +79,6 @@ public class Order : MonoBehaviour
             offline = true;
             orderArray[i].onOrder = false;
             isRunning = true;
-            //randomTime = Random.Range();
         }
     }
     public bool IsOffline()

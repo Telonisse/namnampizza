@@ -111,11 +111,11 @@ Transform:
   m_GameObject: {fileID: 2973769742813336974}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.011000037, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8083969080159913705}
+  m_Father: {fileID: 3637591181978458343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &662914650600266769
 MeshFilter:
@@ -218,9 +218,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.005, z: 0.3}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6519452764193484987}
-  - {fileID: 559986868501320728}
+  m_Children: []
   m_Father: {fileID: 3775900161263642102}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6321183001167908948
@@ -351,11 +349,11 @@ Transform:
   m_GameObject: {fileID: 7573113877087141109}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.007, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8083969080159913705}
+  m_Father: {fileID: 3637591181978458343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8854006178371506063
 MeshFilter:
@@ -477,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 7358e191-33b7-43ca-b066-b2f00531ac66
-  instanceId: f22f7d9e-9a9d-411a-820a-f3ec7ea4b526
+  instanceId: 67af0497-a584-428c-9221-75b1ddee9d76
   version: 1
 --- !u!65 &7841957806458932055
 BoxCollider:
@@ -558,6 +556,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5981925371454966743}
+  - {fileID: 559986868501320728}
+  - {fileID: 6519452764193484987}
   m_Father: {fileID: 3775900161263642102}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7316434111565195696
@@ -576,6 +576,13 @@ MonoBehaviour:
   rawTexture: {fileID: 2800000, guid: 0f135a85c908c574880ca0e8bad17926, type: 3}
   doneTexture: {fileID: 2800000, guid: 1c8bc5dc5dbd5ca4f96ddd6492caf657, type: 3}
   burnedTexture: {fileID: 2800000, guid: ae93ba7aa96d8f74b9dbd672994edbe3, type: 3}
+  myTomatoSauceMaterial: {fileID: 2100000, guid: 0c28c47792c362c4e8cbbf5c0e6438c6, type: 2}
+  rawTextureTomatoSauce: {fileID: 2800000, guid: fe1807f5c7f014b4c832918ab2380624, type: 3}
+  burnedTextureTomatoSauce: {fileID: 2800000, guid: ae93ba7aa96d8f74b9dbd672994edbe3, type: 3}
+  myGratedCheeseMaterial: {fileID: 2100000, guid: 28befc3a29e4d9d47a8aa0ae232bf64e, type: 2}
+  rawTextureGratedCheese: {fileID: 2800000, guid: d59ca01de62cc1b42b017ce854eaeab6, type: 3}
+  doneTextureGratedCheese: {fileID: 2800000, guid: b0b53b3993eeac0489060b286906438e, type: 3}
+  burnedTextureGratedCheese: {fileID: 2800000, guid: 1d7221bbb61e9044a83e96b29c01acd4, type: 3}
 --- !u!1 &8808872054760019669
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 4e14e0ba-51f2-4a5c-a822-e304bf36d48c
-  instanceId: ee90312e-d83c-4ee1-a0f2-00e5fa5c5f72
+  instanceId: ff5b6829-8075-42ec-bbfd-fc83e14e5d41
   version: 1
 --- !u!114 &1721976346179199147
 MonoBehaviour:

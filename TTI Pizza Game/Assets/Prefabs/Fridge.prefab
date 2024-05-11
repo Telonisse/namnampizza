@@ -336,7 +336,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1879398546864204974}
         m_TargetAssemblyTypeName: Fridge, Assembly-CSharp
         m_MethodName: OpenFridge
         m_Mode: 1
@@ -351,7 +351,7 @@ MonoBehaviour:
   _whenUnselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1879398546864204974}
         m_TargetAssemblyTypeName: Fridge, Assembly-CSharp
         m_MethodName: CloseFridge
         m_Mode: 1

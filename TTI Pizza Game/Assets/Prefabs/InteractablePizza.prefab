@@ -111,11 +111,11 @@ Transform:
   m_GameObject: {fileID: 2973769742813336974}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.011000037, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8083969080159913705}
+  m_Father: {fileID: 3637591181978458343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &662914650600266769
 MeshFilter:
@@ -218,9 +218,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.005, z: 0.3}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6519452764193484987}
-  - {fileID: 559986868501320728}
+  m_Children: []
   m_Father: {fileID: 3775900161263642102}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6321183001167908948
@@ -351,11 +349,11 @@ Transform:
   m_GameObject: {fileID: 7573113877087141109}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.005499959, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8083969080159913705}
+  m_Father: {fileID: 3637591181978458343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8854006178371506063
 MeshFilter:
@@ -477,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 7358e191-33b7-43ca-b066-b2f00531ac66
-  instanceId: f22f7d9e-9a9d-411a-820a-f3ec7ea4b526
+  instanceId: d96abafc-f0c6-425d-8291-c04276b2f11d
   version: 1
 --- !u!65 &7841957806458932055
 BoxCollider:
@@ -558,6 +556,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5981925371454966743}
+  - {fileID: 559986868501320728}
+  - {fileID: 6519452764193484987}
   m_Father: {fileID: 3775900161263642102}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7316434111565195696
@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 4e14e0ba-51f2-4a5c-a822-e304bf36d48c
-  instanceId: ee90312e-d83c-4ee1-a0f2-00e5fa5c5f72
+  instanceId: 4d7b6821-6c49-4308-b74a-b7de786dc48c
   version: 1
 --- !u!114 &1721976346179199147
 MonoBehaviour:

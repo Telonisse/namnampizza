@@ -16,6 +16,7 @@ public class CuttingChildObject : MonoBehaviour
         if (detachChild == true)
         {
             myChildObject.parent = null;
+            detachChild = false;
         }
     }
 

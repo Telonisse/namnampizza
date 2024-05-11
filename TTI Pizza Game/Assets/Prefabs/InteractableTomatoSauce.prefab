@@ -298,6 +298,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TomatoCan
       objectReference: {fileID: 0}
+    - target: {fileID: 7385786403025091455, guid: b80cddca6147b6442bdcd3208fcdafd6, type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0.06542575
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -334,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407d4518ea2a97341a9e53cb1c959aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pourThreshold: 45
+  pourThreshold: 5
   origin: {fileID: 6031998044849491267}
   streamPrefab: {fileID: 5238570228697279498, guid: 687fe5b6c1388c34882009636030b3c7, type: 3}
   myAnimationController: {fileID: 0}

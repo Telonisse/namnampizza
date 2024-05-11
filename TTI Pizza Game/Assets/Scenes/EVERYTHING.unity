@@ -19784,10 +19784,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1315764626292988625, guid: 207f1cb10da859a46aa792a683d119ea, type: 3}
-      propertyPath: m_Name
-      value: SausageLeftPart1
-      objectReference: {fileID: 0}
     - target: {fileID: 5958913076211167764, guid: 207f1cb10da859a46aa792a683d119ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.15
@@ -19828,17 +19824,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7867273835157578478, guid: 207f1cb10da859a46aa792a683d119ea, type: 3}
-      propertyPath: m_Name
-      value: SausageRightPart3
-      objectReference: {fileID: 0}
     - target: {fileID: 8177077770685161947, guid: 207f1cb10da859a46aa792a683d119ea, type: 3}
       propertyPath: m_Name
       value: InteractableSausage
-      objectReference: {fileID: 0}
-    - target: {fileID: 9088427307529872974, guid: 207f1cb10da859a46aa792a683d119ea, type: 3}
-      propertyPath: m_Name
-      value: SausageMidPart2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21359,25 +21347,17 @@ PrefabInstance:
       propertyPath: myAnimationController
       value: 
       objectReference: {fileID: 374703045309755059}
-    - target: {fileID: 5314548591103183689, guid: 4888dd6d388c91d43b1ae2b2fbd0ffbf, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5314548591103183689, guid: 4888dd6d388c91d43b1ae2b2fbd0ffbf, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5755887321551958288, guid: 4888dd6d388c91d43b1ae2b2fbd0ffbf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7550001
+      value: 1.695
       objectReference: {fileID: 0}
     - target: {fileID: 5755887321551958288, guid: 4888dd6d388c91d43b1ae2b2fbd0ffbf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.303
+      value: 1.323
       objectReference: {fileID: 0}
     - target: {fileID: 5755887321551958288, guid: 4888dd6d388c91d43b1ae2b2fbd0ffbf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.94000006
+      value: -1.012
       objectReference: {fileID: 0}
     - target: {fileID: 5755887321551958288, guid: 4888dd6d388c91d43b1ae2b2fbd0ffbf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21431,15 +21411,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5289517227518281304, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.813
       objectReference: {fileID: 0}
     - target: {fileID: 5289517227518281304, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.097
       objectReference: {fileID: 0}
     - target: {fileID: 5289517227518281304, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.884
       objectReference: {fileID: 0}
     - target: {fileID: 5289517227518281304, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21548,24 +21528,20 @@ PrefabInstance:
       value: InteractableTomatoSauce
       objectReference: {fileID: 0}
     - target: {fileID: 3427862040137949314, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
-      propertyPath: pourThreshold
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3427862040137949314, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
       propertyPath: myAnimationController
       value: 
       objectReference: {fileID: 4191361670330131805}
     - target: {fileID: 5330799923013369648, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.383
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5330799923013369648, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.216
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5330799923013369648, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.94000006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5330799923013369648, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21593,14 +21569,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5330799923013369648, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7736571411342530203, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7736571411342530203, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
-      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

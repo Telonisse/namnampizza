@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 7358e191-33b7-43ca-b066-b2f00531ac66
-  instanceId: d96abafc-f0c6-425d-8291-c04276b2f11d
+  instanceId: 67af0497-a584-428c-9221-75b1ddee9d76
   version: 1
 --- !u!65 &7841957806458932055
 BoxCollider:
@@ -582,7 +582,7 @@ MonoBehaviour:
   myGratedCheeseMaterial: {fileID: 2100000, guid: 28befc3a29e4d9d47a8aa0ae232bf64e, type: 2}
   rawTextureGratedCheese: {fileID: 2800000, guid: d59ca01de62cc1b42b017ce854eaeab6, type: 3}
   doneTextureGratedCheese: {fileID: 2800000, guid: b0b53b3993eeac0489060b286906438e, type: 3}
-  burnedTextureGratedCheese: {fileID: 2800000, guid: a7b7eb288f2cc684682b148f5890dbc3, type: 3}
+  burnedTextureGratedCheese: {fileID: 2800000, guid: 1d7221bbb61e9044a83e96b29c01acd4, type: 3}
 --- !u!1 &8808872054760019669
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 4e14e0ba-51f2-4a5c-a822-e304bf36d48c
-  instanceId: 4d7b6821-6c49-4308-b74a-b7de786dc48c
+  instanceId: ff5b6829-8075-42ec-bbfd-fc83e14e5d41
   version: 1
 --- !u!114 &1721976346179199147
 MonoBehaviour:

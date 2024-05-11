@@ -10,7 +10,7 @@ public class PourDetector : MonoBehaviour
     public GameObject streamPrefab = null;
 
     [SerializeField] private Animator myAnimationController; 
-    public string collisionTag = "Tomatosauce";
+    public string collisionTag = "Pizza";
 
     private bool IsPouring = false;
     private Stream currentStream = null;
@@ -43,7 +43,7 @@ public class PourDetector : MonoBehaviour
             {
                 if (hit.collider.CompareTag(collisionTag))
                 {
-                    Debug.Log("Collision detected with tag: " + collisionTag);
+                    //Debug.Log("Collision detected with tag: " + collisionTag);
                     myAnimationController.SetBool("IsPouring", true);
                     myAnimationController.SetFloat("PourValue", 1.0f);
 

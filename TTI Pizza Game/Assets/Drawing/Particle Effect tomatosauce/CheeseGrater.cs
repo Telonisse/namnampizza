@@ -9,7 +9,7 @@ public class CheeseGrater : MonoBehaviour
     public Transform cheeseOrigin = null;
 
     [SerializeField] private Animator myAnimationController;
-    public string collisionTag = "Tomatosauce";
+    public string collisionTag = "Pizza";
 
     [SerializeField] private ParticleSystem myParticleSystem;
 

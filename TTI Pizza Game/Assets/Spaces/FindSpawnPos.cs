@@ -7,6 +7,7 @@ using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using static Meta.XR.MRUtilityKit.MRUK;
+using static UnityEditor.PlayerSettings;
 
 public class FindSpawnPos : MonoBehaviour
 {
@@ -109,33 +110,47 @@ public class FindSpawnPos : MonoBehaviour
         }
 
         //spawn fridge and check walls until it doesnt collide with any other object
-        maxMoveFridge = walls[0].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
-        Vector3 startPos = Vector3.zero;
-        if (room.GetFacingDirection(walls[currentWall].GetComponent<MRUKAnchor>()).x >= 0.5f || room.GetFacingDirection(walls[currentWall].GetComponent<MRUKAnchor>()).x <= -0.5f)
+        room.GenerateRandomPositionOnSurface(SurfaceType.FACING_UP, 0.7f, LabelFilter.FromEnum(MRUKAnchor.SceneLabels.FLOOR), out Vector3 pos, out Vector3 normal);
+
+        if (walls != null)
         {
-            startPos = new Vector3(walls[currentWall].transform.position.x, 0.0001f, walls[currentWall].transform.position.z - maxMoveOven);
+            GameObject closestWall = null;
+            float closestDistance = Mathf.Infinity;
+
+            foreach (Transform wall in walls)
+            {
+                float distanceToWall = Vector3.Distance(pos, wall.transform.position);
+                if (distanceToWall < closestDistance)
+                {
+                    closestWall = wall.gameObject;
+                    closestDistance = distanceToWall;
+                }
+            }
+            Vector3 lookPos = new Vector3(closestWall.transform.position.x, 0f, closestWall.transform.position.z);
+            spawnRot = Quaternion.LookRotation(-lookPos);
+            spawnedFridge = Instantiate(fridge, pos, spawnRot);
         }
-        if (room.GetFacingDirection(walls[currentWall].GetComponent<MRUKAnchor>()).z >= 0.5f || room.GetFacingDirection(walls[currentWall].GetComponent<MRUKAnchor>()).z <= -0.5f)
-        {
-            startPos = new Vector3(walls[currentWall].transform.position.x - maxMoveOven, 0.0001f, walls[currentWall].transform.position.z);
-        }
-        spawnPos = startPos;
-        spawnRot = walls[0].transform.rotation;
-        spawnedFridge = Instantiate(fridge, spawnPos, spawnRot);
-        if (!moveOnceFridge)
-        {
-            spawnedFridge.transform.Translate(-maxMoveFridge, 0, 0.5f, Space.Self);
-            moveOnceFridge = true;
-        }
+
         //spawn oven
-        maxMoveOven = walls[0].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
-        room.GenerateRandomPositionOnSurface(SurfaceType.FACING_UP, 0f, LabelFilter.FromEnum(MRUKAnchor.SceneLabels.FLOOR), out Vector3 pos, out Vector3 normal);
-        //spawnRot = Quaternion.LookRotation(room.GetFacingDirection());
-        spawnedOven = Instantiate(oven, pos, spawnRot);
-        if (!moveOnceOven)
+        room.GenerateRandomPositionOnSurface(SurfaceType.FACING_UP, 0.7f, LabelFilter.FromEnum(MRUKAnchor.SceneLabels.FLOOR), out Vector3 pos1, out Vector3 normal1);
+
+        if (walls != null)
         {
-            spawnedOven.transform.Translate(-maxMoveOven + 0.2f, 0, 0.5f, Space.Self);
-            moveOnceOven = true;
+            GameObject closestWall = null;
+            float closestDistance = Mathf.Infinity;
+
+            foreach (Transform wall in walls)
+            {
+                float distanceToWall = Vector3.Distance(pos1, wall.transform.position);
+                if (distanceToWall < closestDistance)
+                {
+                    closestWall = wall.gameObject;
+                    closestDistance = distanceToWall;
+                }
+            }
+            Vector3 lookPos = new Vector3(closestWall.transform.position.x, 0f, closestWall.transform.position.z);
+            spawnRot = Quaternion.LookRotation(-lookPos);
+            spawnedOven = Instantiate(oven, pos1, spawnRot);
         }
 
         //Spawn lucka
@@ -242,21 +257,36 @@ public class FindSpawnPos : MonoBehaviour
 
         for (int i = 0; i < collidersOven.Length; i++)
         {
-            Debug.Log(collidersOven[i]);
-            if (collidersOven[i].name == "Fridge(Clone)")
+            MRUKAnchor anchor = collidersOven[i].GetComponent<MRUKAnchor>();
+            if (anchor != null)
             {
-                room.GenerateRandomPositionOnSurface(SurfaceType.VERTICAL, 1f, LabelFilter.FromEnum(MRUKAnchor.SceneLabels.FLOOR), out Vector3 pos, out Vector3 normal);
-                //Physics.ComputePenetration(spawnedOven.GetComponent<BoxCollider>(), spawnedOven.transform.position, spawnedOven.transform.rotation, collidersOven[i], collidersOven[i].transform.position, collidersOven[i].transform.rotation, out Vector3 dir, out float dis);
-                //Debug.Log(dir);
-                //Debug.Log(dis);
-                //if (room.IsPositionInRoom(spawnedOven.transform.position + (dir * dis), false))
-                //{
-                //    spawnedOven.transform.position += (dir * dis);
-                //}
-                //else if (room.IsPositionInRoom(spawnedOven.transform.position - (dir * dis), false))
-                //{
-                //    spawnedOven.transform.position -= (dir * dis);
-                //}
+                if (anchor.HasLabel("TABLE") || anchor.HasLabel("OTHER") || anchor.HasLabel("COUCH"))
+                {
+
+                }
+            }
+            if (collidersOven[i].name == "Fridge")
+            {
+
+                Physics.ComputePenetration(spawnedOven.GetComponent<Collider>(), spawnedOven.transform.position, spawnedOven.transform.rotation, collidersOven[i], collidersOven[i].transform.position, collidersOven[i].transform.rotation, out Vector3 dir, out float dis);
+                spawnedOven.transform.position += (dir * dis);
+                if (walls != null)
+                {
+                    GameObject closestWall = null;
+                    float closestDistance = Mathf.Infinity;
+
+                    foreach (Transform wall in walls)
+                    {
+                        float distanceToWall = Vector3.Distance(spawnedOven.transform.position, wall.transform.position);
+                        if (distanceToWall < closestDistance)
+                        {
+                            closestWall = wall.gameObject;
+                            closestDistance = distanceToWall;
+                        }
+                    }
+                    Vector3 lookPos = new Vector3(closestWall.transform.position.x, 0f, closestWall.transform.position.z);
+                    spawnedOven.transform.rotation = Quaternion.LookRotation(-lookPos);
+                }
             }
         }
 
@@ -264,56 +294,12 @@ public class FindSpawnPos : MonoBehaviour
 
     private void SpawnFridge()
     {
-        boxCenterFridge = new Vector3(spawnedFridge.transform.position.x, spawnedFridge.transform.position.y + 0.6f, spawnedFridge.transform.position.z);
-        boxSizeFridge = new Vector3(0.8f, 1.2f, 0.8f);
-        Collider[] collidersFridge = Physics.OverlapBox(boxCenterFridge, boxSizeFridge / 2f, spawnedFridge.transform.rotation);
-
-        spawnedFridge.transform.position = new Vector3(spawnedFridge.transform.position.x, 0, spawnedFridge.transform.position.z);
-
-        if (collidersFridge.Length > 0)
-        {
-            for (int i = 0; i < collidersFridge.Length; i++)
-            {
-                MRUKAnchor anchor = collidersFridge[i].GetComponentInParent<MRUKAnchor>();
-                if (anchor != null && anchor.HasLabel("WALL_FACE"))
-                {
-                    fridgeDone = true;
-                }
-                if (anchor != null)
-                {
-                    maxMoveFridge = walls[currentWall].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x;
-                }
-                if (anchor != null && !anchor.HasLabel("WALL_FACE"))
-                {
-                    spawnedFridge.transform.Translate(0.01f, 0, 0, Space.Self);
-                    movedFridge += 0.01f;
-                }
-                if (anchor != null && maxMoveFridge < movedFridge)
-                {
-                    movedFridge = 0;
-                    currentWall++;
-                    if (currentWall > walls.Length - 1)
-                    {
-                        currentWall = 0;
-                    }
-                    movedFridge = 0;
-                    moveOnceFridge = false;
-                    maxMoveFridge = walls[currentWall].GetComponent<MRUKAnchor>().PlaneBoundary2D[1].x; //bug
-                    spawnedFridge.transform.position = new Vector3(walls[currentWall].transform.position.x, walls[currentWall].transform.position.y, walls[currentWall].transform.position.z);
-                    spawnedFridge.transform.rotation = walls[currentWall].transform.rotation * Quaternion.Euler(0, 0, 0);
-                    if (!moveOnceFridge)
-                    {
-                        spawnedFridge.transform.Translate(-maxMoveFridge + 0.5f, 0, 0.5f, Space.Self);
-                        moveOnceFridge = true;
-                    }
-                }
-            }
-        }
+             
     }
 
     private void SpawnCounters()
     {
-        BoxCollider boxcoll = spawnedCounters.GetComponentInChildren<BoxCollider>(); //bug
+        BoxCollider boxcoll = spawnedCounters.GetComponentInChildren<BoxCollider>();
         Vector3 vector3 = new Vector3(boxcoll.transform.position.x, boxcoll.transform.position.y + 0.6f, boxcoll.transform.position.z);
         Collider[] colliders = Physics.OverlapBox(vector3, boxcoll.size / 2f, spawnedCounters.transform.rotation);
         int table = 0;

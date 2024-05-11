@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 7358e191-33b7-43ca-b066-b2f00531ac66
-  instanceId: 72dc42e3-7f31-4738-beb1-314cde397f37
+  instanceId: 8d549a08-e1af-4850-888b-9991aa27d9da
   version: 1
 --- !u!65 &7841957806458932055
 BoxCollider:
@@ -578,7 +578,7 @@ MonoBehaviour:
   burnedTexture: {fileID: 2800000, guid: ae93ba7aa96d8f74b9dbd672994edbe3, type: 3}
   myTomatoSauceMaterial: {fileID: 2100000, guid: 0c28c47792c362c4e8cbbf5c0e6438c6, type: 2}
   rawTextureTomatoSauce: {fileID: 2800000, guid: fe1807f5c7f014b4c832918ab2380624, type: 3}
-  burnedTextureTomatoSauce: {fileID: 2800000, guid: ae93ba7aa96d8f74b9dbd672994edbe3, type: 3}
+  burnedTextureTomatoSauce: {fileID: 2800000, guid: 539b5298e11832549a51cd7265cc81ce, type: 3}
   myGratedCheeseMaterial: {fileID: 2100000, guid: 28befc3a29e4d9d47a8aa0ae232bf64e, type: 2}
   rawTextureGratedCheese: {fileID: 2800000, guid: d59ca01de62cc1b42b017ce854eaeab6, type: 3}
   doneTextureGratedCheese: {fileID: 2800000, guid: b0b53b3993eeac0489060b286906438e, type: 3}
@@ -631,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 4e14e0ba-51f2-4a5c-a822-e304bf36d48c
-  instanceId: 64dc34ca-bec3-4b25-a223-d22e65be4b71
+  instanceId: e77c46ba-1288-4f9c-acaa-410b63c00c7a
   version: 1
 --- !u!114 &1721976346179199147
 MonoBehaviour:

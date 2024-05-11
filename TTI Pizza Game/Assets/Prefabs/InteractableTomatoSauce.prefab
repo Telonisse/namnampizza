@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 7358e191-33b7-43ca-b066-b2f00531ac66
-  instanceId: 56e5a5fd-ef88-4a87-9767-7ef777bc2797
+  instanceId: 8b6d4869-37ab-42f2-b40f-8b9ad3dcd01f
   version: 1
 --- !u!65 &1037033221371194235
 BoxCollider:
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 4e14e0ba-51f2-4a5c-a822-e304bf36d48c
-  instanceId: 4bac1265-ffa3-423f-b37e-fba696d9e8a6
+  instanceId: e91dfb4d-50c8-4dfa-9f8b-a2592bb81c63
   version: 1
 --- !u!114 &8331031914859858015
 MonoBehaviour:
@@ -342,7 +342,7 @@ MonoBehaviour:
   origin: {fileID: 6031998044849491267}
   streamPrefab: {fileID: 5238570228697279498, guid: 687fe5b6c1388c34882009636030b3c7, type: 3}
   myAnimationController: {fileID: 0}
-  collisionTag: Tomatosauce
+  collisionTag: Pizza
 --- !u!65 &4352669142648450263
 BoxCollider:
   m_ObjectHideFlags: 0

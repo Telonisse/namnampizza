@@ -21429,25 +21429,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 680102082929155897, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 680102082929155897, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: m_IsKinematic
+    - target: {fileID: 5289517227518281304, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5289517227518281304, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.066
-      objectReference: {fileID: 0}
-    - target: {fileID: 5289517227518281304, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.143
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5289517227518281304, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.8770001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5289517227518281304, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21477,50 +21469,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6321183001167908948, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: tomatoSauce
-      value: 
-      objectReference: {fileID: 4886381448722139111}
-    - target: {fileID: 6321183001167908948, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: tomatoSauceObject
-      value: 
-      objectReference: {fileID: 4886381448722139111}
-    - target: {fileID: 6519452764193484987, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.007
-      objectReference: {fileID: 0}
-    - target: {fileID: 7316434111565195696, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: myTomatoSauceMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 0c28c47792c362c4e8cbbf5c0e6438c6, type: 2}
-    - target: {fileID: 7316434111565195696, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: rawTextureTomatoSauce
-      value: 
-      objectReference: {fileID: 2800000, guid: fe1807f5c7f014b4c832918ab2380624, type: 3}
-    - target: {fileID: 7316434111565195696, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: doneTextureTomatoSauce
-      value: 
-      objectReference: {fileID: 2800000, guid: d3a4e297446615f4281d57d8101595d0, type: 3}
-    - target: {fileID: 7316434111565195696, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: myGratedCheeseMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 28befc3a29e4d9d47a8aa0ae232bf64e, type: 2}
-    - target: {fileID: 7316434111565195696, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: rawTextureGratedCheese
-      value: 
-      objectReference: {fileID: 2800000, guid: d59ca01de62cc1b42b017ce854eaeab6, type: 3}
-    - target: {fileID: 7316434111565195696, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: doneTextureGratedCheese
-      value: 
-      objectReference: {fileID: 2800000, guid: b0b53b3993eeac0489060b286906438e, type: 3}
-    - target: {fileID: 7316434111565195696, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: burnedTextureTomatoSauce
-      value: 
-      objectReference: {fileID: 2800000, guid: ae93ba7aa96d8f74b9dbd672994edbe3, type: 3}
-    - target: {fileID: 7316434111565195696, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-      propertyPath: burnedTextureGratedCheese
-      value: 
-      objectReference: {fileID: 2800000, guid: a7b7eb288f2cc684682b148f5890dbc3, type: 3}
     - target: {fileID: 7692728054829486326, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
       propertyPath: m_Name
       value: InteractablePizza
@@ -21530,11 +21478,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
---- !u!1 &4886381448722139111 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7573113877087141109, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
-  m_PrefabInstance: {fileID: 4886381448722139110}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5872994593460200420
 PrefabInstance:
   m_ObjectHideFlags: 0

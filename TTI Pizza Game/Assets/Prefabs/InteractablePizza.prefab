@@ -349,7 +349,7 @@ Transform:
   m_GameObject: {fileID: 7573113877087141109}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.005499959, z: 0}
+  m_LocalPosition: {x: 0, y: 0.007, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -576,6 +576,13 @@ MonoBehaviour:
   rawTexture: {fileID: 2800000, guid: 0f135a85c908c574880ca0e8bad17926, type: 3}
   doneTexture: {fileID: 2800000, guid: 1c8bc5dc5dbd5ca4f96ddd6492caf657, type: 3}
   burnedTexture: {fileID: 2800000, guid: ae93ba7aa96d8f74b9dbd672994edbe3, type: 3}
+  myTomatoSauceMaterial: {fileID: 2100000, guid: 0c28c47792c362c4e8cbbf5c0e6438c6, type: 2}
+  rawTextureTomatoSauce: {fileID: 2800000, guid: fe1807f5c7f014b4c832918ab2380624, type: 3}
+  burnedTextureTomatoSauce: {fileID: 2800000, guid: ae93ba7aa96d8f74b9dbd672994edbe3, type: 3}
+  myGratedCheeseMaterial: {fileID: 2100000, guid: 28befc3a29e4d9d47a8aa0ae232bf64e, type: 2}
+  rawTextureGratedCheese: {fileID: 2800000, guid: d59ca01de62cc1b42b017ce854eaeab6, type: 3}
+  doneTextureGratedCheese: {fileID: 2800000, guid: b0b53b3993eeac0489060b286906438e, type: 3}
+  burnedTextureGratedCheese: {fileID: 2800000, guid: a7b7eb288f2cc684682b148f5890dbc3, type: 3}
 --- !u!1 &8808872054760019669
 GameObject:
   m_ObjectHideFlags: 0

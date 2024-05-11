@@ -17,6 +17,7 @@ TagManager:
   - Part1
   - Part2
   - Part3
+  - Pizza
   layers:
   - Default
   - TransparentFX

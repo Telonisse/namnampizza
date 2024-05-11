@@ -50,5 +50,19 @@ public class CuttingChildObject : MonoBehaviour
             deactivateObject(Parent);
         }
 
+        if (other.gameObject.CompareTag("Pizza"))
+        {
+            gameObject.GetComponent<Grabbable>().enabled = false;
+            gameObject.GetComponent<PhysicsGrabbable>().enabled = false;
+            gameObject.GetComponent<TouchHandGrabInteractable>().enabled = false;
+            gameObject.GetComponent<MeshCollider>().enabled = false;
+
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+            rb.useGravity = false;
+            rb.isKinematic = true;
+
+            deactivateObject(Parent);
+
+        }
     }
 }

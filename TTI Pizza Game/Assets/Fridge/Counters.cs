@@ -16,6 +16,10 @@ public class Counters : MonoBehaviour
         startPosKnife = knife.transform.position;
         startPosTomato = tomatoSauce.transform.position;
         startPosRiv = rivjarn.transform.position;
+
+        knife.GetComponent<Rigidbody>().isKinematic = true;
+        tomatoSauce.GetComponent<Rigidbody>().isKinematic = true;
+        rivjarn.GetComponent<Rigidbody>().isKinematic = true;
     }
     void Update()
     {
@@ -31,5 +35,12 @@ public class Counters : MonoBehaviour
         {
             rivjarn.transform.position = startPosRiv;
         }
+    }
+
+    public void SetNonKinematic()
+    {
+        knife.GetComponent<Rigidbody>().isKinematic = false;
+        tomatoSauce.GetComponent<Rigidbody>().isKinematic = false;
+        rivjarn.GetComponent<Rigidbody>().isKinematic = false;
     }
 }

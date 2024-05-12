@@ -1283,7 +1283,7 @@ MonoBehaviour:
     toppingGameObject: {fileID: 3653758977267770442, guid: 24578cce7ebf98349a8f1ef0334613f4, type: 3}
     isInFridge: 0
     objectSpawnPos: {fileID: 1975035494931684868}
-  - toppingTag: Tomatosauce
+  - toppingTag: Pizza
     toppingGameObject: {fileID: 7692728054829486326, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
     isInFridge: 0
     objectSpawnPos: {fileID: 980964934545034283}

@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using static Meta.XR.MRUtilityKit.MRUK;
 
@@ -277,6 +276,7 @@ public class FindSpawnPos : MonoBehaviour
                         }
                         Vector3 lookPos = new Vector3(closestWall.transform.position.x, 0f, closestWall.transform.position.z);
                         spawnedOven.transform.rotation = Quaternion.LookRotation(-lookPos);
+
                     }
                 }
             }
@@ -303,6 +303,10 @@ public class FindSpawnPos : MonoBehaviour
                     spawnedOven.transform.rotation = Quaternion.LookRotation(-lookPos);
                 }
             }
+            else
+            {
+                spawnedOven.GetComponent<BoxCollider>().enabled = false;
+            }
         }
 
     }
@@ -315,6 +319,7 @@ public class FindSpawnPos : MonoBehaviour
         int table = 0;
         if (ovenDone == true && fridgeDone == true)
         {
+            spawnedCounters.GetComponent<Counters>().SetNonKinematic();
             foreach (Collider collider in colliders)
             {
                 if (collider.transform.name == "Fridge" || collider.transform.name == "Furnace")

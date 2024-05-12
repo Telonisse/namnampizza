@@ -27,8 +27,9 @@ public class CheeseGrater : MonoBehaviour
                 if (hit.collider.CompareTag(collisionTag))
                 {
                     //Debug.Log("Collision detected with tag: " + collisionTag);
-                    myAnimationControllerCheese.SetBool("IsGrating", true);
-                    myAnimationControllerCheese.SetFloat("GrateValue", 1.0f);
+                    //myAnimationControllerCheese.SetBool("IsGrating", true);
+                    //myAnimationControllerCheese.SetFloat("GrateValue", 1.0f);
+                    AnimationStarter.Instance.PlayGratingCheeseAnimation();
 
 
                 }
@@ -38,7 +39,9 @@ public class CheeseGrater : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        myAnimationControllerCheese.SetFloat("GrateValue", 0.0f);
+        AnimationStarter.Instance.PauseCheeseGratingAnimation();
+
+        //myAnimationControllerCheese.SetFloat("GrateValue", 0.0f);
         myParticleSystem.Stop();
 
     }

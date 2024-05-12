@@ -21433,6 +21433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90cfffc4e20321040bd2599b1dbc9341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationControllerForCheese: {fileID: 374703045309755059}
   animationControllerForTomatoSauce: {fileID: 4191361670330131805}
 --- !u!1001 &4886381448722139110
 PrefabInstance:
@@ -21561,6 +21562,14 @@ PrefabInstance:
     - target: {fileID: 5330799923013369648, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7736571411342530203, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7736571411342530203, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

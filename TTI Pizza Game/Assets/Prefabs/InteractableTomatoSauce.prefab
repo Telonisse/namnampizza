@@ -341,7 +341,6 @@ MonoBehaviour:
   pourThreshold: 5
   origin: {fileID: 6031998044849491267}
   streamPrefab: {fileID: 5238570228697279498, guid: 687fe5b6c1388c34882009636030b3c7, type: 3}
-  myAnimationControllerTomatoSauce: {fileID: 0}
   collisionTag: Pizza
 --- !u!65 &4352669142648450263
 BoxCollider:

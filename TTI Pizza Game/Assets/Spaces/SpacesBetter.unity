@@ -6289,58 +6289,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1048484490}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &447860494
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 447860495}
-  - component: {fileID: 447860496}
-  m_Layer: 0
-  m_Name: Spawn furniture
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &447860495
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447860494}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &447860496
+--- !u!114 &447860496 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7157446428324259274, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+  m_PrefabInstance: {fileID: 5316442796222173371}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447860494}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e88c56ae986d664ca598594ec6e3c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 7047548193653855166, guid: 99f9113d80de8384cb765779cd58fec5, type: 3}
-  fridge: {fileID: 667430951164996214, guid: 966702a25fe76b246b348fa1ca17b882, type: 3}
-  oven: {fileID: 4625572203522266324, guid: ea648d0619e364d4b9840623a9df09ed, type: 3}
-  lucka: {fileID: 3085490845424976770, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
-  roomObjects: []
-  floor: {fileID: 0}
-  walls: []
-  wallsList: []
 --- !u!1 &448402278
 GameObject:
   m_ObjectHideFlags: 0
@@ -32388,6 +32347,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2018307762}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &5316442796222173371
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1071057676435596320, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071057676435596320, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071057676435596320, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071057676435596320, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071057676435596320, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071057676435596320, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071057676435596320, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071057676435596320, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071057676435596320, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071057676435596320, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290388083200043339, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: m_Name
+      value: Spawn furniture
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -32397,4 +32413,4 @@ SceneRoots:
   - {fileID: 1420247864}
   - {fileID: 528198549}
   - {fileID: 397828312}
-  - {fileID: 447860495}
+  - {fileID: 5316442796222173371}

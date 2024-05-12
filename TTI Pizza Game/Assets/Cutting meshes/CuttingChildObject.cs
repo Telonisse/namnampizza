@@ -9,7 +9,7 @@ public class CuttingChildObject : MonoBehaviour
 
     public bool detachChild;
 
-    public GameObject Parent;
+    public GameObject parent;
 
     void Update()
     {
@@ -19,7 +19,7 @@ public class CuttingChildObject : MonoBehaviour
             detachChild = false;
 
         }
-        if (myChildObject.transform.childCount == 1)
+        if (parent.transform.childCount == 1)
         {
             detachChild = true;
         }
@@ -53,7 +53,7 @@ public class CuttingChildObject : MonoBehaviour
             rb.useGravity = true;
             rb.isKinematic = false;
 
-            deactivateObject(Parent);
+            deactivateObject(parent);
         }
 
         if (other.gameObject.CompareTag("Pizza"))
@@ -65,11 +65,11 @@ public class CuttingChildObject : MonoBehaviour
 
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.useGravity = false;
-            rb.isKinematic = true;
+            //rb.isKinematic = true;
 
             // Turn off box collider?
 
-            deactivateObject(Parent);
+            deactivateObject(parent);
 
         }
     }

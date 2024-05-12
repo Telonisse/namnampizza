@@ -4991,8 +4991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cheeseOrigin: {fileID: 5193941314002761882}
-  myAnimationController: {fileID: 0}
-  collisionTag: Tomatosauce
+  collisionTag: Pizza
   myParticleSystem: {fileID: 7666209573016195094}
 --- !u!65 &6561764627861196347
 BoxCollider:

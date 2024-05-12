@@ -333,6 +333,7 @@ GameObject:
   - component: {fileID: 8854006178371506063}
   - component: {fileID: 8926488406063072006}
   - component: {fileID: 2318635027473829688}
+  - component: {fileID: 5821878157971628371}
   m_Layer: 0
   m_Name: TomatoSauce
   m_TagString: Pizza
@@ -426,6 +427,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5821878157971628371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7573113877087141109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90cfffc4e20321040bd2599b1dbc9341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationControllerForCheese: {fileID: 5672918496599544386}
+  animationControllerForTomatoSauce: {fileID: 2318635027473829688}
 --- !u!1 &7692728054829486326
 GameObject:
   m_ObjectHideFlags: 0

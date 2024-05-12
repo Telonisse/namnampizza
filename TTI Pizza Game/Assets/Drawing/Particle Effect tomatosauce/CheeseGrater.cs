@@ -8,7 +8,7 @@ public class CheeseGrater : MonoBehaviour
 {
     public Transform cheeseOrigin = null;
 
-    [SerializeField] private Animator myAnimationController;
+    [SerializeField] Animator myAnimationControllerCheese;
     public string collisionTag = "Pizza";
 
     [SerializeField] private ParticleSystem myParticleSystem;
@@ -18,7 +18,7 @@ public class CheeseGrater : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Cheese"))
         {
-            Debug.Log("touched");
+            //Debug.Log("touched");
             myParticleSystem.Play();
 
             RaycastHit hit;
@@ -26,9 +26,9 @@ public class CheeseGrater : MonoBehaviour
             {
                 if (hit.collider.CompareTag(collisionTag))
                 {
-                    Debug.Log("Collision detected with tag: " + collisionTag);
-                    myAnimationController.SetBool("IsGrating", true);
-                    myAnimationController.SetFloat("GrateValue", 1.0f);
+                    //Debug.Log("Collision detected with tag: " + collisionTag);
+                    myAnimationControllerCheese.SetBool("IsGrating", true);
+                    myAnimationControllerCheese.SetFloat("GrateValue", 1.0f);
 
 
                 }
@@ -38,7 +38,7 @@ public class CheeseGrater : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        myAnimationController.SetFloat("GrateValue", 0.0f);
+        myAnimationControllerCheese.SetFloat("GrateValue", 0.0f);
         myParticleSystem.Stop();
 
     }

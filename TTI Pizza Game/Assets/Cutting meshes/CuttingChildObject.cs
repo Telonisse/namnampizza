@@ -17,6 +17,11 @@ public class CuttingChildObject : MonoBehaviour
         {
             myChildObject.parent = null;
             detachChild = false;
+
+        }
+        if (myChildObject.transform.childCount == 1)
+        {
+            detachChild = true;
         }
     }
 
@@ -28,10 +33,11 @@ public class CuttingChildObject : MonoBehaviour
         //}
         if (obj.transform.childCount == 0)
         {
-            obj.SetActive(false);
+           obj.SetActive(false);
         }
 
     }
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -60,6 +66,8 @@ public class CuttingChildObject : MonoBehaviour
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.useGravity = false;
             rb.isKinematic = true;
+
+            // Turn off box collider?
 
             deactivateObject(Parent);
 

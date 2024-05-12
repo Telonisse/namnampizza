@@ -6377,6 +6377,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2114824245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &609594982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7573113877087141109, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+  m_PrefabInstance: {fileID: 4886381448722139110}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &611714341
 GameObject:
   m_ObjectHideFlags: 0
@@ -21416,6 +21421,19 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2318635027473829688, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
   m_PrefabInstance: {fileID: 4886381448722139110}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4191361670330131809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609594982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90cfffc4e20321040bd2599b1dbc9341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationControllerForTomatoSauce: {fileID: 4191361670330131805}
 --- !u!1001 &4886381448722139110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21479,7 +21497,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7573113877087141109, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4191361670330131809}
   m_SourcePrefab: {fileID: 100100000, guid: 78ffc0315717fc442a9f1e8b171f2a2f, type: 3}
 --- !u!1001 &7880920615668006058
 PrefabInstance:
@@ -21494,7 +21515,11 @@ PrefabInstance:
       value: InteractableTomatoSauce
       objectReference: {fileID: 0}
     - target: {fileID: 3427862040137949314, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
-      propertyPath: myAnimationController
+      propertyPath: animationStarter
+      value: 
+      objectReference: {fileID: 4191361670330131809}
+    - target: {fileID: 3427862040137949314, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
+      propertyPath: myAnimationControllerTomatoSauce
       value: 
       objectReference: {fileID: 4191361670330131805}
     - target: {fileID: 5330799923013369648, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
@@ -21536,14 +21561,6 @@ PrefabInstance:
     - target: {fileID: 5330799923013369648, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7736571411342530203, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7736571411342530203, guid: fbb42a3d672e5f04c8939bdb8f94b3bc, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -9,13 +9,19 @@ public class PourDetector : MonoBehaviour
     public Transform origin = null;
     public GameObject streamPrefab = null;
 
-    [SerializeField] private Animator myAnimationController; 
+    [SerializeField] Animator myAnimationControllerTomatoSauce; 
     public string collisionTag = "Pizza";
 
     private bool IsPouring = false;
     private Stream currentStream = null;
 
+    //public  AnimationStarter animationStarter;
 
+    private void Start()
+    {
+        //animationStarter = GetComponentInChildren<AnimationStarter>();
+
+    }
 
     private void Update()
     {
@@ -32,7 +38,7 @@ public class PourDetector : MonoBehaviour
             else
             {
                 EndPour();
-                myAnimationController.SetFloat("PourValue", 0.0f);
+                myAnimationControllerTomatoSauce.SetFloat("PourValue", 0.0f);
             }
         }
 
@@ -43,10 +49,9 @@ public class PourDetector : MonoBehaviour
             {
                 if (hit.collider.CompareTag(collisionTag))
                 {
-                    //Debug.Log("Collision detected with tag: " + collisionTag);
-                    myAnimationController.SetBool("IsPouring", true);
-                    myAnimationController.SetFloat("PourValue", 1.0f);
-
+                    Debug.Log("Collision detected with tag: " + collisionTag);
+                    myAnimationControllerTomatoSauce.SetBool("IsPouring", true);
+                    myAnimationControllerTomatoSauce.SetFloat("PourValue", 1.0f);
 
                 }
             }

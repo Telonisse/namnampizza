@@ -4855,7 +4855,7 @@ Transform:
   m_GameObject: {fileID: 1589585783665525481}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.183, z: 0}
+  m_LocalPosition: {x: 0, y: -0.182, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4873,7 +4873,7 @@ GameObject:
   - component: {fileID: 3659013725462783229}
   - component: {fileID: 4569480784090321433}
   m_Layer: 0
-  m_Name: Ostjarn
+  m_Name: CheeseGrater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4956,7 +4956,7 @@ GameObject:
   - component: {fileID: 4403954775524629602}
   - component: {fileID: 6561764627861196347}
   m_Layer: 0
-  m_Name: RivjarnObject
+  m_Name: CheeseGraterObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5012,8 +5012,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.21775526, y: 0.40639287, z: 0.26486635}
-  m_Center: {x: -0.0006224811, y: -0.045204848, z: -0.0012414455}
+  m_Size: {x: 0.14560005, y: 0.25553408, z: 0.10567311}
+  m_Center: {x: -0.0024612397, y: -0.067912295, z: 0.0019056536}
 --- !u!1 &8734186481518908896
 GameObject:
   m_ObjectHideFlags: 0
@@ -5189,8 +5189,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3903438, y: 3.8163176, z: 1.2361517}
-  m_Center: {x: -0.024321154, y: -0.0745894, z: 0.0062478706}
+  m_Size: {x: 1.5116191, y: 3.4397862, z: 1.3107933}
+  m_Center: {x: -0.0025640428, y: -0.26285857, z: 0.043568313}
 --- !u!54 &5314548591103183689
 Rigidbody:
   m_ObjectHideFlags: 0

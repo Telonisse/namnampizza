@@ -35,9 +35,9 @@ public class OrderHandler : MonoBehaviour
                 {
                     for (int j = 0; j < numOfToppings; j++)
                     {
-                        pizza.GetToppings(j, out isOnPizza);
+                        pizza.GetToppings(j, out isOnPizza, out bool tomatoSauce, out bool cheese);
                         orders[i].GetToppings(j, out isOnOrder);
-                        if (isOnOrder != isOnPizza)
+                        if (isOnOrder != isOnPizza || !tomatoSauce || !cheese)
                         {
                             matchesOrder = false;
                         }

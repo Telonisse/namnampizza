@@ -28,7 +28,10 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-
+        if (pointLevel[currentLevel] == 100)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     public void Points(int points)

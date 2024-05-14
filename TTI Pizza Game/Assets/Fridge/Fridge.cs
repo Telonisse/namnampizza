@@ -51,7 +51,7 @@ public class Fridge : MonoBehaviour
             {
                 timer += Time.deltaTime;
             }
-            if (timer < 2)
+            if (timer > 1.5f)
             {
                 isRunning = false;
             }
@@ -85,6 +85,7 @@ public class Fridge : MonoBehaviour
         {
             motor.targetVelocity = 200;
             joint.motor = motor;
+            timer = 0;
             isRunning = true;
         }
     }

@@ -12,37 +12,47 @@ public class CheeseGrater : MonoBehaviour
     public string collisionTag = "Pizza";
 
     [SerializeField] private ParticleSystem myParticleSystem;
+    private bool cheeseTouch = false;
+    private AnimationStarter prevAnim = null;
 
-
+    private void Update()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(cheeseOrigin.position, Vector3.down, out hit, Mathf.Infinity))
+        {
+            if (hit.collider.CompareTag(collisionTag))
+            {
+                if (cheeseTouch == true)
+                {
+                    myParticleSystem.Play();
+                    prevAnim = hit.transform.GetComponentInChildren<AnimationStarter>();
+                    prevAnim.PlayGratingCheeseAnimation();
+                }
+                else
+                {
+                    myParticleSystem.Stop();
+                    hit.transform.GetComponentInChildren<AnimationStarter>().PauseCheeseGratingAnimation();
+                }
+            }
+            else
+            {
+                if (prevAnim != null)
+                {
+                    prevAnim.PauseCheeseGratingAnimation();
+                }
+            }
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Cheese"))
         {
-            //Debug.Log("touched");
-            myParticleSystem.Play();
-
-            RaycastHit hit;
-            if (Physics.Raycast(cheeseOrigin.position, Vector3.down, out hit, Mathf.Infinity))
-            {
-                if (hit.collider.CompareTag(collisionTag))
-                {
-                    //Debug.Log("Collision detected with tag: " + collisionTag);
-                    //myAnimationControllerCheese.SetBool("IsGrating", true);
-                    //myAnimationControllerCheese.SetFloat("GrateValue", 1.0f);
-                    AnimationStarter.Instance.PlayGratingCheeseAnimation();
-
-
-                }
-            }
-
+            cheeseTouch = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        AnimationStarter.Instance.PauseCheeseGratingAnimation();
-
-        //myAnimationControllerCheese.SetFloat("GrateValue", 0.0f);
-        myParticleSystem.Stop();
+        cheeseTouch = false;
 
     }
 }

@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
     }
     private void Start()
     {
-        pointLevel[currentLevel] = 0;
+
     }
     private void Update()
     {

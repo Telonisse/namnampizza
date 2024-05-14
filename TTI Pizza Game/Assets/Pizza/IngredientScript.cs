@@ -31,8 +31,6 @@ public class IngredientScript : MonoBehaviour
     {
         material.mainTexture = doneTexture;
         myGratedCheeseMaterial.mainTexture = doneTextureGratedCheese;
-
-
     }
     public void ChangeMaterialBurned()
     {

@@ -17,7 +17,10 @@ public class Fridge : MonoBehaviour
     [SerializeField] toppingInFridge[] toppingInFridgeArray;
     private HingeJoint joint;
     [SerializeField] bool open;
-    private bool movedDone = false;
+    private bool movedDone = true;
+
+    private float timer = 0;
+    private bool isRunning = false;
 
     private void Start()
     {
@@ -43,7 +46,17 @@ public class Fridge : MonoBehaviour
                     isDone = true;
                 }
             }
-            if (!open && isDone)
+
+            if (isRunning)
+            {
+                timer += Time.deltaTime;
+            }
+            if (timer < 2)
+            {
+                isRunning = false;
+            }
+
+            if (!open && isDone && !isRunning)
             {
                 for (int i = 0; i < toppingInFridgeArray.Length; i++)
                 {
@@ -72,6 +85,7 @@ public class Fridge : MonoBehaviour
         {
             motor.targetVelocity = 200;
             joint.motor = motor;
+            isRunning = true;
         }
     }
 

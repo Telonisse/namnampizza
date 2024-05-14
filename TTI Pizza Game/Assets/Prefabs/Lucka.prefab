@@ -610,6 +610,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2347363142848715359, guid: 6bfa0e7a00725f84b90ce6dbc7cc9ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2996598221880667681, guid: 6bfa0e7a00725f84b90ce6dbc7cc9ca1, type: 3}
       propertyPath: m_Size.x
       value: 0.26811916
@@ -638,6 +642,18 @@ PrefabInstance:
       propertyPath: maxToppingPerOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4122618991266548817, guid: 6bfa0e7a00725f84b90ce6dbc7cc9ca1, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122618991266548817, guid: 6bfa0e7a00725f84b90ce6dbc7cc9ca1, type: 3}
+      propertyPath: pointsBadPizza
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122618991266548817, guid: 6bfa0e7a00725f84b90ce6dbc7cc9ca1, type: 3}
+      propertyPath: pointsGoodPizza
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4962659999072769664, guid: 6bfa0e7a00725f84b90ce6dbc7cc9ca1, type: 3}
       propertyPath: m_Name
       value: OrderHandler
@@ -653,6 +669,18 @@ PrefabInstance:
     - target: {fileID: 7062134035205677582, guid: 6bfa0e7a00725f84b90ce6dbc7cc9ca1, type: 3}
       propertyPath: maxToppingPerOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558039519935638713, guid: 6bfa0e7a00725f84b90ce6dbc7cc9ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611777403707804873, guid: 6bfa0e7a00725f84b90ce6dbc7cc9ca1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.776
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611777403707804873, guid: 6bfa0e7a00725f84b90ce6dbc7cc9ca1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.311
       objectReference: {fileID: 0}
     - target: {fileID: 9215615379342362626, guid: 6bfa0e7a00725f84b90ce6dbc7cc9ca1, type: 3}
       propertyPath: m_LocalPosition.x

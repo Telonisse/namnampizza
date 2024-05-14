@@ -9,34 +9,12 @@ public class AnimationStarter : MonoBehaviour
 
     private static AnimationStarter instance;
 
-    // public bool tomatoSaucePouring = false;
-
-    public static AnimationStarter Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<AnimationStarter>();
-                if (instance == null)
-                {
-                    Debug.LogError("AnimationStarter instance not found in the scene.");
-                }
-            }
-            return instance;
-        }
-    }
-
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
-        //else
-        //{
-           // Destroy(gameObject); // Destroy duplicate instances
-       // }
     }
     public void PauseTomatoSauceAnimation()
     {

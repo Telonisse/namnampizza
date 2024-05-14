@@ -14,12 +14,12 @@ public class PourDetector : MonoBehaviour
 
     private bool IsPouring = false;
     private Stream currentStream = null;
+    private  AnimationStarter prevAnim= null;
 
     //public  AnimationStarter animationStarter;
 
     private void Start()
     {
-        //animationStarter = GetComponentInChildren<AnimationStarter>();
 
     }
 
@@ -38,25 +38,30 @@ public class PourDetector : MonoBehaviour
             else
             {
                 EndPour();
-               // myAnimationControllerTomatoSauce.SetFloat("PourValue", 0.0f);
-                AnimationStarter.Instance.PauseTomatoSauceAnimation();
 
             }
         }
-
-        if (IsPouring)
+        RaycastHit hit;
+        if (Physics.Raycast(origin.position, Vector3.down, out hit, Mathf.Infinity))
         {
-            RaycastHit hit;
-            if (Physics.Raycast(origin.position, Vector3.down, out hit, Mathf.Infinity))
+            if (hit.collider.CompareTag(collisionTag))
             {
-                if (hit.collider.CompareTag(collisionTag))
+                Debug.Log("Collision detected with tag: " + collisionTag);
+                if (pourCheck == true)
                 {
-                    Debug.Log("Collision detected with tag: " + collisionTag);
-                    //myAnimationControllerTomatoSauce.SetBool("IsPouring", true);
-                    //myAnimationControllerTomatoSauce.SetFloat("PourValue", 1.0f);
-                    AnimationStarter.Instance.PlayTomatoSauceAnimation();
-
-
+                    prevAnim = hit.transform.GetComponentInChildren<AnimationStarter>();
+                    prevAnim.PlayTomatoSauceAnimation();
+                }
+                else
+                {
+                    hit.transform.GetComponentInChildren<AnimationStarter>().PauseTomatoSauceAnimation();
+                }
+            }
+            else
+            {
+                if (prevAnim != null)
+                {
+                    prevAnim.PauseTomatoSauceAnimation();
                 }
             }
         }

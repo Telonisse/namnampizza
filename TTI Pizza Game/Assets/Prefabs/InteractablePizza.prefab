@@ -513,8 +513,8 @@ MonoBehaviour:
   - topping: Strawberry
     isOnPizza: 0
   pizzaObject: {fileID: 7788647626971751859}
-  tomatoSauce: {fileID: 0}
-  cheese: {fileID: 0}
+  tomatoSauce: {fileID: 7573113877087141109}
+  cheese: {fileID: 2973769742813336974}
   minTimeDone: 5
   minTimeBurned: 10
   timer: 0
@@ -898,7 +898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 7358e191-33b7-43ca-b066-b2f00531ac66
-  instanceId: 95d08836-f674-4182-8ff5-2426c56bac66
+  instanceId: 8b8bb681-ff2f-474d-8b15-c724517f6194
   version: 1
 --- !u!65 &7841957806458932055
 BoxCollider:
@@ -1297,7 +1297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 4e14e0ba-51f2-4a5c-a822-e304bf36d48c
-  instanceId: 06c30967-0b54-498b-abd8-0b544e647020
+  instanceId: 6b9368f0-3333-4f6b-95f0-1a0cb545fbfb
   version: 1
 --- !u!114 &1721976346179199147
 MonoBehaviour:

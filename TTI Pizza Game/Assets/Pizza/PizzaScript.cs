@@ -15,7 +15,9 @@ public class PizzaScript : MonoBehaviour
     [SerializeField] GameObject pizzaObject;
     [SerializeField] GameObject tomatoSauce;
     [SerializeField] GameObject cheese;
-    
+
+    public bool cheeseOnPizza = false;
+    public bool tomatoSauceOnPizza = false;
 
     //Timer in oven
     [SerializeField] float minTimeDone = 0;
@@ -61,6 +63,15 @@ public class PizzaScript : MonoBehaviour
             isRunning = false;
         }
         StateActions();
+
+        if (cheese.transform.lossyScale.x >= 0.24f)
+        {
+            cheeseOnPizza = true;
+        }
+        if (tomatoSauce.transform.lossyScale.x >= 0.26f)
+        {
+            tomatoSauceOnPizza = true;
+        }
     }
     
     private void ChangeState(pizzaStates state)
@@ -135,8 +146,10 @@ public class PizzaScript : MonoBehaviour
         }
     }
 
-    public void GetToppings(int index, out bool isOnPizza)
+    public void GetToppings(int index, out bool isOnPizza, out bool tomatoSauce, out bool cheese)
     {
         isOnPizza = pizzaToppingsArray[index].isOnPizza;
+        tomatoSauce = tomatoSauceOnPizza;
+        cheese = cheeseOnPizza;
     }
 }

@@ -22,6 +22,14 @@ public class CuttingChildObject : MonoBehaviour
         if (parent.transform.childCount == 1)
         {
             detachChild = true;
+            gameObject.GetComponent<Grabbable>().enabled = true;
+            gameObject.GetComponent<PhysicsGrabbable>().enabled = true;
+            gameObject.GetComponent<TouchHandGrabInteractable>().enabled = true;
+            gameObject.GetComponent<MeshCollider>().enabled = true;
+
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+            rb.useGravity = true;
+            rb.isKinematic = false;
         }
     }
 

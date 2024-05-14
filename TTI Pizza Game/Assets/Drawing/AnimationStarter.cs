@@ -33,10 +33,10 @@ public class AnimationStarter : MonoBehaviour
         {
             instance = this;
         }
-        else
-        {
-            Destroy(gameObject); // Destroy duplicate instances
-        }
+        //else
+        //{
+           // Destroy(gameObject); // Destroy duplicate instances
+       // }
     }
     public void PauseTomatoSauceAnimation()
     {

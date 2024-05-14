@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
     {
         if (pointLevel[currentLevel] == 100)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadSceneAsync(0);
         }
     }
 

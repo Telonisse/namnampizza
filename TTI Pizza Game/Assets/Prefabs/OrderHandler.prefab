@@ -560,8 +560,8 @@ MonoBehaviour:
   - {fileID: 5689364536149867677}
   - {fileID: 7062134035205677582}
   numOfToppings: 3
-  pointsGoodPizza: 0
-  pointsBadPizza: 0
+  pointsGoodPizza: 10
+  pointsBadPizza: -10
   pointsText: {fileID: 637620354474346115}
 --- !u!65 &2996598221880667681
 BoxCollider:

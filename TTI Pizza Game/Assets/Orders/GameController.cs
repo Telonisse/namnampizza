@@ -22,6 +22,10 @@ public class GameController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+    private void Start()
+    {
+        pointLevel[currentLevel] = 0;
+    }
     private void Update()
     {
 

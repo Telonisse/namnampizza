@@ -20,7 +20,6 @@ public class OrderHandler : MonoBehaviour
     {
         gameController = FindObjectOfType<GameController>();
         pointsText.text = gameController.CurrentPoints().ToString();
-        Debug.Log(gameController.CurrentPoints());
     }
 
     private void OnTriggerEnter(Collider other)

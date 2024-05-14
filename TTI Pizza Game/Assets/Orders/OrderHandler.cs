@@ -57,6 +57,7 @@ public class OrderHandler : MonoBehaviour
                 Debug.Log(other.name);
                 gameController.Points(pointsBadPizza);
                 pointsText.text = gameController.CurrentPoints().ToString();
+                Destroy(other.transform.parent.parent.gameObject);
             }
         }
     }

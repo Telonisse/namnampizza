@@ -337,7 +337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1061427888962441325
 Transform:
   m_ObjectHideFlags: 0
@@ -515,6 +515,8 @@ MonoBehaviour:
   pizzaObject: {fileID: 7788647626971751859}
   tomatoSauce: {fileID: 7573113877087141109}
   cheese: {fileID: 2973769742813336974}
+  cheeseOnPizza: 0
+  tomatoSauceOnPizza: 0
   minTimeDone: 5
   minTimeBurned: 10
   timer: 0
@@ -898,7 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 7358e191-33b7-43ca-b066-b2f00531ac66
-  instanceId: 8b8bb681-ff2f-474d-8b15-c724517f6194
+  instanceId: 6f94f826-0149-43d7-8ccb-dbc59a03f0f9
   version: 1
 --- !u!65 &7841957806458932055
 BoxCollider:
@@ -1297,7 +1299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 4e14e0ba-51f2-4a5c-a822-e304bf36d48c
-  instanceId: 6b9368f0-3333-4f6b-95f0-1a0cb545fbfb
+  instanceId: a72c8bba-629f-45b9-b108-753342d2e399
   version: 1
 --- !u!114 &1721976346179199147
 MonoBehaviour:

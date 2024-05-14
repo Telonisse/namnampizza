@@ -174,7 +174,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -8149031547102716917, guid: 2802c0b51d3f75a41920eeddf085870e, type: 3}
+  m_Mesh: {fileID: -8149031547102716917, guid: e8252ceeecc2c3b4f831376555566309, type: 3}
 --- !u!65 &2693199401385583264
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -370,7 +370,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -6240034633719713952, guid: 7e4ad21f86d702647b6c68c555a20dd0, type: 3}
+  m_Mesh: {fileID: -6240034633719713952, guid: c2421576f834aa6498bdcce749c788e6, type: 3}
 --- !u!65 &4288354724645531460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -566,7 +566,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -6541715447157976256, guid: 73eda3d872cf69b4c8c12420357644ea, type: 3}
+  m_Mesh: {fileID: -6541715447157976256, guid: de09c71b6623cba4b92ed33147be2b93, type: 3}
 --- !u!65 &3197665721346675566
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -759,6 +759,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8284145624263851641}
     m_Modifications:
+    - target: {fileID: 5868408166712145242, guid: 3dc204bab6a11e9429607585b31dfa9b, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6240034633719713952, guid: c2421576f834aa6498bdcce749c788e6, type: 3}
     - target: {fileID: 7412676187449719551, guid: 3dc204bab6a11e9429607585b31dfa9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -830,6 +834,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5223245331735819221}
     m_Modifications:
+    - target: {fileID: 345688603330708470, guid: b387ae04d738d074ebbdb736a5a6bdc3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6541715447157976256, guid: de09c71b6623cba4b92ed33147be2b93, type: 3}
     - target: {fileID: 2533510901634266940, guid: b387ae04d738d074ebbdb736a5a6bdc3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -965,6 +973,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Sausage
       objectReference: {fileID: 0}
+    - target: {fileID: 2590056502603725790, guid: 7441bdbcac5cb784e93fac2f9513e367, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -8149031547102716917, guid: e8252ceeecc2c3b4f831376555566309, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -988,6 +1000,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5223245331735819221}
     m_Modifications:
+    - target: {fileID: 345688603330708470, guid: b387ae04d738d074ebbdb736a5a6bdc3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6541715447157976256, guid: de09c71b6623cba4b92ed33147be2b93, type: 3}
     - target: {fileID: 3703078614261206099, guid: b387ae04d738d074ebbdb736a5a6bdc3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1063,6 +1079,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5223245331735819221}
     m_Modifications:
+    - target: {fileID: 345688603330708470, guid: b387ae04d738d074ebbdb736a5a6bdc3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6541715447157976256, guid: de09c71b6623cba4b92ed33147be2b93, type: 3}
     - target: {fileID: 2533510901634266940, guid: b387ae04d738d074ebbdb736a5a6bdc3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1194,6 +1214,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Sausage
       objectReference: {fileID: 0}
+    - target: {fileID: 2590056502603725790, guid: 7441bdbcac5cb784e93fac2f9513e367, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -8149031547102716917, guid: e8252ceeecc2c3b4f831376555566309, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1217,6 +1241,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8284145624263851641}
     m_Modifications:
+    - target: {fileID: 5868408166712145242, guid: 3dc204bab6a11e9429607585b31dfa9b, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6240034633719713952, guid: c2421576f834aa6498bdcce749c788e6, type: 3}
     - target: {fileID: 7412676187449719551, guid: 3dc204bab6a11e9429607585b31dfa9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1296,6 +1324,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8284145624263851641}
     m_Modifications:
+    - target: {fileID: 5868408166712145242, guid: 3dc204bab6a11e9429607585b31dfa9b, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6240034633719713952, guid: c2421576f834aa6498bdcce749c788e6, type: 3}
     - target: {fileID: 7412676187449719551, guid: 3dc204bab6a11e9429607585b31dfa9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1431,6 +1463,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Sausage
       objectReference: {fileID: 0}
+    - target: {fileID: 2590056502603725790, guid: 7441bdbcac5cb784e93fac2f9513e367, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -8149031547102716917, guid: e8252ceeecc2c3b4f831376555566309, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

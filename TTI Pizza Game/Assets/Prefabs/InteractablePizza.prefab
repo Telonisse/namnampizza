@@ -517,8 +517,8 @@ MonoBehaviour:
   cheese: {fileID: 2973769742813336974}
   cheeseOnPizza: 0
   tomatoSauceOnPizza: 0
-  minTimeDone: 5
-  minTimeBurned: 10
+  minTimeDone: 15
+  minTimeBurned: 30
   timer: 0
   currentState: 0
 --- !u!65 &2315313259435963591

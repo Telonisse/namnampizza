@@ -23,6 +23,7 @@ public class Fridge : MonoBehaviour
     }
     private void Update()
     {
+        Debug.Log(transform.rotation.eulerAngles.y);
         if (transform.rotation.eulerAngles.y == 0)
         {
             open = false;

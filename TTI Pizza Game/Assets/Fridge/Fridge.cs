@@ -19,6 +19,8 @@ public class Fridge : MonoBehaviour
     [SerializeField] bool open;
     private bool movedDone = true;
 
+    [SerializeField] GameObject grabPoint;
+
     private float timer = 0;
     private bool isRunning = false;
 
@@ -28,6 +30,15 @@ public class Fridge : MonoBehaviour
     }
     private void Update()
     {
+        //Vector3 relativePos = grabPoint.transform.position - transform.parent.position;
+        //Vector3 rotate = Vector3.RotateTowards(transform.position, relativePos, 10, 10);
+        //Quaternion rotateQuaternion = Quaternion.LookRotation(rotate, Vector3.up);
+        //rotateQuaternion.x = 0;
+        //rotateQuaternion.y -= 0.21f;
+        //rotateQuaternion.z = 0;
+        //Debug.Log(rotateQuaternion);
+        //transform.rotation = rotateQuaternion;
+
         if (movedDone == true)
         {
             bool isDone = false;
@@ -75,19 +86,19 @@ public class Fridge : MonoBehaviour
     }
     public void OpenFridge()
     {
-        var motor = joint.motor;
-        if (!open)
-        {
-            motor.targetVelocity = -200;
-            joint.motor = motor;
-        }
-        if (open)
-        {
-            motor.targetVelocity = 200;
-            joint.motor = motor;
-            timer = 0;
-            isRunning = true;
-        }
+        //var motor = joint.motor;
+        //if (!open)
+        //{
+        //    motor.targetVelocity = -200;
+        //    joint.motor = motor;
+        //}
+        //if (open)
+        //{
+        //    motor.targetVelocity = 200;
+        //    joint.motor = motor;
+        //    timer = 0;
+        //    isRunning = true;
+        //}
     }
 
     public void CloseFridge()

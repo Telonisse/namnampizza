@@ -23,15 +23,15 @@ public class Counters : MonoBehaviour
     }
     void Update()
     {
-        if (Vector3.Distance(transform.position, knife.transform.position) >= 5)
+        if (Vector3.Distance(transform.position, knife.transform.position) >= 2f)
         {
             knife.transform.position = startPosKnife;
         }
-        if (Vector3.Distance(transform.position, tomatoSauce.transform.position) >= 5)
+        if (Vector3.Distance(transform.position, tomatoSauce.transform.position) >= 2f)
         {
             tomatoSauce.transform.position = startPosTomato;
         }
-        if (Vector3.Distance(transform.position, rivjarn.transform.position) >= 5)
+        if (Vector3.Distance(transform.position, rivjarn.transform.position) >= 2f)
         {
             rivjarn.transform.position = startPosRiv;
         }

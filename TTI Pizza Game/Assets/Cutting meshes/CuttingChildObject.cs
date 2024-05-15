@@ -11,44 +11,83 @@ public class CuttingChildObject : MonoBehaviour
 
     public GameObject parent;
 
+    bool isDestroyed = false;
+
 
     void Update()
     {
-        if (detachChild == true)
+        if (isDestroyed == true)
         {
-            myChildObject.parent = null;
             detachChild = false;
-
+            parent = null;
+            return;
         }
-        if (parent.transform.childCount == 1)
+        else
         {
-            detachChild = true;
-            gameObject.GetComponent<Grabbable>().enabled = true;
-            gameObject.GetComponent<PhysicsGrabbable>().enabled = true;
-            gameObject.GetComponent<TouchHandGrabInteractable>().enabled = true;
-            gameObject.GetComponent<MeshCollider>().enabled = true;
+            if (detachChild == true)
+            {
+                myChildObject.parent = null;
+                detachChild = false;
+                deactivateObject(parent);
 
-            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-            rb.useGravity = true;
-            rb.isKinematic = false;
+            }
+            if (parent != null && parent.transform.childCount == 1)
+            {
+                detachChild = true;
+                activateObject();
+            }
+            //if (parent.transform.childCount == 1)
+            //{
+            //    detachChild = true;
+            //    activateObject();
+            //    //parent = null;
 
-
+            //}
         }
+        
     }
 
     public void deactivateObject(GameObject obj)
     {
         //if (obj == null)
         //{
-           //return;
+        //return;
 
         //}
-        if (obj.transform.childCount == 0)
+        if (isDestroyed == true)
         {
-           obj.SetActive(false);
-           //Destroy(parent);
+            return;
+        }
+        else
+        {
+            if (obj.transform.childCount == 0)
+            {
+                //obj.SetActive(false);
+                Destroy(parent);
+                isDestroyed = true;
+                parent = null;
+            }
         }
 
+  
+
+        //if (obj != null && obj.transform.childCount == 0)
+        //{
+        //    Destroy(obj);
+        //    parent = null; 
+        //}
+    }
+
+    void activateObject()
+    {
+        gameObject.GetComponent<Grabbable>().enabled = true;
+        gameObject.GetComponent<PhysicsGrabbable>().enabled = true;
+        gameObject.GetComponent<TouchHandGrabInteractable>().enabled = true;
+        gameObject.GetComponent<MeshCollider>().enabled = true;
+
+        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+        rb.useGravity = true;
+        rb.isKinematic = false;
     }
     
 
@@ -57,16 +96,11 @@ public class CuttingChildObject : MonoBehaviour
         if (other.gameObject.CompareTag("Knife"))
         {
             detachChild = true;
-            gameObject.GetComponent<Grabbable>().enabled = true;
-            gameObject.GetComponent<PhysicsGrabbable>().enabled = true;
-            gameObject.GetComponent<TouchHandGrabInteractable>().enabled = true;
-            gameObject.GetComponent<MeshCollider>().enabled = true;
 
-            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-            rb.useGravity = true;
-            rb.isKinematic = false;
+            activateObject();
 
             deactivateObject(parent);
+
         }
 
         if (other.gameObject.CompareTag("Pizza"))
@@ -78,12 +112,8 @@ public class CuttingChildObject : MonoBehaviour
 
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.useGravity = false;
-            //rb.isKinematic = true;
-
-            // Turn off box collider?
 
             deactivateObject(parent);
-
         }
     }
 }

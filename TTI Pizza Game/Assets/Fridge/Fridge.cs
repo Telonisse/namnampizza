@@ -23,8 +23,8 @@ public class Fridge : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(transform.rotation.eulerAngles.y);
-        if (transform.rotation.eulerAngles.y == 0)
+        Debug.Log(transform.localRotation.eulerAngles.y);
+        if (transform.localRotation.eulerAngles.y == 0)
         {
             open = false;
             for (int i = 0; i < toppingInFridgeArray.Length; i++)
@@ -32,7 +32,7 @@ public class Fridge : MonoBehaviour
                 toppingInFridgeArray[i].isInFridge = false;
             }
         }
-        else if(transform.rotation.eulerAngles.y < 0)
+        else if(transform.localRotation.eulerAngles.y < 0)
         {
             open = true;
         }

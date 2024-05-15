@@ -216,6 +216,7 @@ public class FindSpawnPos : MonoBehaviour
                 }
             }
             spawnedFridge.GetComponent<Collider>().enabled = false;
+            spawnedFridge.GetComponent<Fridge>().MovedDone();
         }
     }
 
@@ -307,6 +308,7 @@ public class FindSpawnPos : MonoBehaviour
             else
             {
                 spawnedOven.GetComponent<BoxCollider>().enabled = false;
+
             }
         }
 

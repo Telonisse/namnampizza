@@ -16,7 +16,7 @@ public class Fridge : MonoBehaviour
 {
     [SerializeField] toppingInFridge[] toppingInFridgeArray;
     [SerializeField] bool open;
-    private bool movedDone = false;
+    private bool movedDone = true;
 
     private void Start()
     {

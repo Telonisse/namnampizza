@@ -215,6 +215,7 @@ public class FindSpawnPos : MonoBehaviour
                     }
                 }
             }
+            spawnedFridge.GetComponent<Collider>().enabled = false;
         }
     }
 

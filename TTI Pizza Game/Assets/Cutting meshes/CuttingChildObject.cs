@@ -11,6 +11,7 @@ public class CuttingChildObject : MonoBehaviour
 
     public GameObject parent;
 
+
     void Update()
     {
         if (detachChild == true)
@@ -30,6 +31,8 @@ public class CuttingChildObject : MonoBehaviour
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.useGravity = true;
             rb.isKinematic = false;
+
+
         }
     }
 
@@ -37,11 +40,13 @@ public class CuttingChildObject : MonoBehaviour
     {
         //if (obj == null)
         //{
-         //   return;
+           //return;
+
         //}
         if (obj.transform.childCount == 0)
         {
            obj.SetActive(false);
+           //Destroy(parent);
         }
 
     }

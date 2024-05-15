@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   table: {fileID: 7047548193653855166, guid: 99f9113d80de8384cb765779cd58fec5, type: 3}
-  fridge: {fileID: 667430951164996214, guid: 966702a25fe76b246b348fa1ca17b882, type: 3}
+  fridge: {fileID: 7872081292425312345, guid: 0e392e0abc0877e468205a06fb88fbb6, type: 3}
   oven: {fileID: 4625572203522266324, guid: ea648d0619e364d4b9840623a9df09ed, type: 3}
   lucka: {fileID: 3085490845424976770, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
   roomObjects: []

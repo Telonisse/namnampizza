@@ -15,36 +15,32 @@ public struct toppingInFridge
 public class Fridge : MonoBehaviour
 {
     [SerializeField] toppingInFridge[] toppingInFridgeArray;
-    private HingeJoint joint;
     [SerializeField] bool open;
-    private bool movedDone = true;
-
-    [SerializeField] GameObject grabPoint;
-
-    private float timer = 0;
-    private bool isRunning = false;
+    private bool movedDone = false;
 
     private void Start()
     {
-        joint = GetComponent<HingeJoint>();
     }
     private void Update()
     {
-        //Vector3 relativePos = grabPoint.transform.position - transform.parent.position;
-        //Vector3 rotate = Vector3.RotateTowards(transform.position, relativePos, 10, 10);
-        //Quaternion rotateQuaternion = Quaternion.LookRotation(rotate, Vector3.up);
-        //rotateQuaternion.x = 0;
-        //rotateQuaternion.y -= 0.21f;
-        //rotateQuaternion.z = 0;
-        //Debug.Log(rotateQuaternion);
-        //transform.rotation = rotateQuaternion;
-
+        if (transform.rotation.eulerAngles.y == 0)
+        {
+            open = false;
+            for (int i = 0; i < toppingInFridgeArray.Length; i++)
+            {
+                toppingInFridgeArray[i].isInFridge = false;
+            }
+        }
+        else
+        {
+            open = true;
+        }
         if (movedDone == true)
         {
             bool isDone = false;
             if (!open)
             {
-                Collider[] colliders = Physics.OverlapBox(new Vector3(transform.parent.position.x, transform.parent.position.y + 1, transform.parent.position.z), new Vector3(0.7f / 2, 1.2f / 2, 0.7f / 2), Quaternion.identity);
+                Collider[] colliders = Physics.OverlapBox(new Vector3(transform.parent.parent.position.x, transform.parent.parent.position.y + 1, transform.parent.parent.position.z), new Vector3(0.7f / 2, 1.2f / 2, 0.7f / 2), Quaternion.identity);
                 for (int i = 0; i < colliders.Length; i++)
                 {
                     for (int j = 0; j < toppingInFridgeArray.Length; j++)
@@ -58,16 +54,7 @@ public class Fridge : MonoBehaviour
                 }
             }
 
-            if (isRunning)
-            {
-                timer += Time.deltaTime;
-            }
-            if (timer > 1.5f)
-            {
-                isRunning = false;
-            }
-
-            if (!open && isDone && !isRunning)
+            if (!open && isDone)
             {
                 for (int i = 0; i < toppingInFridgeArray.Length; i++)
                 {
@@ -83,38 +70,6 @@ public class Fridge : MonoBehaviour
     public void MovedDone()
     {
         movedDone = true;
-    }
-    public void OpenFridge()
-    {
-        //var motor = joint.motor;
-        //if (!open)
-        //{
-        //    motor.targetVelocity = -200;
-        //    joint.motor = motor;
-        //}
-        //if (open)
-        //{
-        //    motor.targetVelocity = 200;
-        //    joint.motor = motor;
-        //    timer = 0;
-        //    isRunning = true;
-        //}
-    }
-
-    public void CloseFridge()
-    {
-        if (open)
-        {
-            for(int i = 0;i < toppingInFridgeArray.Length; i++)
-            {
-                toppingInFridgeArray[i].isInFridge = false;
-            }
-            open = false;
-        }
-        else
-        {
-            open = true;
-        }
     }
     void OnDrawGizmos()
     {

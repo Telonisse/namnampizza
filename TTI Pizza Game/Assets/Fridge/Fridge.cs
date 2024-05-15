@@ -31,7 +31,7 @@ public class Fridge : MonoBehaviour
                 toppingInFridgeArray[i].isInFridge = false;
             }
         }
-        else
+        else if(transform.rotation.eulerAngles.y < 0)
         {
             open = true;
         }

@@ -59,6 +59,7 @@ public class Fridge : MonoBehaviour
     {
         if (other.CompareTag("Fridge"))
         {
+            Debug.Log("Closed");
             open = false;
         }
     }
@@ -66,6 +67,7 @@ public class Fridge : MonoBehaviour
     {
         if (other.CompareTag("Fridge"))
         {
+            Debug.Log("Open");
             open = true;
         }
     }

@@ -745,8 +745,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myChildObject: {fileID: 8488511884511613060}
-  detachChild: 0
   parent: {fileID: 6640482053319179679}
+  detachChild: 0
+  isOnMyPizza: 0
 --- !u!65 &1843127809011170984
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1025,8 +1026,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myChildObject: {fileID: 3062737686077401509}
-  detachChild: 0
   parent: {fileID: 6640482053319179679}
+  detachChild: 0
+  isOnMyPizza: 0
 --- !u!65 &2561487890768048213
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1221,8 +1223,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myChildObject: {fileID: 4990403415057982067}
-  detachChild: 0
   parent: {fileID: 6640482053319179679}
+  detachChild: 0
+  isOnMyPizza: 0
 --- !u!65 &1307387066984338106
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1753,8 +1756,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myChildObject: {fileID: 7194659344940712114}
-  detachChild: 0
   parent: {fileID: 6640482053319179679}
+  detachChild: 0
+  isOnMyPizza: 0
 --- !u!65 &7046517245490775715
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1949,8 +1953,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myChildObject: {fileID: 3096021813953252857}
-  detachChild: 0
   parent: {fileID: 6640482053319179679}
+  detachChild: 0
+  isOnMyPizza: 0
 --- !u!65 &8312227170453240326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3159,8 +3164,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myChildObject: {fileID: 5045404952936954969}
-  detachChild: 0
   parent: {fileID: 6640482053319179679}
+  detachChild: 0
+  isOnMyPizza: 0
 --- !u!65 &3067154396838102080
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3355,8 +3361,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myChildObject: {fileID: 6026266660153015399}
-  detachChild: 0
   parent: {fileID: 6640482053319179679}
+  detachChild: 0
+  isOnMyPizza: 0
 --- !u!65 &7761141105397344024
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3551,8 +3558,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myChildObject: {fileID: 595549396333844345}
-  detachChild: 0
   parent: {fileID: 6640482053319179679}
+  detachChild: 0
+  isOnMyPizza: 0
 --- !u!65 &8590717578060700102
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -6,11 +6,11 @@ using UnityEngine;
 public class CuttingChildObject : MonoBehaviour
 {
     public Transform myChildObject;
+    public GameObject parent;
+
 
     public bool detachChild;
-
-    public GameObject parent;
-    bool isOnMyPizza = false;
+    public bool isOnMyPizza = false;
 
 
     void Update()
@@ -82,14 +82,14 @@ public class CuttingChildObject : MonoBehaviour
         if (other.gameObject.CompareTag("Pizza"))
         {
             isOnMyPizza = true;
-            gameObject.GetComponent<Grabbable>().enabled = false;
-            gameObject.GetComponent<PhysicsGrabbable>().enabled = false;
-            gameObject.GetComponent<TouchHandGrabInteractable>().enabled = false;
-            gameObject.GetComponent<MeshCollider>().enabled = false;
+            //gameObject.GetComponent<Grabbable>().enabled = false;
+            //gameObject.GetComponent<PhysicsGrabbable>().enabled = false;
+            //gameObject.GetComponent<TouchHandGrabInteractable>().enabled = false;
+            //gameObject.GetComponent<MeshCollider>().enabled = false;
 
-            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-            rb.useGravity = false;
-            gameObject.GetComponent<BoxCollider>().enabled = false;
+            //Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+            //rb.useGravity = false;
+            //gameObject.GetComponent<BoxCollider>().enabled = false;
            
             //rb.isKinematic = true;
 

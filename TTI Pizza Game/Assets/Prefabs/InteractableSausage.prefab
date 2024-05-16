@@ -70,9 +70,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myChildObject: {fileID: 6635085507966272825}
-  detachChild: 0
   parent: {fileID: 8177077770685161947}
-  isDestroyed: 0
+  detachChild: 0
   isOnMyPizza: 0
 --- !u!114 &4584095912333284313
 MonoBehaviour:
@@ -268,9 +267,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myChildObject: {fileID: 8284145624263851641}
-  detachChild: 0
   parent: {fileID: 8177077770685161947}
-  isDestroyed: 0
+  detachChild: 0
   isOnMyPizza: 0
 --- !u!114 &6845095232762325230
 MonoBehaviour:
@@ -466,9 +464,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myChildObject: {fileID: 5223245331735819221}
-  detachChild: 0
   parent: {fileID: 8177077770685161947}
-  isDestroyed: 0
+  detachChild: 0
   isOnMyPizza: 0
 --- !u!114 &9217287850395758611
 MonoBehaviour:
@@ -812,6 +809,10 @@ PrefabInstance:
     - target: {fileID: 7896161564437225541, guid: 3dc204bab6a11e9429607585b31dfa9b, type: 3}
       propertyPath: m_Name
       value: sausageRightModelRaw
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896161564437225541, guid: 3dc204bab6a11e9429607585b31dfa9b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7896161564437225541, guid: 3dc204bab6a11e9429607585b31dfa9b, type: 3}
       propertyPath: m_TagString

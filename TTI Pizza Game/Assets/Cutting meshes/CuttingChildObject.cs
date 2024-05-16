@@ -7,12 +7,12 @@ public class CuttingChildObject : MonoBehaviour
 {
     public Transform myChildObject;
 
-    public bool detachChild;
+     bool detachChild;
 
     public GameObject parent;
 
-    public bool isDestroyed = false;
-    public bool isOnMyPizza = false;
+     bool isDestroyed = false;
+     bool isOnMyPizza = false;
 
 
     void Update()

@@ -21,11 +21,9 @@ public class CuttingChildObject : MonoBehaviour
             detachChild = false;
             Debug.Log("detach false");
 
-
-
         }
 
-        if (parent.transform.childCount == 1 && parent.name == transform.parent.name)
+        if (parent.transform.childCount == 1 && parent.name == transform.parent.name) 
         {
             Debug.Log("detach true");
             detachChild = true;
@@ -33,6 +31,7 @@ public class CuttingChildObject : MonoBehaviour
             gameObject.GetComponent<PhysicsGrabbable>().enabled = true;
             gameObject.GetComponent<TouchHandGrabInteractable>().enabled = true;
             gameObject.GetComponent<MeshCollider>().enabled = true;
+            parent.GetComponent<BoxCollider >().enabled = false;
 
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.useGravity = true;

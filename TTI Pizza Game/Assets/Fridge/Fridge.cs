@@ -61,6 +61,10 @@ public class Fridge : MonoBehaviour
         {
             Debug.Log("Closed");
             open = false;
+            for (int i = 0; i < toppingInFridgeArray.Length; i++)
+            {
+                toppingInFridgeArray[i].isInFridge = false;
+            }
         }
     }
     private void OnTriggerExit(Collider other)

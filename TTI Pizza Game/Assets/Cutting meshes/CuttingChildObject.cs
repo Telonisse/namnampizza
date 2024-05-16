@@ -7,120 +7,77 @@ public class CuttingChildObject : MonoBehaviour
 {
     public Transform myChildObject;
 
-     bool detachChild;
+    public bool detachChild;
 
     public GameObject parent;
-
-     bool isDestroyed = false;
-     bool isOnMyPizza = false;
+    bool isOnMyPizza = false;
 
 
     void Update()
     {
-        if (isDestroyed == true)
+        if (detachChild == true)
         {
+            myChildObject.parent = null;
             detachChild = false;
-            parent = null;
-            return;
+
         }
-        else
+        if (parent.transform.childCount == 1)
         {
-            if (detachChild == true)
-            {
-                myChildObject.parent = null;
-                detachChild = false;
-                deleteObject(parent);
+            detachChild = true;
+            gameObject.GetComponent<Grabbable>().enabled = true;
+            gameObject.GetComponent<PhysicsGrabbable>().enabled = true;
+            gameObject.GetComponent<TouchHandGrabInteractable>().enabled = true;
+            gameObject.GetComponent<MeshCollider>().enabled = true;
 
-            }
-            if (parent != null && parent.transform.childCount == 1)
-            {
-                detachChild = true;
-                activateObject();
-            }
-            //if (parent.transform.childCount == 1)
-            //{
-            //    detachChild = true;
-            //    activateObject();
-            //    //parent = null;
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+            rb.useGravity = true;
+            rb.isKinematic = false;
 
-            //}
+
         }
-        
     }
 
-    public void deleteObject(GameObject obj)
+    public void deactivateObject(GameObject obj)
     {
         //if (obj == null)
         //{
         //return;
 
         //}
-        if (isDestroyed == true)
+        if (obj.transform.childCount == 0)
         {
-            return;
-        }
-        else
-        {
-            if (isOnMyPizza == true)
-            {
-                Destroy(parent);
-                isDestroyed = true;
-                parent = null;
-                isOnMyPizza=false;
-            }
-            else
-            {
-                if (obj.transform.childCount == 0)
-                {
-                    //obj.SetActive(false);
-                    Destroy(parent);
-                    isDestroyed = true;
-                    parent = null;
-                }
-            }
+            obj.SetActive(false);
+            //Destroy(parent);
+            //parent = null;
         }
 
-  
-
-        //if (obj != null && obj.transform.childCount == 0)
-        //{
-        //    Destroy(obj);
-        //    parent = null; 
-        //}
     }
 
-    void activateObject()
-    {
-        gameObject.GetComponent<Grabbable>().enabled = true;
-        gameObject.GetComponent<PhysicsGrabbable>().enabled = true;
-        gameObject.GetComponent<TouchHandGrabInteractable>().enabled = true;
-        gameObject.GetComponent<MeshCollider>().enabled = true;
-
-        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-        rb.useGravity = true;
-        rb.isKinematic = false;
-    }
-    
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isOnMyPizza == true)
+        if (other.gameObject.CompareTag("Knife"))
         {
-            return; 
-        }
-        else
-        {
-            if (other.gameObject.CompareTag("Knife"))
+            if (isOnMyPizza == true)
+            {
+                return;
+            }
+            else
             {
                 detachChild = true;
+                gameObject.GetComponent<Grabbable>().enabled = true;
+                gameObject.GetComponent<PhysicsGrabbable>().enabled = true;
+                gameObject.GetComponent<TouchHandGrabInteractable>().enabled = true;
+                gameObject.GetComponent<MeshCollider>().enabled = true;
 
-                activateObject();
+                Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+                rb.useGravity = true;
+                rb.isKinematic = false;
 
-                deleteObject(parent);
-
+                deactivateObject(parent);
             }
+            
         }
-        
 
         if (other.gameObject.CompareTag("Pizza"))
         {
@@ -132,9 +89,14 @@ public class CuttingChildObject : MonoBehaviour
 
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.useGravity = false;
+            gameObject.GetComponent<BoxCollider>().enabled = false;
+           
+            //rb.isKinematic = true;
 
-            if (myChildObject != null)
-                myChildObject.parent = null;
+            // Turn off box collider?
+
+            deactivateObject(parent);
+
         }
     }
 }

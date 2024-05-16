@@ -24,7 +24,7 @@ public class CheeseGrater : MonoBehaviour
             {
                 if (cheeseTouch == true)
                 {
-                    myParticleSystem.Play();
+                    //myParticleSystem.Play();
                     prevAnim = hit.transform.GetComponentInChildren<AnimationStarter>();
                     prevAnim.PlayGratingCheeseAnimation();
                 }
@@ -50,6 +50,7 @@ public class CheeseGrater : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Cheese"))
         {
+            myParticleSystem.Play();
             cheeseTouch = true;
         }
     }

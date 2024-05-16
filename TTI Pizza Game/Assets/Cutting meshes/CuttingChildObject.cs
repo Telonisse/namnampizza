@@ -21,7 +21,8 @@ public class CuttingChildObject : MonoBehaviour
             detachChild = false;
 
         }
-        if (parent.transform.childCount == 1)
+
+        if (parent.transform.childCount == 1 && parent.name == transform.parent.name)
         {
             detachChild = true;
             gameObject.GetComponent<Grabbable>().enabled = true;

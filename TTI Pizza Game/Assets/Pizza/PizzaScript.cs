@@ -1,3 +1,4 @@
+using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -94,6 +95,13 @@ public class PizzaScript : MonoBehaviour
                 BoxCollider box = other.GetComponent<BoxCollider>();
                 other.transform.position = new Vector3(other.transform.position.x, transform.parent.position.y - box.center.y + 0.02f, other.transform.position.z);
                 other.transform.SetParent(transform);
+
+                other.gameObject.GetComponent<Grabbable>().enabled = false;
+                other.gameObject.GetComponent<PhysicsGrabbable>().enabled = false;
+                other.gameObject.GetComponent<TouchHandGrabInteractable>().enabled = false;
+                other.gameObject.GetComponent<MeshCollider>().enabled = false;
+                other.gameObject.GetComponent<BoxCollider>().enabled = false;
+                other.gameObject.GetComponent<Rigidbody>().useGravity = false;
 
                 transform.parent.rotation = Quaternion.identity;
                 other.transform.rotation = Quaternion.identity;

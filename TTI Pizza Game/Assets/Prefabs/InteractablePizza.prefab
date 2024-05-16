@@ -900,7 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 7358e191-33b7-43ca-b066-b2f00531ac66
-  instanceId: 6f94f826-0149-43d7-8ccb-dbc59a03f0f9
+  instanceId: 91dbebe2-54d5-4653-804a-9ddf2dd0cd2e
   version: 1
 --- !u!65 &7841957806458932055
 BoxCollider:
@@ -1299,7 +1299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 4e14e0ba-51f2-4a5c-a822-e304bf36d48c
-  instanceId: a72c8bba-629f-45b9-b108-753342d2e399
+  instanceId: e97995e1-096c-4cbc-b51d-2e3743a57805
   version: 1
 --- !u!114 &1721976346179199147
 MonoBehaviour:
@@ -1334,7 +1334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointable: {fileID: 1721976346179199147}
   _rigidbody: {fileID: 680102082929155897}
-  _scaleMassWithSize: 1
+  _scaleMassWithSize: 0
 --- !u!114 &2487505727967227396
 MonoBehaviour:
   m_ObjectHideFlags: 0

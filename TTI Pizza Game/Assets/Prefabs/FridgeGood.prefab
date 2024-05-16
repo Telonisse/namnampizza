@@ -224,7 +224,7 @@ Transform:
   m_GameObject: {fileID: 1769293763373553065}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.4, z: 0}
+  m_LocalPosition: {x: 0, y: 1.368, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -595,6 +595,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3601167977637051147, guid: c6a22e77f0cc1794db19211e8b5767d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 565570624913322793}
+    - targetCorrespondingSourceObject: {fileID: 3601167977637051147, guid: c6a22e77f0cc1794db19211e8b5767d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8497216557882539401}
   m_SourcePrefab: {fileID: 100100000, guid: c6a22e77f0cc1794db19211e8b5767d3, type: 3}
 --- !u!1 &4876571799013089500 stripped
 GameObject:
@@ -881,6 +884,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &8497216557882539401
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876571799013089500}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0.74, y: 0, z: 0}
 --- !u!4 &5253097784431393382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4229508552951144881, guid: c6a22e77f0cc1794db19211e8b5767d3, type: 3}
@@ -902,6 +926,10 @@ PrefabInstance:
     - target: {fileID: 289818032741490648, guid: 2ac0310e29a912640be4407b7494aa1a, type: 3}
       propertyPath: m_Name
       value: kyl
+      objectReference: {fileID: 0}
+    - target: {fileID: 289818032741490648, guid: 2ac0310e29a912640be4407b7494aa1a, type: 3}
+      propertyPath: m_TagString
+      value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 1102945795608364386, guid: 2ac0310e29a912640be4407b7494aa1a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -942,6 +970,22 @@ PrefabInstance:
     - target: {fileID: 1102945795608364386, guid: 2ac0310e29a912640be4407b7494aa1a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636021380938694643, guid: 2ac0310e29a912640be4407b7494aa1a, type: 3}
+      propertyPath: m_TagString
+      value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417573590421310117, guid: 2ac0310e29a912640be4407b7494aa1a, type: 3}
+      propertyPath: m_TagString
+      value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 5891460303530449057, guid: 2ac0310e29a912640be4407b7494aa1a, type: 3}
+      propertyPath: m_TagString
+      value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 7336159702872592604, guid: 2ac0310e29a912640be4407b7494aa1a, type: 3}
+      propertyPath: m_TagString
+      value: Fridge
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

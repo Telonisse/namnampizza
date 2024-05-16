@@ -16,26 +16,13 @@ public class Fridge : MonoBehaviour
 {
     [SerializeField] toppingInFridge[] toppingInFridgeArray;
     [SerializeField] bool open;
-    private bool movedDone = false;
+    private bool movedDone = true;
 
     private void Start()
     {
     }
     private void Update()
     {
-        Debug.Log(transform.localRotation.eulerAngles.y);
-        if (transform.localRotation.eulerAngles.y <= 0)
-        {
-            open = false;
-            for (int i = 0; i < toppingInFridgeArray.Length; i++)
-            {
-                toppingInFridgeArray[i].isInFridge = false;
-            }
-        }
-        else if(transform.localRotation.eulerAngles.y > 270)
-        {
-            open = true;
-        }
         if (movedDone == true)
         {
             bool isDone = false;
@@ -66,6 +53,20 @@ public class Fridge : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Fridge"))
+        {
+            open = false;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Fridge"))
+        {
+            open = true;
         }
     }
     public void MovedDone()

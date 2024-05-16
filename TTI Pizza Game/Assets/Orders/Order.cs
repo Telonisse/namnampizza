@@ -36,10 +36,10 @@ public class Order : MonoBehaviour
         if (isRunning == true)
         {
             timer += Time.deltaTime;
-            ResetOrder();
         }
         if (timer >= maxTimer)
         {
+            ResetOrder();
             Debug.Log("Timer Stopped");
             isRunning = false;
             timer = 0f;
@@ -80,6 +80,7 @@ public class Order : MonoBehaviour
             orderArray[i].onOrder = false;
             isRunning = true;
         }
+        maxTimer = 15f;
     }
     public bool IsOffline()
     {

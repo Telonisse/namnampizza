@@ -623,7 +623,7 @@ MonoBehaviour:
     isInFridge: 0
     objectSpawnPos: {fileID: 2809029481217110019}
   - toppingTag: Strawberry
-    toppingGameObject: {fileID: 5854672396538580880, guid: 45155fb614f50a54a82766e232269f03, type: 3}
+    toppingGameObject: {fileID: 334406175571568854, guid: 38516c9a1daf40246bc74bb1fcb9b34a, type: 3}
     isInFridge: 0
     objectSpawnPos: {fileID: 487458556597137290}
   - toppingTag: Cheese

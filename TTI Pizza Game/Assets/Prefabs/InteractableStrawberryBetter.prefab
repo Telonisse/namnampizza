@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3316159328841602776}
   m_Layer: 0
   m_Name: StrawberryModelBottomBurned
-  m_TagString: Untagged
+  m_TagString: Strawberry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 8469606511008087685}
   m_Layer: 0
   m_Name: StrawberryBottom
-  m_TagString: Untagged
+  m_TagString: Strawberry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 4446582924511191809}
   m_Layer: 0
   m_Name: StrawberryModelTopBurned
-  m_TagString: Untagged
+  m_TagString: Strawberry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 5013067132925608678}
   m_Layer: 0
   m_Name: StrawberryModelBottomRaw
-  m_TagString: Untagged
+  m_TagString: Strawberry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 8623242386377084765}
   m_Layer: 0
   m_Name: StrawberryModelTopRaw
-  m_TagString: Untagged
+  m_TagString: Strawberry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 4345661155227804802}
   m_Layer: 0
   m_Name: StrawberryTop
-  m_TagString: Untagged
+  m_TagString: Strawberry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 3053212511126767006}
   m_Layer: 0
   m_Name: StrawberryModelBottomCooked
-  m_TagString: Untagged
+  m_TagString: Strawberry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -992,7 +992,7 @@ GameObject:
   - component: {fileID: 2316569696557513754}
   m_Layer: 0
   m_Name: StrawberryModelTopCooked
-  m_TagString: Untagged
+  m_TagString: Strawberry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

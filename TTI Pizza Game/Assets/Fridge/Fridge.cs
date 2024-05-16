@@ -16,7 +16,7 @@ public class Fridge : MonoBehaviour
 {
     [SerializeField] toppingInFridge[] toppingInFridgeArray;
     [SerializeField] bool open;
-    private bool movedDone = true;
+    private bool movedDone = false;
 
     private void Start()
     {
@@ -32,7 +32,7 @@ public class Fridge : MonoBehaviour
                 toppingInFridgeArray[i].isInFridge = false;
             }
         }
-        else if(transform.localRotation.eulerAngles.y < 0)
+        else if(transform.localRotation.eulerAngles.y > 270)
         {
             open = true;
         }

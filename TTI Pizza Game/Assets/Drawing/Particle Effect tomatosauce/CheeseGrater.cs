@@ -38,6 +38,9 @@ public class CheeseGrater : MonoBehaviour
             {
                 if (prevAnim != null)
                 {
+                    if (myParticleSystem.isPlaying)
+                        myParticleSystem.Stop();
+                    
                     prevAnim.PauseCheeseGratingAnimation();
                 }
             }

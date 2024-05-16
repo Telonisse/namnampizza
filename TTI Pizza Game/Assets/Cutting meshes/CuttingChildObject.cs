@@ -19,11 +19,15 @@ public class CuttingChildObject : MonoBehaviour
         {
             myChildObject.parent = null;
             detachChild = false;
+            Debug.Log("detach false");
+
+
 
         }
 
         if (parent.transform.childCount == 1 && parent.name == transform.parent.name)
         {
+            Debug.Log("detach true");
             detachChild = true;
             gameObject.GetComponent<Grabbable>().enabled = true;
             gameObject.GetComponent<PhysicsGrabbable>().enabled = true;

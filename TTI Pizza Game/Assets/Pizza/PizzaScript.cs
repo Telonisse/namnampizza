@@ -91,7 +91,8 @@ public class PizzaScript : MonoBehaviour
             {
                 other.GetComponent<Rigidbody>().isKinematic = true;
                 pizzaToppingsArray[i].isOnPizza = true;
-                other.transform.position = new Vector3(other.transform.position.x, transform.parent.position.y + 0.02f, other.transform.position.z); //change 0.05f to whatever half of the scale is cus that shit isnt fucking working and idk why
+                BoxCollider box = other.GetComponent<BoxCollider>();
+                other.transform.position = new Vector3(other.transform.position.x, transform.parent.position.y - box.center.y + 0.02f, other.transform.position.z);
                 other.transform.SetParent(transform);
 
                 transform.parent.rotation = Quaternion.identity;

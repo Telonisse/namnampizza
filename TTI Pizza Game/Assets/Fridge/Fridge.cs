@@ -24,7 +24,7 @@ public class Fridge : MonoBehaviour
     private void Update()
     {
         Debug.Log(transform.localRotation.eulerAngles.y);
-        if (transform.localRotation.eulerAngles.y == 0)
+        if (transform.localRotation.eulerAngles.y <= 0)
         {
             open = false;
             for (int i = 0; i < toppingInFridgeArray.Length; i++)

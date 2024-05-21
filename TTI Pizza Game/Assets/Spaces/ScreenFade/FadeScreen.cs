@@ -29,7 +29,6 @@ public class FadeScreen : MonoBehaviour
     public void Fade(float alphaIn, float alphaOut)
     {
         StartCoroutine(FadeRoutine(alphaIn, alphaOut));
-        fadeOnStart = false;
     }
 
     private IEnumerator FadeRoutine(float alphaIn, float alphaOut)

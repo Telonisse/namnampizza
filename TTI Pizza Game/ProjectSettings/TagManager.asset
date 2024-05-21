@@ -18,6 +18,8 @@ TagManager:
   - Part2
   - Part3
   - Pizza
+  - SamplesInfoPanel
+  - Egg
   layers:
   - Default
   - TransparentFX

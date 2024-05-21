@@ -900,7 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 7358e191-33b7-43ca-b066-b2f00531ac66
-  instanceId: 91dbebe2-54d5-4653-804a-9ddf2dd0cd2e
+  instanceId: 8de704ce-47e3-4652-92cc-7d58102908c5
   version: 1
 --- !u!65 &7841957806458932055
 BoxCollider:
@@ -949,7 +949,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1 &7788647626971751859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 4e14e0ba-51f2-4a5c-a822-e304bf36d48c
-  instanceId: e97995e1-096c-4cbc-b51d-2e3743a57805
+  instanceId: e44f822d-7496-4a3a-a51e-a0e7f933d0b6
   version: 1
 --- !u!114 &1721976346179199147
 MonoBehaviour:

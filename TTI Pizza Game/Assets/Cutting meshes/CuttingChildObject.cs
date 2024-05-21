@@ -86,19 +86,6 @@ public class CuttingChildObject : MonoBehaviour
         if (other.gameObject.CompareTag("Pizza"))
         {
             isOnMyPizza = true;
-            //gameObject.GetComponent<Grabbable>().enabled = false;
-            //gameObject.GetComponent<PhysicsGrabbable>().enabled = false;
-            //gameObject.GetComponent<TouchHandGrabInteractable>().enabled = false;
-            //gameObject.GetComponent<MeshCollider>().enabled = false;
-
-            //Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-            //rb.useGravity = false;
-            //gameObject.GetComponent<BoxCollider>().enabled = false;
-           
-            //rb.isKinematic = true;
-
-            // Turn off box collider?
-
             deactivateObject(parent);
 
         }

@@ -166,10 +166,18 @@ public class PizzaScript : MonoBehaviour
         }
     }
 
-    public void GetToppings(int index, out bool isOnPizza, out bool tomatoSauce, out bool cheese)
+    public void GetToppings(int index, out bool isOnPizza, out bool tomatoSauce, out bool cheese, out bool state)
     {
         isOnPizza = pizzaToppingsArray[index].isOnPizza;
         tomatoSauce = tomatoSauceOnPizza;
         cheese = cheeseOnPizza;
+        if (currentState == pizzaStates.burned || currentState == pizzaStates.uncooked)
+        {
+            state = false;
+        }
+        else
+        {
+            state= true;
+        }
     }
 }

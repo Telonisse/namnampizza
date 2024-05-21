@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [SerializeField] int[] pointLevel;
+    [SerializeField] GameObject textCompleted;
 
+    private FadeScreen fade;
     int currentLevel = 1;
     private void Awake()
     {
@@ -24,14 +26,23 @@ public class GameController : MonoBehaviour
     }
     private void Start()
     {
-
+        fade = FindObjectOfType<FadeScreen>();
     }
     private void Update()
     {
         if (pointLevel[currentLevel - 1] == 30)
         {
+            StartCoroutine(WinSequence());
             SceneManager.LoadSceneAsync(0);
+            pointLevel[currentLevel - 1] = 0;
         }
+    }
+
+    private IEnumerator WinSequence()
+    {
+        textCompleted.SetActive(true);
+        fade.FadeOut();
+        yield return new WaitForSecondsRealtime(2);
     }
 
     public void Points(int points)
@@ -41,5 +52,9 @@ public class GameController : MonoBehaviour
     public int CurrentPoints()
     {
         return pointLevel[currentLevel - 1];
+    }
+    public int LevelPoints(int level)
+    {
+        return pointLevel[level];
     }
 }

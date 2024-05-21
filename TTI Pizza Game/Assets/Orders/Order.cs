@@ -52,6 +52,11 @@ public class Order : MonoBehaviour
     {
 
         orderText = null;
+        orderText += "Tomato sauce";
+        orderText += "\n";
+        orderText += "Cheese";
+        orderText += "\n";
+
         for (int i = 0; i < maxToppings; i++)
         {
             randomTopping = Random.Range(0, orderArray.Length);

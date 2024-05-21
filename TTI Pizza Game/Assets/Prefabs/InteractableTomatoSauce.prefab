@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5330799923013369648}
-  - component: {fileID: 4821302655663166681}
   - component: {fileID: 1037033221371194235}
   - component: {fileID: 7736571411342530203}
   m_Layer: 0
@@ -36,21 +35,6 @@ Transform:
   - {fileID: 4852462432462756939}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4821302655663166681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419293571629992221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockId: 7358e191-33b7-43ca-b066-b2f00531ac66
-  instanceId: 8b6d4869-37ab-42f2-b40f-8b9ad3dcd01f
-  version: 1
 --- !u!65 &1037033221371194235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70,8 +54,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.3704056, z: 1}
-  m_Center: {x: 0, y: -0.18520266, z: 0}
+  m_Size: {x: 0.9224278, y: 1.6371554, z: 1.0184166}
+  m_Center: {x: -0.01842156, y: -0.16662848, z: -0.039575286}
 --- !u!54 &7736571411342530203
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -139,7 +123,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8805910295353464401}
-  - component: {fileID: 1968436194604876447}
   - component: {fileID: 8331031914859858015}
   - component: {fileID: 1745162697552469848}
   - component: {fileID: 4272772805050429436}
@@ -165,21 +148,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5330799923013369648}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1968436194604876447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5515281424497331682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockId: 4e14e0ba-51f2-4a5c-a822-e304bf36d48c
-  instanceId: e91dfb4d-50c8-4dfa-9f8b-a2592bb81c63
-  version: 1
 --- !u!114 &8331031914859858015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407d4518ea2a97341a9e53cb1c959aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pourThreshold: 5
+  pourThreshold: 10
   origin: {fileID: 6031998044849491267}
   streamPrefab: {fileID: 5238570228697279498, guid: 687fe5b6c1388c34882009636030b3c7, type: 3}
   collisionTag: Pizza
@@ -361,5 +329,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.096148, y: 0.12703562, z: 0.10325346}
-  m_Center: {x: 0.0022423025, y: -0.014789224, z: -0.000984516}
+  m_Size: {x: 0.10173355, y: 0.14442137, z: 0.11148475}
+  m_Center: {x: -0.0036840066, y: -0.010328382, z: 0.00096251816}

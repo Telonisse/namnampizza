@@ -9,11 +9,17 @@ using static Meta.XR.MRUtilityKit.MRUK;
 public class FindSpawnPos : MonoBehaviour
 {
     [SerializeField] GameObject table;
+    [SerializeField] GameObject previewTable;
     [SerializeField] GameObject fridge;
+    [SerializeField] GameObject previewFridge;
     [SerializeField] GameObject oven;
+    [SerializeField] GameObject previewOven;
     [SerializeField] GameObject lucka;
+    [SerializeField] GameObject previewLucka;
     [SerializeField] Transform[] roomObjects;
     [SerializeField] Transform floor;
+
+    private GameObject currentPreview;
 
     private Vector3 spawnPos;
     private Quaternion spawnRot;
@@ -33,9 +39,6 @@ public class FindSpawnPos : MonoBehaviour
 
     private Vector3 boxCenterFridge;
     private Vector3 boxSizeFridge;
-    private float movedFridge = 0;
-    private float maxMoveFridge = 0;
-    private bool moveOnceFridge = false;
     private bool fridgeDone = false;
     private Vector3 prevPosFridge;
     private float lastTimeMovedFridge;
@@ -45,9 +48,6 @@ public class FindSpawnPos : MonoBehaviour
 
     private Vector3 boxCenterOven;
     private Vector3 boxSizeOven;
-    private float movedOven = 0;
-    private float maxMoveOven = 0;
-    private bool moveOnceOven = false;
     private bool ovenDone = false;
     private Vector3 prevPosOven;
     private float lastTimeMovedOven;
@@ -57,9 +57,6 @@ public class FindSpawnPos : MonoBehaviour
 
     private Vector3 boxCenterLucka;
     private Vector3 boxSizeLucka;
-    private float movedLucka = 0;
-    private float maxMoveLucka = 0;
-    private bool moveOnceLucka = false;
     //private bool luckaDone = false;
     //private Vector3 prevPosLucka;
     //private float lastTimeMovedLucka;
@@ -161,8 +158,24 @@ public class FindSpawnPos : MonoBehaviour
 
         roomLoaded = true;
     }
+    private void Start()
+    {
+        //currentPreview = Instantiate(fridge);
+    }
     private void Update()
     {
+        //Ray ray = new Ray(OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch), OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch) * Vector3.forward);
+
+        //if (Physics.Raycast(ray, out RaycastHit hit))
+        //{
+        //    currentPreview.transform.position = hit.point;
+        //    currentPreview.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+        //    if (OVRInput.GetDown(OVRInput.Button.One) && hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR"))
+        //    {
+        //        Instantiate(fridge, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+        //    }
+        //}
+
         if (roomLoaded)
         {
             //FIND POS COUNTERS

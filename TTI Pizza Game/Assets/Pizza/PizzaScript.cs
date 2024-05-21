@@ -31,6 +31,7 @@ public class PizzaScript : MonoBehaviour
     public float timer = 0;
     private bool isRunning = false;
 
+    public bool meAmOnPizza = false;
     private enum pizzaStates
     {
         uncooked,
@@ -86,26 +87,36 @@ public class PizzaScript : MonoBehaviour
         {
             isRunning = true;
         }
-        for (int i = 0; i < pizzaToppingsArray.Length; i++)
+        CuttingChildObject cutScript = other.GetComponent<CuttingChildObject>();
+        if (cutScript != null && cutScript.beenCut)
         {
-            if (pizzaToppingsArray[i].topping == other.tag)
+            for (int i = 0; i < pizzaToppingsArray.Length; i++)
             {
-                other.GetComponent<Rigidbody>().isKinematic = true;
-                pizzaToppingsArray[i].isOnPizza = true;
-                BoxCollider box = other.GetComponent<BoxCollider>();
-                other.transform.position = new Vector3(other.transform.position.x, transform.parent.position.y - box.center.y + 0.02f, other.transform.position.z);
-                other.transform.SetParent(transform);
+                if (pizzaToppingsArray[i].topping == other.tag)
+                {
+                    other.GetComponent<Rigidbody>().isKinematic = true;
+                    pizzaToppingsArray[i].isOnPizza = true;
+                    BoxCollider box = other.GetComponent<BoxCollider>();
+                    other.transform.position = new Vector3(other.transform.position.x, transform.parent.position.y - box.center.y + 0.02f, other.transform.position.z);
+                    other.transform.SetParent(transform);
 
-                other.gameObject.GetComponent<Grabbable>().enabled = false;
-                other.gameObject.GetComponent<PhysicsGrabbable>().enabled = false;
-                other.gameObject.GetComponent<TouchHandGrabInteractable>().enabled = false;
-                other.gameObject.GetComponent<MeshCollider>().enabled = false;
-                other.gameObject.GetComponent<BoxCollider>().enabled = false;
-                other.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                    other.gameObject.GetComponent<Grabbable>().enabled = false;
+                    other.gameObject.GetComponent<PhysicsGrabbable>().enabled = false;
+                    other.gameObject.GetComponent<TouchHandGrabInteractable>().enabled = false;
+                    other.gameObject.GetComponent<BoxCollider>().enabled = false;
+                    other.gameObject.GetComponent<Rigidbody>().useGravity = false;
 
-                transform.parent.rotation = Quaternion.identity;
-                other.transform.rotation = Quaternion.identity;
-                //other.transform.localScale = new Vector3(1,1,1); pls scale work
+                    MeshCollider otherMeshCollider = other.gameObject.GetComponent<MeshCollider>();
+                    if (otherMeshCollider != null)
+                    {
+                        otherMeshCollider.enabled = false;
+                    }
+
+                    meAmOnPizza = true;
+
+                    transform.parent.rotation = Quaternion.identity;
+                    other.transform.rotation = Quaternion.identity;
+                }
             }
         }
     }

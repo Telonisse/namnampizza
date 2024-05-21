@@ -11,6 +11,7 @@ public class CuttingChildObject : MonoBehaviour
 
     public bool detachChild;
     public bool isOnMyPizza = false;
+    public bool beenCut = false;
 
 
     void Update()
@@ -23,8 +24,10 @@ public class CuttingChildObject : MonoBehaviour
 
         }
 
-        if (parent.transform.childCount == 1 && parent.name == transform.parent.name) 
+        if (parent != null && transform.parent != null)
+            if (parent.transform.childCount == 1 && parent.name == transform.parent.name) 
         {
+
             Debug.Log("detach true");
             detachChild = true;
             gameObject.GetComponent<Grabbable>().enabled = true;
@@ -36,6 +39,7 @@ public class CuttingChildObject : MonoBehaviour
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.useGravity = true;
             rb.isKinematic = false;
+                beenCut = true;
 
 
         }
@@ -62,7 +66,8 @@ public class CuttingChildObject : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Knife"))
         {
-            if (isOnMyPizza == true)
+            PizzaScript pizza = other.gameObject.GetComponent<PizzaScript>();
+            if (pizza != null && pizza.meAmOnPizza)
             {
                 return;
             }
@@ -79,14 +84,16 @@ public class CuttingChildObject : MonoBehaviour
                 rb.isKinematic = false;
 
                 deactivateObject(parent);
+                beenCut = true;
             }
             
         }
-
-        if (other.gameObject.CompareTag("Pizza"))
+        if (other.gameObject.CompareTag("Pizza") )
         {
-            isOnMyPizza = true;
-            deactivateObject(parent);
+            
+            //isOnMyPizza = true;
+            //parent.SetActive(false);
+           // deactivateObject(parent);
 
         }
     }

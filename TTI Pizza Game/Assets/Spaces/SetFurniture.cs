@@ -9,6 +9,7 @@ public class SetFurniture : MonoBehaviour
     [SerializeField] GameObject oven;
     [SerializeField] GameObject lucka;
     [SerializeField] GameObject table;
+    [SerializeField] GameObject door;
 
     public GameController gameController;
     [SerializeField] Transform[] roomObjects;
@@ -79,67 +80,90 @@ public class SetFurniture : MonoBehaviour
             Debug.Log("WHY ARE U NULL");
             gameController = FindObjectOfType<GameController>();
         }
-        gameController.GetPos(out Vector3 posFridge, out Vector3 posOven, out Vector3 posLucka);
-
-        Debug.Log(posFridge);
-        Debug.Log(posOven);
-        Debug.Log(posLucka);
-
-        fridge.transform.position = posFridge;
-        oven.transform.position = posOven;
-        lucka.transform.position = posLucka;
-        if (walls != null)
+        gameController.GetPos(out Vector3 posFridge, out Vector3 posOven, out Vector3 posLucka, out Vector3 posDoor);
+        if (fridge != null)
         {
-            GameObject closestWall = null;
-            float closestDistance = Mathf.Infinity;
-
-            foreach (Transform wall in walls)
+            fridge.transform.position = posFridge;
+            if (walls != null)
             {
-                float distanceToWall = Vector3.Distance(fridge.transform.position, wall.transform.position);
-                if (distanceToWall < closestDistance)
+                GameObject closestWall = null;
+                float closestDistance = Mathf.Infinity;
+
+                foreach (Transform wall in walls)
                 {
-                    closestWall = wall.gameObject;
-                    closestDistance = distanceToWall;
+                    float distanceToWall = Vector3.Distance(fridge.transform.position, wall.transform.position);
+                    if (distanceToWall < closestDistance)
+                    {
+                        closestWall = wall.gameObject;
+                        closestDistance = distanceToWall;
+                    }
                 }
+                Vector3 lookPos = new Vector3(closestWall.transform.position.x, 0f, closestWall.transform.position.z);
+                fridge.transform.rotation = Quaternion.LookRotation(-lookPos);
             }
-            Vector3 lookPos = new Vector3(closestWall.transform.position.x, 0f, closestWall.transform.position.z);
-            fridge.transform.rotation = Quaternion.LookRotation(-lookPos);
         }
-        if (walls != null)
+        if (oven != null)
         {
-            GameObject closestWall = null;
-            float closestDistance = Mathf.Infinity;
-
-            foreach (Transform wall in walls)
+            oven.transform.position = posOven;
+            if (walls != null)
             {
-                float distanceToWall = Vector3.Distance(oven.transform.position, wall.transform.position);
-                if (distanceToWall < closestDistance)
+                GameObject closestWall = null;
+                float closestDistance = Mathf.Infinity;
+
+                foreach (Transform wall in walls)
                 {
-                    closestWall = wall.gameObject;
-                    closestDistance = distanceToWall;
+                    float distanceToWall = Vector3.Distance(oven.transform.position, wall.transform.position);
+                    if (distanceToWall < closestDistance)
+                    {
+                        closestWall = wall.gameObject;
+                        closestDistance = distanceToWall;
+                    }
                 }
+                Vector3 lookPos = new Vector3(closestWall.transform.position.x, 0f, closestWall.transform.position.z);
+                oven.transform.rotation = Quaternion.LookRotation(-lookPos);
             }
-            Vector3 lookPos = new Vector3(closestWall.transform.position.x, 0f, closestWall.transform.position.z);
-            oven.transform.rotation = Quaternion.LookRotation(-lookPos);
         }
-        if (walls != null)
+        if (lucka != null)
         {
-            GameObject closestWall = null;
-            float closestDistance = Mathf.Infinity;
-
-            foreach (Transform wall in walls)
+            lucka.transform.position = posLucka;
+            if (walls != null)
             {
-                float distanceToWall = Vector3.Distance(lucka.transform.position, wall.transform.position);
-                if (distanceToWall < closestDistance)
-                {
-                    closestWall = wall.gameObject;
-                    closestDistance = distanceToWall;
-                }
-            }
-            Vector3 lookPos = new Vector3(closestWall.transform.position.x, 0f, closestWall.transform.position.z);
-            lucka.transform.rotation = closestWall.transform.rotation;
-        }
+                GameObject closestWall = null;
+                float closestDistance = Mathf.Infinity;
 
+                foreach (Transform wall in walls)
+                {
+                    float distanceToWall = Vector3.Distance(lucka.transform.position, wall.transform.position);
+                    if (distanceToWall < closestDistance)
+                    {
+                        closestWall = wall.gameObject;
+                        closestDistance = distanceToWall;
+                    }
+                }
+                lucka.transform.rotation = closestWall.transform.rotation;
+            }
+        }
+        if (door != null)
+        {
+            door.transform.position = posDoor;
+            if (walls != null)
+            {
+                GameObject closestWall = null;
+                float closestDistance = Mathf.Infinity;
+
+                foreach (Transform wall in walls)
+                {
+                    float distanceToWall = Vector3.Distance(door.transform.position, wall.transform.position);
+                    if (distanceToWall < closestDistance)
+                    {
+                        closestWall = wall.gameObject;
+                        closestDistance = distanceToWall;
+                    }
+                }
+                Vector3 lookPos = new Vector3(closestWall.transform.position.x, 0f, closestWall.transform.position.z);
+                door.transform.rotation = closestWall.transform.rotation;
+            }
+        }
         fridge.GetComponentInChildren<Fridge>().MovedDone();
     }
 }

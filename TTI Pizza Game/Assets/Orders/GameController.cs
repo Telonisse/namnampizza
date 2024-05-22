@@ -8,9 +8,10 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] int[] pointLevel;
 
-    [SerializeField] Vector3 fridgePos;
-    [SerializeField] Vector3 ovenPos;
-    [SerializeField] Vector3 luckaPos;
+    private Vector3 fridgePos;
+    private Vector3 ovenPos;
+    private Vector3 luckaPos;
+    private Vector3 doorPos;
 
     private FadeScreen fade;
     int currentLevel = 1;
@@ -59,16 +60,18 @@ public class GameController : MonoBehaviour
     {
         return pointLevel[level];
     }
-    public void SavePos(Vector3 fridgepos1, Vector3 ovenpos1, Vector3 luckapos1)
+    public void SavePos(Vector3 fridgepos1, Vector3 ovenpos1, Vector3 luckapos1, Vector3 doorpos1)
     {
         fridgePos = fridgepos1;
         ovenPos = ovenpos1;
         luckaPos = luckapos1;
+        doorPos = doorpos1;
     }
-    public void GetPos(out Vector3 fridgepos1,out Vector3 ovenpos1,out Vector3 luckapos1)
+    public void GetPos(out Vector3 fridgepos1,out Vector3 ovenpos1,out Vector3 luckapos1, out Vector3 doorpos1)
     {
         fridgepos1 = fridgePos;
         ovenpos1 = ovenPos;
         luckapos1 = luckaPos;
+        doorpos1 = doorPos;
     }
 }

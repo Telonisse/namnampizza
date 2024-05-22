@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Meta.XR.MRUtilityKit.MRUK;
 
 public class FindSpawnPos : MonoBehaviour
@@ -191,5 +192,6 @@ public class FindSpawnPos : MonoBehaviour
     {
         fade.FadeOut(false);
         yield return new WaitForSecondsRealtime(2);
+        SceneManager.LoadSceneAsync(1);
     }
 }

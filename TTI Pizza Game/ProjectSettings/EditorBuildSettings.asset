@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/EVERYTHING SPAWN BETTER WAOW.unity
+    guid: feae51d84c7066b4b8a133952933eeb6
+  - enabled: 1
     path: Assets/Scenes/MENU EVERYTHING.unity
     guid: 008cb57256f46c64097b9525dc656044
   - enabled: 1

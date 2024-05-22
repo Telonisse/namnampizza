@@ -9,7 +9,6 @@ using static Meta.XR.MRUtilityKit.MRUK;
 public class FindSpawnPos : MonoBehaviour
 {
     [SerializeField] GameObject table;
-    [SerializeField] GameObject previewTable;
     [SerializeField] GameObject fridge;
     [SerializeField] GameObject previewFridge;
     [SerializeField] GameObject oven;
@@ -52,6 +51,7 @@ public class FindSpawnPos : MonoBehaviour
     private bool roomLoaded = false;
     private bool wasButtonPressed = false;
     private GameController gameController;
+    private FadeScreen fade;
 
     public void FindSpawnPosOnSurface()
     {
@@ -98,6 +98,7 @@ public class FindSpawnPos : MonoBehaviour
     {
         currentPreview = Instantiate(previewFridge);
         gameController = FindObjectOfType<GameController>();
+        fade = FindObjectOfType<FadeScreen>();
     }
     private void Update()
     {
@@ -160,7 +161,13 @@ public class FindSpawnPos : MonoBehaviour
             if (luckaDone && ovenDone && fridgeDone)
             {
                 gameController.SavePos(spawnedFridge.transform.position, spawnedOven.transform.position, spawnedLucka.transform.position);
+                StartCoroutine(FurnitureDone());
             }
         }
+    }
+    private IEnumerator FurnitureDone()
+    {
+        fade.FadeOut(false);
+        yield return new WaitForSecondsRealtime(2);
     }
 }

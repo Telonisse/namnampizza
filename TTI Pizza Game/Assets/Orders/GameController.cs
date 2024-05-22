@@ -8,9 +8,9 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] int[] pointLevel;
 
-    private Vector3 fridgePos;
-    private Vector3 ovenPos;
-    private Vector3 luckaPos;
+    [SerializeField] Vector3 fridgePos;
+    [SerializeField] Vector3 ovenPos;
+    [SerializeField] Vector3 luckaPos;
 
     private FadeScreen fade;
     int currentLevel = 1;
@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
         if (pointLevel[currentLevel - 1] == 30)
         {
             StartCoroutine(WinSequence());
-            SceneManager.LoadSceneAsync(0);
+            SceneManager.LoadSceneAsync(1);
             pointLevel[currentLevel - 1] = 0;
         }
     }
@@ -59,10 +59,16 @@ public class GameController : MonoBehaviour
     {
         return pointLevel[level];
     }
-    public void SavePos(Vector3 fridgepos, Vector3 ovenpos, Vector3 luckapos)
+    public void SavePos(Vector3 fridgepos1, Vector3 ovenpos1, Vector3 luckapos1)
     {
-        fridgePos = fridgepos;
-        ovenPos = ovenpos;
-        luckaPos = luckapos;
+        fridgePos = fridgepos1;
+        ovenPos = ovenpos1;
+        luckaPos = luckapos1;
+    }
+    public void GetPos(out Vector3 fridgepos1,out Vector3 ovenpos1,out Vector3 luckapos1)
+    {
+        fridgepos1 = fridgePos;
+        ovenpos1 = ovenPos;
+        luckapos1 = luckaPos;
     }
 }

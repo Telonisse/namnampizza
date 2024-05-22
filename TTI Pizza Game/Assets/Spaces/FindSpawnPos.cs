@@ -42,17 +42,16 @@ public class FindSpawnPos : MonoBehaviour
     //spawn oven
     private GameObject spawnedOven = null;
 
-    private Vector3 boxCenterOven;
-    private Vector3 boxSizeOven;
     private bool ovenDone = false;
-    private Vector3 prevPosOven;
-    private float lastTimeMovedOven;
 
     //Spawn lucka
+    private GameObject spawnedLucka = null;
+
     private bool luckaDone = false;
 
     private bool roomLoaded = false;
     private bool wasButtonPressed = false;
+    private GameController gameController;
 
     public void FindSpawnPosOnSurface()
     {
@@ -98,6 +97,7 @@ public class FindSpawnPos : MonoBehaviour
     private void Start()
     {
         currentPreview = Instantiate(previewFridge);
+        gameController = FindObjectOfType<GameController>();
     }
     private void Update()
     {
@@ -113,48 +113,54 @@ public class FindSpawnPos : MonoBehaviour
                 currentPreview.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
                 if (OVRInput.GetDown(OVRInput.Button.One) && !fridgeDone && !wasButtonPressed && isButtonPressed && hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR")) //&& hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR")
                 {
-                    Instantiate(fridge, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
-                    //save pos
-                    fridgeDone = true;
-                    Destroy(currentPreview);
-                    currentPreview = Instantiate(previewOven);
-                    wasButtonPressed = isButtonPressed;
+                    if (hit.transform.GetComponentInParent<MRUKAnchor>() != null)
+                    {
+                        if (hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR"))
+                        {
+                            spawnedFridge = Instantiate(fridge, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+                            //save pos
+                            fridgeDone = true;
+                            Destroy(currentPreview);
+                            currentPreview = Instantiate(previewOven);
+                            wasButtonPressed = isButtonPressed;
+                        }
+                    }
                 }
                 if (OVRInput.GetDown(OVRInput.Button.One) && !ovenDone && fridgeDone && !wasButtonPressed && isButtonPressed && hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR")) //
                 {
-                    Debug.Log("STOP SPAWN OVEN PLSPSLPSL");
-                    Instantiate(oven, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
-                    //save pos
-                    ovenDone = true;
-                    Destroy(currentPreview);
-                    currentPreview = Instantiate(previewLucka);
-                    wasButtonPressed = isButtonPressed;
+                    if (hit.transform.GetComponentInParent<MRUKAnchor>() != null)
+                    {
+                        if (hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR"))
+                        {
+                            Debug.Log("STOP SPAWN OVEN PLSPSLPSL");
+                            spawnedOven = Instantiate(oven, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+                            //save pos
+                            ovenDone = true;
+                            Destroy(currentPreview);
+                            currentPreview = Instantiate(previewLucka);
+                            wasButtonPressed = isButtonPressed;
+                        }
+                    }
                 }
-                if (OVRInput.GetDown(OVRInput.Button.One) && hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("WALL_FACE") && fridgeDone && ovenDone)
+                if (OVRInput.GetDown(OVRInput.Button.One) && hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("WALL_FACE") && fridgeDone && ovenDone && !luckaDone)
                 {
-                    Instantiate(oven, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
-                    //save pos
-                    luckaDone = true;
+                    if (hit.transform.GetComponentInParent<MRUKAnchor>() != null)
+                    {
+                        if (hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR"))
+                        {
+                            spawnedLucka = Instantiate(lucka, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+                            //save pos
+                            luckaDone = true;
+                        }
+                    }
                 }
                 wasButtonPressed = isButtonPressed;
             }
+
+            if (luckaDone && ovenDone && fridgeDone)
+            {
+                gameController.SavePos(spawnedFridge.transform.position, spawnedOven.transform.position, spawnedLucka.transform.position);
+            }
         }
-
-        //if (roomLoaded)
-        //{
-        //    //FIND POS COUNTERS
-        //    SpawnCounters();
-
-        //    //FIND POS FRIDGE
-        //    SpawnFridge();
-
-        //    //FIND POS OVEN
-        //    SpawnOven();
-
-        //    //FIND POS LUCKA
-        //    SpawnLucka();
-
-        //    CanSpawnCounters();
-        //}
     }
 }

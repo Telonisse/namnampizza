@@ -7,7 +7,10 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [SerializeField] int[] pointLevel;
-    [SerializeField] GameObject textCompleted;
+
+    private Vector3 fridgePos;
+    private Vector3 ovenPos;
+    private Vector3 luckaPos;
 
     private FadeScreen fade;
     int currentLevel = 1;
@@ -40,8 +43,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator WinSequence()
     {
-        textCompleted.SetActive(true);
-        fade.FadeOut();
+        fade.FadeOut(true);
         yield return new WaitForSecondsRealtime(2);
     }
 
@@ -56,5 +58,11 @@ public class GameController : MonoBehaviour
     public int LevelPoints(int level)
     {
         return pointLevel[level];
+    }
+    public void SavePos(Vector3 fridgepos, Vector3 ovenpos, Vector3 luckapos)
+    {
+        fridgePos = fridgepos;
+        ovenPos = ovenpos;
+        luckaPos = luckapos;
     }
 }

@@ -1,17 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class FadeScreen : MonoBehaviour
 {
     [SerializeField] Color fadeColor;
     [SerializeField] float fadeDuration;
     [SerializeField] bool fadeOnStart;
+    [SerializeField] GameObject text;
+    [SerializeField] TextMeshPro pointText;
+
     private Renderer rend;
+    private GameController gameController;
 
     void Start()
     {
         rend = GetComponent<Renderer>();
+        gameController = FindObjectOfType<GameController>();
         if (fadeOnStart)
         {
             FadeIn();
@@ -21,8 +27,12 @@ public class FadeScreen : MonoBehaviour
     {
         Fade(1, 0);
     }
-    public void FadeOut()
+    public void FadeOut(bool showText)
     {
+        if (showText)
+        {
+            text.SetActive(true);
+        }
         Fade(0, 1);
     }
 
@@ -47,5 +57,10 @@ public class FadeScreen : MonoBehaviour
         Color newcolor2 = fadeColor;
         newcolor2.a = alphaOut;
         rend.material.SetColor("_Color", newcolor2);
+    }
+
+    private void Update()
+    {
+        pointText.text = gameController.CurrentPoints().ToString();
     }
 }

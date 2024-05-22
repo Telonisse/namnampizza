@@ -115,6 +115,7 @@ public class FindSpawnPos : MonoBehaviour
             }
             if (OVRInput.GetDown(OVRInput.Button.One) && hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR") && !ovenDone && fridgeDone)
             {
+                Debug.Log("STOP SPAWN OVEN PLSPSLPSL");
                 Instantiate(oven, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
                 //save pos
                 ovenDone = true;

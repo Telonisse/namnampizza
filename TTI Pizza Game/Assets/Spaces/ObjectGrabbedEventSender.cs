@@ -11,6 +11,8 @@ public class ObjectGrabbedEventSender : OneGrabFreeTransformer, ITransformer
     public delegate void ObjectReleased(GameObject source);
     public event ObjectReleased onObjectReleased;
 
+    [SerializeField] bool quit = false;
+
     public new void Initialize(IGrabbable grabbable)
     {
         base.Initialize(grabbable);
@@ -18,7 +20,15 @@ public class ObjectGrabbedEventSender : OneGrabFreeTransformer, ITransformer
     public new void BeginTransform()
     {
         base.BeginTransform();
-        Debug.Log("OMG GRABBED");
+        if (quit)
+        {
+            Application.Quit();
+        }
+        else 
+        {
+            SceneManager.LoadSceneAsync(1);
+        }
+
         onObjectGrabbed?.Invoke(gameObject);
     }
 

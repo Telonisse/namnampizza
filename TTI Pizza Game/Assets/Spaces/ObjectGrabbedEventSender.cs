@@ -18,7 +18,7 @@ public class ObjectGrabbedEventSender : OneGrabFreeTransformer, ITransformer
     public new void BeginTransform()
     {
         base.BeginTransform();
-        SceneManager.LoadSceneAsync(1);
+        Debug.Log("OMG GRABBED");
         onObjectGrabbed?.Invoke(gameObject);
     }
 

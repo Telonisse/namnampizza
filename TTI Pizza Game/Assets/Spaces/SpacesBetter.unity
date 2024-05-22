@@ -5711,7 +5711,7 @@ MonoBehaviour:
   Colliders: 1
   CutHoles: 0
   castShadows: 1
-  hideMesh: 0
+  hideMesh: 1
   textureCoordinateModes:
   - WallU: 5
     WallV: 2
@@ -7589,7 +7589,7 @@ MonoBehaviour:
       m_Calls: []
   EnableWorldLock: 1
   SceneSettings:
-    DataSource: 1
+    DataSource: 2
     RoomIndex: 2
     RoomPrefabs:
     - {fileID: 5618556046422172173, guid: 4b454e8ccd6764ccdbcd91586969863f, type: 3}
@@ -32405,6 +32405,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawn furniture
       objectReference: {fileID: 0}
+    - target: {fileID: 7157446428324259274, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: previewOven
+      value: 
+      objectReference: {fileID: 28552394800402144, guid: f02c975dc6298934089430608c682ad8, type: 3}
+    - target: {fileID: 7157446428324259274, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: previewLucka
+      value: 
+      objectReference: {fileID: 5640391162450352537, guid: f9c2e77ba0f3af844aae037951f7abaf, type: 3}
+    - target: {fileID: 7157446428324259274, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: previewTable
+      value: 
+      objectReference: {fileID: 7047548193653855166, guid: 99f9113d80de8384cb765779cd58fec5, type: 3}
+    - target: {fileID: 7157446428324259274, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: previewFridge
+      value: 
+      objectReference: {fileID: 8675125804084867711, guid: b204d3535687c0c4981abeffb1b3a541, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32418,6 +32434,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 334869519}
     m_Modifications:
+    - target: {fileID: 894378184172622985, guid: 10b5b577ed6525f46856ff3ded908e0f, type: 3}
+      propertyPath: fadeOnStart
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2085055889936107031, guid: 10b5b577ed6525f46856ff3ded908e0f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

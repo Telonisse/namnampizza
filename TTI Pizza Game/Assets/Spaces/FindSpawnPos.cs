@@ -134,7 +134,7 @@ public class FindSpawnPos : MonoBehaviour
                         }
                     }
                 }
-                if (OVRInput.GetDown(OVRInput.Button.One) && !ovenDone && fridgeDone && !wasButtonPressed && isButtonPressed && hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR")) //
+                if (OVRInput.GetDown(OVRInput.Button.One) && !ovenDone && fridgeDone && !wasButtonPressed && isButtonPressed) //
                 {
                     if (hit.transform.GetComponentInParent<MRUKAnchor>() != null)
                     {
@@ -150,7 +150,7 @@ public class FindSpawnPos : MonoBehaviour
                         }
                     }
                 }
-                if (OVRInput.GetDown(OVRInput.Button.One) && fridgeDone && ovenDone && !doorDone && !wasButtonPressed && isButtonPressed && hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR")) //&& hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR")
+                if (OVRInput.GetDown(OVRInput.Button.One) && fridgeDone && ovenDone && !doorDone && !wasButtonPressed && isButtonPressed) //&& hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR")
                 {
                     if (hit.transform.GetComponentInParent<MRUKAnchor>() != null)
                     {
@@ -165,11 +165,11 @@ public class FindSpawnPos : MonoBehaviour
                         }
                     }
                 }
-                if (OVRInput.GetDown(OVRInput.Button.One) && hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("WALL_FACE") && fridgeDone && ovenDone && doorDone && !luckaDone)
+                if (OVRInput.GetDown(OVRInput.Button.One) && fridgeDone && ovenDone && doorDone && !luckaDone && !wasButtonPressed && isButtonPressed)
                 {
                     if (hit.transform.GetComponentInParent<MRUKAnchor>() != null)
                     {
-                        if (hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR"))
+                        if (hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("WALL_FACE"))
                         {
                             spawnedLucka = Instantiate(lucka, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
                             //save pos
@@ -180,7 +180,7 @@ public class FindSpawnPos : MonoBehaviour
                 wasButtonPressed = isButtonPressed;
             }
 
-            if (luckaDone && ovenDone && fridgeDone)
+            if (luckaDone && ovenDone && fridgeDone && doorDone)
             {
                 gameController.SavePos(spawnedFridge.transform.position, spawnedOven.transform.position, spawnedLucka.transform.position, spawnedDoor.transform.position);
                 StartCoroutine(FurnitureDone());

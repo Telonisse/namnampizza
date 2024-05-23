@@ -643,6 +643,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5144354536256236204, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5479986066346500091, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
       propertyPath: pointsBadPizza
       value: 0
@@ -685,7 +689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7457930173635813912, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.082
       objectReference: {fileID: 0}
     - target: {fileID: 7457930173635813912, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
       propertyPath: m_LocalRotation.w

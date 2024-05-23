@@ -6,22 +6,78 @@ using UnityEngine;
 
 public class StarPoints : MonoBehaviour
 {
-    GameController gameController;
+    [SerializeField] private GameObject[] starEmpty; 
+    [SerializeField] private GameObject[] starFull;  
+    [SerializeField] private int level; // Level for script specficcicicopkokcciko
 
-    [SerializeField] GameObject starEmpty1;
-    [SerializeField] GameObject starFull1;
-
-    [SerializeField] GameObject starEmpty2;
-    [SerializeField] GameObject starFull2;
-
-    [SerializeField] GameObject starEmpty3;
-    [SerializeField] GameObject starFull3;
+    private GameController gameController;
 
     private void Start()
     {
         gameController = FindObjectOfType<GameController>();
+
+        if (gameController != null)
+        {
+            UpdateStars();
+        }
     }
 
-   
+    private void UpdateStars()
+    {
+        int points = gameController.GetPointLevel(level); 
+        int savedStars = PlayerPrefs.GetInt("Stars_Level_" + level, 0); 
 
+        
+        foreach (var star in starFull)
+        {
+            star.SetActive(false);
+        }
+
+       
+        for (int i = 0; i < savedStars; i++)
+        {
+            starFull[i].SetActive(true);
+           
+            if (i < starEmpty.Length)
+            {
+                starEmpty[i].SetActive(false);
+            }
+        }
+
+        
+        int starsEarned = StarCalculator(points);
+        for (int i = 0; i < starsEarned; i++)
+        {
+            starFull[i].SetActive(true);
+            
+            if (i < starEmpty.Length)
+            {
+                starEmpty[i].SetActive(false);
+            }
+        }
+
+        PlayerPrefs.SetInt("Stars_Level_" + level, starsEarned);
+        PlayerPrefs.Save();
+
+    }
+
+    private int StarCalculator(int points)
+    {
+        if (points >= 30)
+        {
+            return 3;
+        }
+        else if (points >= 20)
+        {
+            return 2;
+        }
+        else if (points >= 10)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
 }

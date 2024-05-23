@@ -38,7 +38,8 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-        //currentLevel = SceneManager.GetActiveScene().buildIndex;
+        // currentLevel = SceneManager.GetActiveScene().buildIndex; 
+
         if (fade == null)
         {
             fade = FindObjectOfType<FadeScreen>();
@@ -108,4 +109,17 @@ public class GameController : MonoBehaviour
         luckapos1 = luckaPos;
         doorpos1 = doorPos;
     }
+
+
+
+    // DONT KILL ME THIS ALL I ADDED I PROMISE
+    public int GetPointLevel(int level)
+    {
+        if (level >= 0 && level < pointLevel.Length)
+        {
+            return pointLevel[level];
+        }
+        return 0;
+    }
+
 }

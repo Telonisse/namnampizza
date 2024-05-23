@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{8dfd5f58-7ae5-4f23-b43a-c19434441eae}">
+		<property name="assetPath">
+			<value>ESM_Cooking_Game_One_Shot_Actions_Slice_Bread_Thick_03_v2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.43922916666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{17cf5cd2-1060-4b24-968a-9697b4867906}</destination>
+		</relationship>
+	</object>
+</objects>

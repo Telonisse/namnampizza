@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d8a89c64-4d29-45e5-ad9c-5b0e7d0f43bb}">
+		<property name="assetPath">
+			<value>ESM_Explainer_Video_One_Shot_Paper_Foley_Book_Leather_Grab_2_Hit.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.2432291666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{17cf5cd2-1060-4b24-968a-9697b4867906}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -11,7 +11,10 @@ public class Counters : MonoBehaviour
     [SerializeField] GameObject rivjarn;
     private Vector3 startPosRiv;
 
-    bool selected = false;
+    public bool selected = false;
+
+    public float timer = 0f;
+    [SerializeField] float maxTimer = 3f;
 
     private void Awake()
     {
@@ -21,27 +24,17 @@ public class Counters : MonoBehaviour
     }
     private void Start()
     {
-        startPosKnife = knife.transform.position;
-        startPosTomato = tomatoSauce.transform.position;
-        startPosRiv = rivjarn.transform.position;
     }
     void Update()
     {
-        //if (Vector3.Distance(transform.position, knife.transform.position) >= 2f)
-        //{
-        //    knife.transform.position = startPosKnife;
-        //}
-        //if (Vector3.Distance(transform.position, tomatoSauce.transform.position) >= 2f)
-        //{
-        //    tomatoSauce.transform.position = startPosTomato;
-        //}
-        //if (Vector3.Distance(transform.position, rivjarn.transform.position) >= 2f)
-        //{
-        //    rivjarn.transform.position = startPosRiv;
-        //}
-
-        if (selected)
+        if (selected == true)
         {
+            timer += Time.deltaTime;
+        }
+        if (timer >= maxTimer && selected == true)
+        {
+            Debug.Log("Timer Stopped");
+            timer = 0f;
             knife.transform.position = startPosKnife;
             tomatoSauce.transform.position = startPosTomato;
             rivjarn.transform.position = startPosRiv;
@@ -55,6 +48,7 @@ public class Counters : MonoBehaviour
     public void DeselectThumbsUp()
     {
         selected = false;
+        timer = 0f;
     }
 
     public void SetNonKinematic()
@@ -63,5 +57,8 @@ public class Counters : MonoBehaviour
         tomatoSauce.GetComponent<Rigidbody>().isKinematic = false;
         rivjarn.GetComponent<Rigidbody>().isKinematic = false;
         Debug.Log("kinematic set");
+        startPosKnife = knife.transform.position;
+        startPosTomato = tomatoSauce.transform.position;
+        startPosRiv = rivjarn.transform.position;
     }
 }

@@ -359,8 +359,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets/FMod/VRPizza/VRPizza.fspro
-  sourceBankPath: Assets/FMod/VRPizza/Build
+  sourceProjectPath: Assets/FMod/FMOD_pizzaljud_b/FMOD_pizzaljud_b.fspro
+  sourceBankPath: Assets/FMod/FMOD_pizzaljud_b/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

@@ -40,7 +40,7 @@ public class LevelStarter : MonoBehaviour
         if (other.gameObject.CompareTag("Stamp"))
         {
             //SceneManager.LoadSceneAsync(levelPicker.whichLevel);
-            Debug.Log(levelPicker.whichLevel);
+            Debug.Log("Meow" +  levelPicker.whichLevel);
 
         }
     }

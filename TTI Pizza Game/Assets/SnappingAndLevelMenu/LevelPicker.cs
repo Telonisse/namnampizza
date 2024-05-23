@@ -23,6 +23,6 @@ public class LevelPicker : MonoBehaviour
     }
     public void PickLevel4()
     {
-         whichLevel = 5;
+         whichLevel = 4;
     }
 }

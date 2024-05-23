@@ -1,6 +1,7 @@
 using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class StarPoints : MonoBehaviour
@@ -14,6 +15,6 @@ public class StarPoints : MonoBehaviour
     [SerializeField] GameObject starEmpty3;
     [SerializeField] GameObject starFull3;
 
-   
+
 
 }

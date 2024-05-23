@@ -38,6 +38,7 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
+        currentLevel = SceneManager.GetActiveScene().buildIndex;
         if (fade == null)
         {
             fade = FindObjectOfType<FadeScreen>();

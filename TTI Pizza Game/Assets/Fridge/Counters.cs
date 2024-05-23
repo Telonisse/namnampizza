@@ -11,6 +11,8 @@ public class Counters : MonoBehaviour
     [SerializeField] GameObject rivjarn;
     private Vector3 startPosRiv;
 
+    bool selected = false;
+
     private void Awake()
     {
         knife.GetComponent<Rigidbody>().isKinematic = true;
@@ -37,6 +39,22 @@ public class Counters : MonoBehaviour
         //{
         //    rivjarn.transform.position = startPosRiv;
         //}
+
+        if (selected)
+        {
+            knife.transform.position = startPosKnife;
+            tomatoSauce.transform.position = startPosTomato;
+            rivjarn.transform.position = startPosRiv;
+        }
+    }
+
+    public void SelectThumbsUp()
+    {
+        selected = true;
+    }
+    public void DeselectThumbsUp()
+    {
+        selected = false;
     }
 
     public void SetNonKinematic()

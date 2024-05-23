@@ -12827,6 +12827,10 @@ PrefabInstance:
       value: Strawberry
       objectReference: {fileID: 0}
     - target: {fileID: 4928545553890216578, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
+      propertyPath: maxTimer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928545553890216578, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
       propertyPath: orderArray.Array.data[1].topping
       value: Egg
       objectReference: {fileID: 0}

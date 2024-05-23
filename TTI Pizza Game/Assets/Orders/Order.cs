@@ -85,7 +85,7 @@ public class Order : MonoBehaviour
             orderArray[i].onOrder = false;
             isRunning = true;
         }
-        maxTimer = 15f;
+        maxTimer = 10f;
     }
     public bool IsOffline()
     {

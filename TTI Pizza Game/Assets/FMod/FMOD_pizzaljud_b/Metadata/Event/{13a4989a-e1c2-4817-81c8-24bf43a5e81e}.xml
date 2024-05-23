@@ -173,6 +173,9 @@
 		<property name="maximumDistance">
 			<value>4.80000019</value>
 		</property>
+		<property name="minimumExtent">
+			<value>122</value>
+		</property>
 	</object>
 	<object class="AutomationPoint" id="{23b8f439-cd45-427d-b4f3-1ce5d91ba245}">
 		<property name="position">

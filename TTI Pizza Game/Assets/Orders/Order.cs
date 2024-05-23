@@ -22,7 +22,7 @@ public class Order : MonoBehaviour
 
     //Timer
     private float timer = 0f;
-    [SerializeField] bool isRunning = false;
+    private bool isRunning = false;
     [SerializeField] float maxTimer;
 
     bool offline = false;

@@ -28,8 +28,6 @@ public class SetFurniture : MonoBehaviour
     private bool countersSpawned = false;
     private int currentTable = 0;
 
-    private float closestDistance;
-
     private void Awake()
     {
         gameController = FindObjectOfType<GameController>();
@@ -77,7 +75,6 @@ public class SetFurniture : MonoBehaviour
 
         if (gameController == null)
         {
-            Debug.Log("WHY ARE U NULL");
             gameController = FindObjectOfType<GameController>();
         }
         gameController.GetPos(out Vector3 posFridge, out Vector3 posOven, out Vector3 posLucka, out Vector3 posDoor);
@@ -165,5 +162,6 @@ public class SetFurniture : MonoBehaviour
             }
         }
         fridge.GetComponentInChildren<Fridge>().MovedDone();
+        spawnedCounters.GetComponent<Counters>().SetNonKinematic();
     }
 }

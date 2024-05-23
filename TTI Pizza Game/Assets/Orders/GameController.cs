@@ -15,6 +15,10 @@ public class GameController : MonoBehaviour
 
     private FadeScreen fade;
     int currentLevel = 1;
+
+    private float timer = 0f;
+    [SerializeField] bool usesTimer = false;
+    [SerializeField] float maxTimer;
     private void Awake()
     {
         int numGameSessions = FindObjectsOfType<GameController>().Length;
@@ -34,11 +38,16 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-        if (pointLevel[currentLevel - 1] == 30)
+        if (usesTimer == true)
         {
+            timer += Time.deltaTime;
+        }
+        if (timer >= maxTimer)
+        {
+            Debug.Log("Timer Stopped");
+            usesTimer = false;
+            timer = 0f;
             StartCoroutine(WinSequence());
-            SceneManager.LoadSceneAsync(1);
-            pointLevel[currentLevel - 1] = 0;
         }
     }
 
@@ -46,6 +55,7 @@ public class GameController : MonoBehaviour
     {
         fade.FadeOut(true);
         yield return new WaitForSecondsRealtime(2);
+        SceneManager.LoadSceneAsync(1);
     }
 
     public void Points(int points)

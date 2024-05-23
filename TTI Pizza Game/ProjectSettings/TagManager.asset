@@ -20,6 +20,7 @@ TagManager:
   - Pizza
   - SamplesInfoPanel
   - Egg
+  - Onion
   layers:
   - Default
   - TransparentFX

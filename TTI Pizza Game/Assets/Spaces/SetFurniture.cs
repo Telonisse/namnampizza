@@ -24,7 +24,7 @@ public class SetFurniture : MonoBehaviour
     private int currentWall = 0;
 
     //spawn counters
-    private GameObject spawnedCounters = null;
+    public GameObject spawnedCounters = null;
     private bool countersSpawned = false;
     private int currentTable = 0;
 
@@ -163,5 +163,6 @@ public class SetFurniture : MonoBehaviour
         }
         fridge.GetComponentInChildren<Fridge>().MovedDone();
         spawnedCounters.GetComponent<Counters>().SetNonKinematic();
+        Debug.Log("kinematic setting");
     }
 }

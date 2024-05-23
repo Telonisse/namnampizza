@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     private Vector3 luckaPos;
     private Vector3 doorPos;
 
-    private FadeScreen fade;
+    public FadeScreen fade;
     int currentLevel = 1;
 
     private float timer = 0f;
@@ -38,6 +38,29 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
+        if (fade == null)
+        {
+            fade = FindObjectOfType<FadeScreen>();
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 2 && pointLevel[0] == 10)
+        {
+            StartCoroutine(WinSequence());
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            usesTimer = true;
+            maxTimer = 120;
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            usesTimer = false;
+            maxTimer = 5;
+        }
+        else
+        {
+            usesTimer = false;
+            timer = 0f;
+        }
         if (usesTimer == true)
         {
             timer += Time.deltaTime;
@@ -45,7 +68,6 @@ public class GameController : MonoBehaviour
         if (timer >= maxTimer)
         {
             Debug.Log("Timer Stopped");
-            usesTimer = false;
             timer = 0f;
             StartCoroutine(WinSequence());
         }

@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MENU EVERYTHING.unity
     guid: 008cb57256f46c64097b9525dc656044
   - enabled: 1
-    path: Assets/Scenes/EVERYTHING.unity
+    path: Assets/Scenes/EVERYTHING TUTORIAL.unity
     guid: 142e85d29cc36ea4dba6540fad42e79c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b3231dba273accb4097f5306fcaac4e4, type: 2}

@@ -29,7 +29,7 @@ public class FadeScreen : MonoBehaviour
     }
     public void FadeOut(bool showText)
     {
-        if (showText)
+        if (showText )
         {
             text.SetActive(true);
         }
@@ -61,6 +61,9 @@ public class FadeScreen : MonoBehaviour
 
     private void Update()
     {
-        pointText.text = gameController.CurrentPoints().ToString();
+        if (gameController != null)
+        {
+            pointText.text = gameController.CurrentPoints().ToString();
+        }
     }
 }

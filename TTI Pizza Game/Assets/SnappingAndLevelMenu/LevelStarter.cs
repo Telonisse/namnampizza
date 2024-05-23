@@ -10,32 +10,25 @@ public class LevelStarter : MonoBehaviour
     [SerializeField] TextMeshPro whatLevel;
     private void Start()
     {
-        levelPicker = FindObjectOfType<LevelPicker>(); // Finds the LevelPicker in the scene
-        
-        //RAWR I DONT LIKE THIS SHIT GRR GRRGRGRHGAAAAARGH
+        levelPicker = FindObjectOfType<LevelPicker>(); 
     }
 
     private void Update()
     {
-        // whatLevel.text = "Level Selected: " + levelPicker.whichLevel.ToString();
 
-        if (levelPicker.level1 == true)
+        if (levelPicker.whichLevel == 1) 
         {
             whatLevel.text = "1";
-            Debug.Log("i am true 1");
         }
-
-        if (levelPicker.level2 == true)
+        if (levelPicker.whichLevel == 2)
         {
             whatLevel.text = "2";
         }
-
-        if (levelPicker.level3 == true)
+        if (levelPicker.whichLevel == 3)
         {
             whatLevel.text = "3";
         }
-
-        if (levelPicker.level4 == true)
+        if (levelPicker.whichLevel == 4)
         {
             whatLevel.text = "4";
         }
@@ -44,7 +37,7 @@ public class LevelStarter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Knife"))
+        if (other.gameObject.CompareTag("Stamp"))
         {
             //SceneManager.LoadSceneAsync(levelPicker.whichLevel);
             Debug.Log(levelPicker.whichLevel);

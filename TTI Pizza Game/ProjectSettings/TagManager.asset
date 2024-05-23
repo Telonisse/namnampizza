@@ -21,6 +21,7 @@ TagManager:
   - SamplesInfoPanel
   - Egg
   - Onion
+  - Stamp
   layers:
   - Default
   - TransparentFX

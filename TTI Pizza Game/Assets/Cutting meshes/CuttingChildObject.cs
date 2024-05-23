@@ -9,7 +9,7 @@ public class CuttingChildObject : MonoBehaviour
     public GameObject parent;
 
 
-    public bool detachChild;
+    bool detachChild;
     public bool isOnMyPizza = false;
     public bool beenCut = false;
 
@@ -39,7 +39,7 @@ public class CuttingChildObject : MonoBehaviour
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.useGravity = true;
             rb.isKinematic = false;
-                beenCut = true;
+            beenCut = true;
 
 
         }

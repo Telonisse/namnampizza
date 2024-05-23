@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class StarPoints : MonoBehaviour
 {
+    GameController gameController;
+
     [SerializeField] GameObject starEmpty1;
     [SerializeField] GameObject starFull1;
 
@@ -15,6 +17,11 @@ public class StarPoints : MonoBehaviour
     [SerializeField] GameObject starEmpty3;
     [SerializeField] GameObject starFull3;
 
+    private void Start()
+    {
+        gameController = FindObjectOfType<GameController>();
+    }
 
+   
 
 }

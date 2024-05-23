@@ -22,6 +22,7 @@ TagManager:
   - Egg
   - Onion
   - Stamp
+  - Carrot
   layers:
   - Default
   - TransparentFX

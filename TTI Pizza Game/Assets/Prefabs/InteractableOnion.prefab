@@ -173,9 +173,9 @@ GameObject:
   - component: {fileID: 7298984479779582754}
   - component: {fileID: 3522984838047070000}
   - component: {fileID: 5767896823426877017}
-  - component: {fileID: 8954087947384680259}
-  - component: {fileID: 1297736335525639173}
   - component: {fileID: 3262415677005765977}
+  - component: {fileID: 1297736335525639173}
+  - component: {fileID: 8954087947384680259}
   - component: {fileID: 8104526408718938754}
   - component: {fileID: 6791594317732592456}
   - component: {fileID: 6286073811664737364}
@@ -233,11 +233,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myChildObject: {fileID: 7298984479779582754}
   parent: {fileID: 334956740462718724}
-  detachChild: 0
   isOnMyPizza: 0
   beenCut: 0
---- !u!64 &8954087947384680259
-MeshCollider:
+--- !u!65 &3262415677005765977
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -251,13 +250,12 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7539912853744857588, guid: 6e9937404b2200142a59cc894ab71748, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.053100135, y: 0.081777774, z: 0.08287464}
+  m_Center: {x: -0.00003074296, y: 0.000020224601, z: -0.0021718964}
 --- !u!54 &1297736335525639173
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -285,8 +283,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!65 &3262415677005765977
-BoxCollider:
+--- !u!64 &8954087947384680259
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -300,12 +298,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.053100135, y: 0.081777774, z: 0.08287464}
-  m_Center: {x: -0.00003074296, y: 0.000020224601, z: -0.0021718964}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7539912853744857588, guid: 6e9937404b2200142a59cc894ab71748, type: 3}
 --- !u!114 &8104526408718938754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1206,9 +1205,9 @@ GameObject:
   - component: {fileID: 120408484449728465}
   - component: {fileID: 3596990845139368312}
   - component: {fileID: 8042994923975436376}
-  - component: {fileID: 7273838978682207516}
-  - component: {fileID: 2384185081927401057}
   - component: {fileID: 6771935297365094200}
+  - component: {fileID: 2384185081927401057}
+  - component: {fileID: 7273838978682207516}
   - component: {fileID: 214041296122607908}
   - component: {fileID: 3940193624232788283}
   - component: {fileID: 7490906263708217741}
@@ -1266,11 +1265,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myChildObject: {fileID: 120408484449728465}
   parent: {fileID: 334956740462718724}
-  detachChild: 0
   isOnMyPizza: 0
   beenCut: 0
---- !u!64 &7273838978682207516
-MeshCollider:
+--- !u!65 &6771935297365094200
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1284,13 +1282,12 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3209097409963520316, guid: d12ac150de06cf944958d9dfd28b5466, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.05128742, y: 0.081613295, z: 0.0814634}
+  m_Center: {x: 0.0003274046, y: 0.005681101, z: -0.0009540841}
 --- !u!54 &2384185081927401057
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1318,8 +1315,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!65 &6771935297365094200
-BoxCollider:
+--- !u!64 &7273838978682207516
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1333,12 +1330,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.05128742, y: 0.081613295, z: 0.0814634}
-  m_Center: {x: 0.0003274046, y: 0.005681101, z: -0.0009540841}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3209097409963520316, guid: d12ac150de06cf944958d9dfd28b5466, type: 3}
 --- !u!114 &214041296122607908
 MonoBehaviour:
   m_ObjectHideFlags: 0

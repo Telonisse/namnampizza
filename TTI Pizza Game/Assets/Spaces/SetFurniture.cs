@@ -26,7 +26,6 @@ public class SetFurniture : MonoBehaviour
     //spawn counters
     public GameObject spawnedCounters = null;
     private bool countersSpawned = false;
-    private int currentTable = 0;
 
     private void Awake()
     {
@@ -60,18 +59,19 @@ public class SetFurniture : MonoBehaviour
                     spawnPos = child.transform.position;
                     spawnPos.y = 0;
                     spawnRot = Quaternion.LookRotation(room.GetFacingDirection(child.GetComponent<MRUKAnchor>()));
-                    spawnedCounters = Instantiate(table, spawnPos, spawnRot, transform);
-                    currentTable++;
+                    //spawnedCounters = Instantiate(table, spawnPos, spawnRot, transform);
+                    table.transform.position = spawnPos;
+                    table.transform.rotation = spawnRot;
                     countersSpawned = true;
                 }
             }
         }
-        if (spawnedCounters == null)
-        {
-            spawnPos = Vector3.zero;
-            spawnRot = Quaternion.identity;
-            spawnedCounters = Instantiate(table, spawnPos, spawnRot, transform);
-        }
+        //if (spawnedCounters == null)
+        //{
+        //    spawnPos = Vector3.zero;
+        //    spawnRot = Quaternion.identity;
+        //    spawnedCounters = Instantiate(table, spawnPos, spawnRot, transform);
+        //}
 
         if (gameController == null)
         {
@@ -162,7 +162,7 @@ public class SetFurniture : MonoBehaviour
             }
         }
         fridge.GetComponentInChildren<Fridge>().MovedDone();
-        spawnedCounters.GetComponent<Counters>().SetNonKinematic();
+        table.GetComponent<Counters>().SetNonKinematic();
         Debug.Log("kinematic setting");
     }
 }

@@ -27166,6 +27166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLevel: 00000000
+  fade: {fileID: 0}
+  usesTimer: 0
+  maxTimer: 1
 --- !u!4 &1841087327
 Transform:
   m_ObjectHideFlags: 0

@@ -60,6 +60,7 @@ public class GameController : MonoBehaviour
         {
             usesTimer = false;
             timer = 0f;
+            maxTimer = 1f;
         }
         if (usesTimer == true)
         {

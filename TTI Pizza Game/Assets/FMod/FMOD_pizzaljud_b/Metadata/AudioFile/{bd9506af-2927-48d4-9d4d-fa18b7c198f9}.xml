@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{bd9506af-2927-48d4-9d4d-fa18b7c198f9}">
+		<property name="assetPath">
+			<value>ESM_Cooking_Game_One_Shot_Shapen_Large_Knife_Metal_Cylinder_Sharpener_5_v2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.54305208333333332</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{17cf5cd2-1060-4b24-968a-9697b4867906}</destination>
+		</relationship>
+	</object>
+</objects>

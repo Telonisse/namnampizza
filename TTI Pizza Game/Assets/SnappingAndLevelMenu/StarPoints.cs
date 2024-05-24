@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StarPoints : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class StarPoints : MonoBehaviour
 
     private GameController gameController;
 
+    private void Update()
+    {
+        UpdateStars();
+    }
     private void Start()
     {
         gameController = FindObjectOfType<GameController>();
@@ -27,29 +32,29 @@ public class StarPoints : MonoBehaviour
         int points = gameController.GetPointLevel(level); 
         int savedStars = PlayerPrefs.GetInt("Stars_Level_" + level, 0); 
 
-        
         foreach (var star in starFull)
         {
             star.SetActive(false);
         }
 
-       
+        foreach (var star in starEmpty)
+        {
+            star.SetActive(true);
+        }
+
         for (int i = 0; i < savedStars; i++)
         {
             starFull[i].SetActive(true);
-           
             if (i < starEmpty.Length)
             {
                 starEmpty[i].SetActive(false);
             }
         }
 
-        
         int starsEarned = StarCalculator(points);
         for (int i = 0; i < starsEarned; i++)
         {
             starFull[i].SetActive(true);
-            
             if (i < starEmpty.Length)
             {
                 starEmpty[i].SetActive(false);
@@ -58,7 +63,6 @@ public class StarPoints : MonoBehaviour
 
         PlayerPrefs.SetInt("Stars_Level_" + level, starsEarned);
         PlayerPrefs.Save();
-
     }
 
     private int StarCalculator(int points)

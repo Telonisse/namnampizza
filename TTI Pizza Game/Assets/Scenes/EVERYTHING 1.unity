@@ -17045,6 +17045,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5479986066346500091, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
+      propertyPath: numOfToppings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479986066346500091, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
       propertyPath: pointsBadPizza
       value: -5
       objectReference: {fileID: 0}

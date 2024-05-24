@@ -508,9 +508,13 @@ MonoBehaviour:
   pizzaToppingsArray:
   - topping: Sausage
     isOnPizza: 0
-  - topping: Pineapple
+  - topping: Egg
     isOnPizza: 0
   - topping: Strawberry
+    isOnPizza: 0
+  - topping: Carrot
+    isOnPizza: 0
+  - topping: Onion
     isOnPizza: 0
   pizzaObject: {fileID: 7788647626971751859}
   tomatoSauce: {fileID: 7573113877087141109}
@@ -520,6 +524,7 @@ MonoBehaviour:
   minTimeDone: 15
   minTimeBurned: 30
   timer: 0
+  meAmOnPizza: 0
   currentState: 0
 --- !u!65 &2315313259435963591
 BoxCollider:

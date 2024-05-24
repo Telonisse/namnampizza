@@ -2318,6 +2318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointLevel: 00000000
   fade: {fileID: 0}
+  currentLevel: 1
   usesTimer: 0
   maxTimer: 0
 --- !u!4 &382397997
@@ -9605,9 +9606,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1673952674673193380, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
+      propertyPath: maxToppingPerOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673952674673193380, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
+      propertyPath: orderArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3085490845424976770, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
       propertyPath: m_Name
       value: Lucka
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309382497470148407, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
+      propertyPath: maxToppingPerOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309382497470148407, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
+      propertyPath: orderArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928545553890216578, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
+      propertyPath: maxToppingPerOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928545553890216578, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
+      propertyPath: orderArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479986066346500091, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
+      propertyPath: numOfToppings
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7457930173635813912, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
       propertyPath: m_LocalPosition.x

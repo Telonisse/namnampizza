@@ -24,14 +24,17 @@ public class OrderHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
         if (other != null )
         {
+            Debug.Log("not null");
             PizzaScript pizza = other.GetComponent<PizzaScript>();
             for (int i = 0; i < orders.Length; i++)
             {
                 matchesOrder = true;
                 if (orders[i].IsOffline() == false && other != null && pizza != null)
                 {
+                    Debug.Log("pizza not null");
                     for (int j = 0; j < numOfToppings; j++)
                     {
                         pizza.GetToppings(j, out isOnPizza, out bool tomatoSauce, out bool cheese, out bool state);
@@ -39,6 +42,7 @@ public class OrderHandler : MonoBehaviour
                         if (isOnOrder != isOnPizza || !tomatoSauce || !cheese || !state)
                         {
                             matchesOrder = false;
+                            Debug.Log("Not Matching");
                         }
                     }
                     if (matchesOrder && other != null && pizza != null)

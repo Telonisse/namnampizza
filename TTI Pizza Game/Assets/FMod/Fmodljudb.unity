@@ -671,7 +671,7 @@ MonoBehaviour:
     Path: event:/knife
   Event: 
   PlayEvent: 11
-  StopEvent: 0
+  StopEvent: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -1928,6 +1928,106 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 74224834e2f9e7b40a9bb4d28943502c, type: 3}
   m_PrefabInstance: {fileID: 7029948699431501733}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7238661724769580914
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bcc1efeee075c424ca645059eb938534, type: 2}
+    - target: {fileID: 919132149155446097, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+      propertyPath: m_Name
+      value: ExitFrameHandle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7238661724769580916}
+  m_SourcePrefab: {fileID: 100100000, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+--- !u!1 &7238661724769580915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ccd6cc6512b56a44f82f9ac40a92e80b, type: 3}
+  m_PrefabInstance: {fileID: 7238661724769580914}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7238661724769580916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7238661724769580915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 761295423
+      Data2: 1301593173
+      Data3: -666580600
+      Data4: 1699133893
+    Path: event:/doorknob
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &7310717045198372472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2474,3 +2574,4 @@ SceneRoots:
   - {fileID: 3634823184131501871}
   - {fileID: 2456849010636840931}
   - {fileID: 6727940452928874313}
+  - {fileID: 7238661724769580914}

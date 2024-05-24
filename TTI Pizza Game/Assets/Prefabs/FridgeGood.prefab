@@ -10334,6 +10334,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3601167977637051147, guid: c6a22e77f0cc1794db19211e8b5767d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8497216557882539401}
+    - targetCorrespondingSourceObject: {fileID: 3601167977637051147, guid: c6a22e77f0cc1794db19211e8b5767d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4340909460497430500}
+    - targetCorrespondingSourceObject: {fileID: 3601167977637051147, guid: c6a22e77f0cc1794db19211e8b5767d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4271596171832816036}
   m_SourcePrefab: {fileID: 100100000, guid: c6a22e77f0cc1794db19211e8b5767d3, type: 3}
 --- !u!1 &4876571799013089500 stripped
 GameObject:
@@ -10641,6 +10647,68 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0.74, y: 0, z: 0}
+--- !u!114 &4340909460497430500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876571799013089500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -237737302
+      Data2: 1095194882
+      Data3: -1732251744
+      Data4: 980916469
+    Path: event:/fridge_close
+  Event: 
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &4271596171832816036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876571799013089500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1309562136
+      Data2: 1321370907
+      Data3: -1842320222
+      Data4: 944611180
+    Path: event:/fridge_open
+  Event: 
+  PlayEvent: 4
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &5253097784431393382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4229508552951144881, guid: c6a22e77f0cc1794db19211e8b5767d3, type: 3}

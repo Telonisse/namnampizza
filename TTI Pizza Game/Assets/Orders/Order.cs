@@ -101,6 +101,13 @@ public class Order : MonoBehaviour
 
     public void GetToppings(int index, out bool isOnOrder)
     {
-        isOnOrder = orderArray[index].onOrder;
+        if (index >= 0)
+        {
+            isOnOrder = orderArray[index].onOrder;
+        }
+        else
+        {
+            isOnOrder = false;
+        }
     }
 }

@@ -13,10 +13,6 @@ public class StarPoints : MonoBehaviour
 
     private GameController gameController;
 
-    private void Update()
-    {
-        UpdateStars();
-    }
     private void Start()
     {
         gameController = FindObjectOfType<GameController>();

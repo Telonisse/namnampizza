@@ -16,19 +16,19 @@ public class LevelStarter : MonoBehaviour
     private void Update()
     {
 
-        if (levelPicker.whichLevel == 1) 
+        if (levelPicker.whichLevel == 2) 
         {
             whatLevel.text = "1";
         }
-        if (levelPicker.whichLevel == 2)
+        if (levelPicker.whichLevel == 3)
         {
             whatLevel.text = "2";
         }
-        if (levelPicker.whichLevel == 3)
+        if (levelPicker.whichLevel == 4)
         {
             whatLevel.text = "3";
         }
-        if (levelPicker.whichLevel == 4)
+        if (levelPicker.whichLevel == 5)
         {
             whatLevel.text = "4";
         }
@@ -39,7 +39,7 @@ public class LevelStarter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Stamp"))
         {
-            //SceneManager.LoadSceneAsync(levelPicker.whichLevel);
+            SceneManager.LoadSceneAsync(levelPicker.whichLevel);
             Debug.Log("Meow" +  levelPicker.whichLevel);
 
         }

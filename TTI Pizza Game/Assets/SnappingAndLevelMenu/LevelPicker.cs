@@ -11,18 +11,18 @@ public class LevelPicker : MonoBehaviour
     // fix numbers for  right scene 
     public void PickLevel1()
     {
-        whichLevel = 1;
+        whichLevel = 2;
     }
     public void PickLevel2()
     {
-        whichLevel = 2;
+        whichLevel = 3;
     }
     public void PickLevel3()
     {
-        whichLevel = 3;
+        whichLevel = 4;
     }
     public void PickLevel4()
     {
-         whichLevel = 4;
+         whichLevel = 5;
     }
 }

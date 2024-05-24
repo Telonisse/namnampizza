@@ -1,60 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8923765690061400907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/objects/materials
-  m_EditorClassIdentifier: 
-  Name: materials
-  StudioPath: 
-  Min: 0
-  Max: 2
-  Default: 0
-  ID:
-    data1: 2471362988
-    data2: 3090789750
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - metal
-  - knife
-  - food
-  Exists: 1
---- !u!114 &-8000139505212309976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/objects
-  m_EditorClassIdentifier: 
-  Path: event:/objects
-  Guid:
-    Data1: -1597382415
-    Data2: 1163233145
-    Data3: 398264708
-    Data4: -362459153
-  Banks:
-  - {fileID: 4181820228769015215}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -8923765690061400907}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-7992864811938059588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +26,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 200
+  Length: 1500
 --- !u!114 &-6314831312812238372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +53,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 5000
+  Length: 2600
 --- !u!114 &-5439399937635823931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +79,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1.4
-  MaxDistance: 4.8
+  MaxDistance: 3.2
   Length: 32134
 --- !u!114 &-4226312276904649189
 MonoBehaviour:
@@ -150,19 +95,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/grater
   Guid:
-    Data1: -2085401520
-    Data2: 1273091978
-    Data3: -1846262905
-    Data4: 684892491
+    Data1: -513613895
+    Data2: 1173483364
+    Data3: -654074946
+    Data4: 1105972124
   Banks:
   - {fileID: 4181820228769015215}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 600
+  Length: 500
 --- !u!114 &-3235120272005356208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,10 +150,10 @@ MonoBehaviour:
   Path: Assets/FMod/FMOD_pizzaljud_b/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638520728194226393
+  lastModified: 638521501260000000
   FileSizes:
   - Name: Desktop
-    Value: 1186
+    Value: 1216
   Exists: 1
 --- !u!114 &-2649811258425316694
 MonoBehaviour:
@@ -235,7 +180,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1.6
-  MaxDistance: 3.6000001
+  MaxDistance: 2.8
   Length: 145697
 --- !u!114 &-2025036212740033718
 MonoBehaviour:
@@ -264,6 +209,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 750
+--- !u!114 &-821227800148860400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/metal
+  m_EditorClassIdentifier: 
+  Path: event:/metal
+  Guid:
+    Data1: -256601140
+    Data2: 1260303978
+    Data3: 1745296268
+    Data4: 1651756643
+  Banks:
+  - {fileID: 4181820228769015215}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 526
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,13 +260,15 @@ MonoBehaviour:
   - {fileID: 8139739467718637144}
   - {fileID: -3235120272005356208}
   - {fileID: -2025036212740033718}
-  - {fileID: -8000139505212309976}
+  - {fileID: 9188644236521986103}
+  - {fileID: -821227800148860400}
+  - {fileID: 7586108514022657970}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4181820228769015215}
   StringsBanks:
   - {fileID: -2899389959563599579}
-  cacheTime: 638521381763293071
+  cacheTime: 638521501260000000
   cacheVersion: 131603
 --- !u!114 &4181820228769015215
 MonoBehaviour:
@@ -311,11 +285,38 @@ MonoBehaviour:
   Path: Assets/FMod/FMOD_pizzaljud_b/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638521381763293071
+  lastModified: 638521501260000000
   FileSizes:
   - Name: Desktop
-    Value: 2542848
+    Value: 2563488
   Exists: 1
+--- !u!114 &7586108514022657970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/knife
+  m_EditorClassIdentifier: 
+  Path: event:/knife
+  Guid:
+    Data1: -1151686172
+    Data2: 1141076647
+    Data3: -1776370755
+    Data4: -2119199382
+  Banks:
+  - {fileID: 4181820228769015215}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600
 --- !u!114 &8139739467718637144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,4 +343,31 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 720
+  Length: 800
+--- !u!114 &9188644236521986103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/grabfood
+  m_EditorClassIdentifier: 
+  Path: event:/grabfood
+  Guid:
+    Data1: 1213123598
+    Data2: 1335036313
+    Data3: -844779632
+    Data4: -1584267255
+  Banks:
+  - {fileID: 4181820228769015215}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 750

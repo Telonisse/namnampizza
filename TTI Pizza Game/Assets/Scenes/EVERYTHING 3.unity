@@ -13048,6 +13048,14 @@ PrefabInstance:
       propertyPath: orders.Array.data[4]
       value: 
       objectReference: {fileID: 864377436}
+    - target: {fileID: 6677888675383557515, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8181681
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677888675383557515, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
+      propertyPath: m_Center.x
+      value: 0.23112246
+      objectReference: {fileID: 0}
     - target: {fileID: 6781737567562798821, guid: 4eed358d7aea66843a809caf2e13dc88, type: 3}
       propertyPath: m_IsActive
       value: 1

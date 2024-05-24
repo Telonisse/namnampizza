@@ -191,7 +191,7 @@ public class FindSpawnPos : MonoBehaviour
     private IEnumerator FurnitureDone()
     {
         fade.FadeOut(false);
-        yield return new WaitForSecondsRealtime(2);
         SceneManager.LoadSceneAsync(1);
+        yield return new WaitForSecondsRealtime(2);
     }
 }

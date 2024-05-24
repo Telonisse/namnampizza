@@ -27781,6 +27781,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6408581603864797640, guid: e65940c06b9145e45bd1c41096044fb2, type: 3}
     - target: {fileID: 7157446428324259274, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
+      propertyPath: table
+      value: 
+      objectReference: {fileID: 6850361987953430344, guid: 7e36a067313f8634c88dd0afc5262e0d, type: 3}
+    - target: {fileID: 7157446428324259274, guid: e91a4df05d1e6f449ae9e54272112425, type: 3}
       propertyPath: previewDoor
       value: 
       objectReference: {fileID: 1770865714862137001, guid: ca0a1c1c0591a5840a4f31380f9e9b80, type: 3}

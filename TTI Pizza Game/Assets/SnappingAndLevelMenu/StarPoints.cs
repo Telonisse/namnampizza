@@ -63,15 +63,15 @@ public class StarPoints : MonoBehaviour
 
     private int StarCalculator(int points)
     {
-        if (points >= 30)
+        if (points >= 120)
         {
             return 3;
         }
-        else if (points >= 20)
+        else if (points >= 80)
         {
             return 2;
         }
-        else if (points >= 10)
+        else if (points >= 40)
         {
             return 1;
         }

@@ -20,7 +20,7 @@ public class FadeScreen : MonoBehaviour
         gameController = FindObjectOfType<GameController>();
         if (fadeOnStart)
         {
-            FadeIn();
+            FadeOut(false);
         }
     }
     public void FadeIn()

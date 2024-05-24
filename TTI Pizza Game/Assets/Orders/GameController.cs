@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     private Vector3 doorPos;
 
     public FadeScreen fade;
-    int currentLevel = 1;
+    public int currentLevel = 1;
 
     private float timer = 0f;
     [SerializeField] bool usesTimer = false;
@@ -38,25 +38,24 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-        // currentLevel = SceneManager.GetActiveScene().buildIndex; 
+        currentLevel = SceneManager.GetActiveScene().buildIndex - 2;
+        if (currentLevel < 0)
+        {
+            currentLevel = 0;
+        }
 
         if (fade == null)
         {
             fade = FindObjectOfType<FadeScreen>();
         }
-        if (SceneManager.GetActiveScene().buildIndex == 2 && pointLevel[0] == 10)
+        if (currentLevel == 0 && SceneManager.GetActiveScene().buildIndex == 2 && pointLevel[currentLevel] >= 1)
         {
             StartCoroutine(WinSequence());
         }
-        if (SceneManager.GetActiveScene().buildIndex == 3)
+        if (currentLevel > 0)
         {
             usesTimer = true;
             maxTimer = 120;
-        }
-        else if (SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            usesTimer = false;
-            maxTimer = 5;
         }
         else
         {
@@ -85,11 +84,11 @@ public class GameController : MonoBehaviour
 
     public void Points(int points)
     {
-        pointLevel[currentLevel - 1] += points;
+        pointLevel[currentLevel] += points;
     }
     public int CurrentPoints()
     {
-        return pointLevel[currentLevel - 1];
+        return pointLevel[currentLevel];
     }
     public int LevelPoints(int level)
     {

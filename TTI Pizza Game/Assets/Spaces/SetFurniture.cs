@@ -161,8 +161,13 @@ public class SetFurniture : MonoBehaviour
                 door.transform.rotation = closestWall.transform.rotation;
             }
         }
-        fridge.GetComponentInChildren<Fridge>().MovedDone();
-        table.GetComponent<Counters>().SetNonKinematic();
-        Debug.Log("kinematic setting");
+        if (fridge != null)
+        {
+            fridge.GetComponentInChildren<Fridge>().MovedDone();
+        }
+        if (table != null)
+        {
+            table.GetComponent<Counters>().SetNonKinematic();
+        }
     }
 }

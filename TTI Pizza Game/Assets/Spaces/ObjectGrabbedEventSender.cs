@@ -12,6 +12,8 @@ public class ObjectGrabbedEventSender : OneGrabFreeTransformer, ITransformer
     public event ObjectReleased onObjectReleased;
 
     [SerializeField] bool quit = false;
+    [SerializeField] bool playSound = true;
+    [SerializeField] GameObject grabbed;
 
     public new void Initialize(IGrabbable grabbable)
     {
@@ -20,9 +22,13 @@ public class ObjectGrabbedEventSender : OneGrabFreeTransformer, ITransformer
     public new void BeginTransform()
     {
         base.BeginTransform();
-        if (quit)
+        if (quit && !playSound)
         {
             Application.Quit();
+        }
+        else if (playSound)
+        {
+            grabbed.SetActive(true);
         }
         else 
         {
@@ -41,6 +47,10 @@ public class ObjectGrabbedEventSender : OneGrabFreeTransformer, ITransformer
     public new void EndTransform()
     {
         //Parent class does nothing with that method so no need to call it
+        if (playSound)
+        {
+            grabbed.SetActive(false);
+        }
         onObjectReleased?.Invoke(gameObject);
     }
 

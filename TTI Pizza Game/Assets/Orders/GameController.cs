@@ -79,10 +79,10 @@ public class GameController : MonoBehaviour
 
     private IEnumerator WinSequence()
     {
+        win = false;
         fade.FadeOut(true);
         yield return new WaitForSecondsRealtime(2);
         SceneManager.LoadSceneAsync(1);
-        win = false;
     }
 
     public void Points(int points)

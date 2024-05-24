@@ -12742,11 +12742,11 @@ PrefabInstance:
     - target: {fileID: 4285991167656738445, guid: 0e392e0abc0877e468205a06fb88fbb6, type: 3}
       propertyPath: toppingInFridgeArray.Array.data[5].toppingGameObject
       value: 
-      objectReference: {fileID: 334406175571568854, guid: 38516c9a1daf40246bc74bb1fcb9b34a, type: 3}
+      objectReference: {fileID: 3496105560761575440, guid: 425447090432b284093e82139b66c5bd, type: 3}
     - target: {fileID: 4285991167656738445, guid: 0e392e0abc0877e468205a06fb88fbb6, type: 3}
       propertyPath: toppingInFridgeArray.Array.data[6].toppingGameObject
       value: 
-      objectReference: {fileID: 334406175571568854, guid: 38516c9a1daf40246bc74bb1fcb9b34a, type: 3}
+      objectReference: {fileID: 334956740462718724, guid: fd5510c1b7147b3409e970b5afd6fdeb, type: 3}
     - target: {fileID: 7872081292425312345, guid: 0e392e0abc0877e468205a06fb88fbb6, type: 3}
       propertyPath: m_Name
       value: FridgeGood (1)

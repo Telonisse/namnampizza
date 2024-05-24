@@ -1,4 +1,5 @@
 using Meta.XR.MRUtilityKit;
+using Oculus.Interaction.Input;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -20,6 +21,8 @@ public class FindSpawnPos : MonoBehaviour
     [SerializeField] GameObject previewDoor;
     [SerializeField] Transform[] roomObjects;
     [SerializeField] Transform floor;
+
+    [SerializeField] Hand rHand;
 
     private GameObject currentPreview;
 

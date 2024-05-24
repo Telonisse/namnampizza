@@ -10,6 +10,7 @@ public class OrderHandler : MonoBehaviour
     [SerializeField] int pointsGoodPizza;
     [SerializeField] int pointsBadPizza;
     [SerializeField] TextMeshPro pointsText;
+    [SerializeField] ParticleSystem confetti;
 
     private bool isOnPizza;
     private bool isOnOrder;
@@ -48,6 +49,7 @@ public class OrderHandler : MonoBehaviour
                     if (matchesOrder && other != null && pizza != null)
                     {
                         orders[i].ResetOrder();
+                        confetti.Play();
                         Debug.Log(other.name);
                         Destroy(other.transform.parent.parent.gameObject);
                         gameController.Points(pointsGoodPizza);

@@ -19,6 +19,7 @@ public class Order : MonoBehaviour
     [SerializeField] GameObject graphics;
     [SerializeField] int maxToppingPerOrder;
     private string orderText;
+    [SerializeField] ParticleSystem spawn;
 
     //Timer
     private float timer = 0f;
@@ -46,6 +47,7 @@ public class Order : MonoBehaviour
             offline = false;
             graphics.SetActive(true);
             NewOrder(maxToppingPerOrder);
+            spawn.Play();
         }
     }
     public void NewOrder(int maxToppings)
@@ -84,6 +86,7 @@ public class Order : MonoBehaviour
             offline = true;
             orderArray[i].onOrder = false;
             isRunning = true;
+            spawn.Play();
         }
         maxTimer = 10f;
     }

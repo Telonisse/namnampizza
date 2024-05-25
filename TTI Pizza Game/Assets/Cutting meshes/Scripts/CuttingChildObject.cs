@@ -12,6 +12,7 @@ public class CuttingChildObject : MonoBehaviour
     bool detachChild;
     public bool isOnMyPizza = false;
     public bool beenCut = false;
+    [SerializeField] GameObject soundObject;
 
 
     void Update()
@@ -73,6 +74,7 @@ public class CuttingChildObject : MonoBehaviour
             }
             else
             {
+                soundObject.SetActive(true);
                 detachChild = true;
                 gameObject.GetComponent<Grabbable>().enabled = true;
                 gameObject.GetComponent<PhysicsGrabbable>().enabled = true;
@@ -85,6 +87,7 @@ public class CuttingChildObject : MonoBehaviour
 
                 deactivateObject(parent);
                 beenCut = true;
+                soundObject.SetActive(false);
             }
             
         }

@@ -137,7 +137,7 @@ public class SetFurniture : MonoBehaviour
                         closestDistance = distanceToWall;
                     }
                 }
-                lucka.transform.rotation = closestWall.transform.rotation;
+                lucka.transform.rotation = new Quaternion(0f, closestWall.transform.rotation.y, 0f, closestWall.transform.rotation.w);
             }
         }
         if (door != null)
@@ -158,7 +158,7 @@ public class SetFurniture : MonoBehaviour
                     }
                 }
                 Vector3 lookPos = new Vector3(closestWall.transform.position.x, 0f, closestWall.transform.position.z);
-                door.transform.rotation = closestWall.transform.rotation;
+                door.transform.rotation = Quaternion.LookRotation(-lookPos);
             }
         }
         if (fridge != null)

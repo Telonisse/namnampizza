@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     [SerializeField] bool usesTimer = false;
     [SerializeField] float maxTimer;
     bool win = false;
+    public GameObject timerObject;
     private void Awake()
     {
         int numGameSessions = FindObjectsOfType<GameController>().Length;
@@ -36,6 +37,8 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         fade = FindObjectOfType<FadeScreen>();
+        timerObject = GameObject.Find("Timer");
+        timerObject.SetActive(false);
     }
     private void Update()
     {
@@ -48,6 +51,12 @@ public class GameController : MonoBehaviour
         if (fade == null)
         {
             fade = FindObjectOfType<FadeScreen>();
+            win = false;
+        }
+        if (timerObject == null)
+        {
+            timerObject = GameObject.Find("Timer");
+            timerObject.SetActive(false);
         }
         if (currentLevel == 0 && SceneManager.GetActiveScene().buildIndex == 2 && pointLevel[currentLevel] >= 1 && !win)
         {
@@ -57,7 +66,7 @@ public class GameController : MonoBehaviour
         if (currentLevel > 0)
         {
             usesTimer = true;
-            maxTimer = 120;
+            maxTimer = 300;
         }
         else
         {
@@ -69,8 +78,13 @@ public class GameController : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        if (timer >= maxTimer)
+        if (timer >= 290 && timer <= 291)
         {
+            timerObject.SetActive(true);
+        }
+        if (timer >= maxTimer && !win)
+        {
+            win = true;
             Debug.Log("Timer Stopped");
             timer = 0f;
             StartCoroutine(WinSequence());
@@ -79,8 +93,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator WinSequence()
     {
-        win = false;
-        fade.FadeOut(true);
+        fade.FadeOut(false);
         yield return new WaitForSecondsRealtime(2);
         SceneManager.LoadSceneAsync(1);
     }

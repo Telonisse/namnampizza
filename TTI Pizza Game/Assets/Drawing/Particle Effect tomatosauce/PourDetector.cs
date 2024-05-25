@@ -15,6 +15,7 @@ public class PourDetector : MonoBehaviour
     private bool IsPouring = false;
     private Stream currentStream = null;
     private  AnimationStarter prevAnim= null;
+    [SerializeField] GameObject soundObject;
 
     //public  AnimationStarter animationStarter;
 
@@ -71,14 +72,14 @@ public class PourDetector : MonoBehaviour
     {
         currentStream = CreateStream();
         currentStream.Begin();
-        
+        soundObject.SetActive(true);
     }
 
     private void EndPour()
     {
         currentStream.End();
         currentStream = null;
-
+        soundObject.SetActive(false);
     }
 
     private float CalculatePourAngle()

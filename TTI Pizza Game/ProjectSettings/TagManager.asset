@@ -23,6 +23,7 @@ TagManager:
   - Onion
   - Stamp
   - Carrot
+  - FLOOR
   layers:
   - Default
   - TransparentFX

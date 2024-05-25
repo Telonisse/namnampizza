@@ -12,6 +12,7 @@ public class CheeseGrater : MonoBehaviour
     public string collisionTag = "Pizza";
 
     [SerializeField] private ParticleSystem myParticleSystem;
+    [SerializeField] GameObject soundObject;
     private bool cheeseTouch = false;
     private AnimationStarter prevAnim = null;
 
@@ -31,6 +32,7 @@ public class CheeseGrater : MonoBehaviour
                 else
                 {
                     myParticleSystem.Stop();
+                    soundObject.SetActive(false);
                     hit.transform.GetComponentInChildren<AnimationStarter>().PauseCheeseGratingAnimation();
                 }
             }
@@ -39,7 +41,10 @@ public class CheeseGrater : MonoBehaviour
                 if (prevAnim != null)
                 {
                     if (myParticleSystem.isPlaying)
+                    {
+                        soundObject.SetActive(false); 
                         myParticleSystem.Stop();
+                    }
                     
                     prevAnim.PauseCheeseGratingAnimation();
                 }
@@ -51,12 +56,14 @@ public class CheeseGrater : MonoBehaviour
         if (other.gameObject.CompareTag("Cheese"))
         {
             myParticleSystem.Play();
+            soundObject.SetActive(true);
             cheeseTouch = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
         cheeseTouch = false;
-
+        soundObject.SetActive(false);
+        myParticleSystem.Stop();
     }
 }

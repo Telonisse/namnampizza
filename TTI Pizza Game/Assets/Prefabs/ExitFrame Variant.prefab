@@ -1,5 +1,68 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5153881109303002314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8990527598109568483}
+  - component: {fileID: 8649162514479552930}
+  m_Layer: 0
+  m_Name: Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8990527598109568483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5153881109303002314}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6026955048226306930}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8649162514479552930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5153881109303002314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1671232544
+      Data2: 1227735587
+      Data3: 2048763288
+      Data4: 1609016861
+    Path: event:/zero p and leave
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1446599826396915226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80,6 +143,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 646172222983340251, guid: 31274fcc0fd69a540be227ecbb84d57b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7502646263171874486}
+    - targetCorrespondingSourceObject: {fileID: 646172222983340251, guid: 31274fcc0fd69a540be227ecbb84d57b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8422471448079908691}
+    - targetCorrespondingSourceObject: {fileID: 646172222983340251, guid: 31274fcc0fd69a540be227ecbb84d57b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5661194189793451739}
   m_SourcePrefab: {fileID: 100100000, guid: 31274fcc0fd69a540be227ecbb84d57b, type: 3}
 --- !u!4 &1706618495318523003 stripped
 Transform:
@@ -305,6 +374,80 @@ MonoBehaviour:
         Min: 0
         Max: 0
   quit: 0
+--- !u!114 &8422471448079908691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082053730305451713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 3693621082720722285}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5661194189793451739}
+        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
+        m_MethodName: Grabbed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5661194189793451739}
+        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
+        m_MethodName: Dropped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5661194189793451739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082053730305451713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d77e96b9f8fea5d4ca19482ebf568400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundObject: {fileID: 5153881109303002314}
 --- !u!1001 &7661377366603312196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -363,6 +506,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4176707882657322806, guid: 2a2b1d53dec36a6499e3484077e46e7a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1706618495318523003}
+    - targetCorrespondingSourceObject: {fileID: 4176707882657322806, guid: 2a2b1d53dec36a6499e3484077e46e7a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8990527598109568483}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7394394693570746897, guid: 2a2b1d53dec36a6499e3484077e46e7a, type: 3}
       insertIndex: -1

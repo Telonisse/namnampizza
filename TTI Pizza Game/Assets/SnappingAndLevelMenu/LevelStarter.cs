@@ -1,3 +1,4 @@
+using Meta.WitAi;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,9 +9,12 @@ public class LevelStarter : MonoBehaviour
 {
     LevelPicker levelPicker;
     [SerializeField] TextMeshPro whatLevel;
+    [SerializeField] GameObject soundObject;
+    FadeScreen fade;
     private void Start()
     {
-        levelPicker = FindObjectOfType<LevelPicker>(); 
+        levelPicker = FindObjectOfType<LevelPicker>();
+        fade = FindObjectOfType<FadeScreen>();
     }
 
     private void Update()
@@ -39,9 +43,15 @@ public class LevelStarter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Stamp"))
         {
-            SceneManager.LoadSceneAsync(levelPicker.whichLevel);
+            StartCoroutine(StartLevel());
             Debug.Log("Meow" +  levelPicker.whichLevel);
-
+            soundObject.SetActive(true);
         }
+    }
+    private IEnumerator StartLevel()
+    {
+        fade.FadeOut(false);
+        yield return new WaitForSecondsRealtime(2);
+        SceneManager.LoadSceneAsync(levelPicker.whichLevel);
     }
 }

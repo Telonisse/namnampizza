@@ -9,6 +9,7 @@ public class FadeScreen : MonoBehaviour
     [SerializeField] float fadeDuration;
     [SerializeField] bool fadeOnStart;
     [SerializeField] GameObject text;
+    [SerializeField] GameObject soundObject;
     [SerializeField] TextMeshPro pointText;
 
     private Renderer rend;
@@ -20,12 +21,13 @@ public class FadeScreen : MonoBehaviour
         gameController = FindObjectOfType<GameController>();
         if (fadeOnStart)
         {
-            FadeOut(false);
+            FadeIn();
         }
     }
     public void FadeIn()
     {
         Fade(1, 0);
+        soundObject.SetActive(true);
     }
     public void FadeOut(bool showText)
     {
@@ -34,6 +36,7 @@ public class FadeScreen : MonoBehaviour
             text.SetActive(true);
         }
         Fade(0, 1);
+        soundObject.SetActive(false);
     }
 
     public void Fade(float alphaIn, float alphaOut)

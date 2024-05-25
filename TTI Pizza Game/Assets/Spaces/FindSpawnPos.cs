@@ -64,6 +64,7 @@ public class FindSpawnPos : MonoBehaviour
     private GameController gameController;
     private FadeScreen fade;
 
+    private bool switchscene = false;
     public void FindSpawnPosOnSurface()
     {
         room = FindObjectOfType<MRUKRoom>();
@@ -120,14 +121,14 @@ public class FindSpawnPos : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                Debug.Log(hit.transform.name);
+                Debug.Log(hit.transform.tag);
                 currentPreview.transform.position = hit.point;
                 currentPreview.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-                if (OVRInput.GetDown(OVRInput.Button.One) && !fridgeDone && !wasButtonPressed && isButtonPressed && hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR")) //&& hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR")
+                if (OVRInput.GetDown(OVRInput.Button.One) && !fridgeDone && !wasButtonPressed && isButtonPressed && hit.transform.CompareTag("FLOOR")) //&& hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR")
                 {
-                    if (hit.transform.GetComponentInParent<MRUKAnchor>() != null)
+                    if (true)
                     {
-                        if (hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR"))
+                        if (hit.transform.tag == "FLOOR")
                         {
                             spawnedFridge = Instantiate(fridge, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
                             //save pos
@@ -140,9 +141,9 @@ public class FindSpawnPos : MonoBehaviour
                 }
                 if (OVRInput.GetDown(OVRInput.Button.One) && !ovenDone && fridgeDone && !wasButtonPressed && isButtonPressed) //
                 {
-                    if (hit.transform.GetComponentInParent<MRUKAnchor>() != null)
+                    if (true)
                     {
-                        if (hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR"))
+                        if (hit.transform.tag == "FLOOR")
                         {
                             Debug.Log("STOP SPAWN OVEN PLSPSLPSL");
                             spawnedOven = Instantiate(oven, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
@@ -156,9 +157,9 @@ public class FindSpawnPos : MonoBehaviour
                 }
                 if (OVRInput.GetDown(OVRInput.Button.One) && fridgeDone && ovenDone && !doorDone && !wasButtonPressed && isButtonPressed) //&& hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR")
                 {
-                    if (hit.transform.GetComponentInParent<MRUKAnchor>() != null)
+                    if (true)
                     {
-                        if (hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR"))
+                        if (hit.transform.CompareTag("FLOOR"))
                         {
                             spawnedDoor = Instantiate(door, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
                             //save pos
@@ -171,7 +172,7 @@ public class FindSpawnPos : MonoBehaviour
                 }
                 if (OVRInput.GetDown(OVRInput.Button.One) && fridgeDone && ovenDone && doorDone && !luckaDone && !wasButtonPressed && isButtonPressed)
                 {
-                    if (hit.transform.GetComponentInParent<MRUKAnchor>() != null)
+                    if (true)
                     {
                         if (hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("WALL_FACE"))
                         {
@@ -184,10 +185,11 @@ public class FindSpawnPos : MonoBehaviour
                 wasButtonPressed = isButtonPressed;
             }
 
-            if (luckaDone && ovenDone && fridgeDone && doorDone)
+            if (luckaDone && ovenDone && fridgeDone && doorDone && !switchscene)
             {
                 gameController.SavePos(spawnedFridge.transform.position, spawnedOven.transform.position, spawnedLucka.transform.position, spawnedDoor.transform.position);
                 StartCoroutine(FurnitureDone());
+                switchscene = true;
             }
         }
     }

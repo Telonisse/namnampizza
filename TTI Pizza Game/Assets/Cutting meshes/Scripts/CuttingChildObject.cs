@@ -10,7 +10,7 @@ public class CuttingChildObject : MonoBehaviour
 
 
     bool detachChild;
-    public bool isOnMyPizza = false;
+    // public bool isOnMyPizza = false;
     public bool beenCut = false;
     [SerializeField] GameObject soundObject;
 
@@ -26,7 +26,7 @@ public class CuttingChildObject : MonoBehaviour
         }
 
         if (parent != null && transform.parent != null)
-            if (parent.transform.childCount == 1 && parent.name == transform.parent.name) 
+            if (parent.transform.childCount == 3 && parent.name == transform.parent.name) 
         {
 
             Debug.Log("detach true");
@@ -53,7 +53,7 @@ public class CuttingChildObject : MonoBehaviour
         //return;
 
         //}
-        if (obj.transform.childCount == 0)
+        if (obj.transform.childCount == 2)
         {
             obj.SetActive(false);
             //Destroy(parent);

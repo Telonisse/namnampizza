@@ -15349,6 +15349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 9143777029220620227, guid: be3cf185531c6f04e8e09c25d94d565c, type: 3}
+      propertyPath: pointLevel.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

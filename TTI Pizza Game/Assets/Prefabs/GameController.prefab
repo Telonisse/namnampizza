@@ -46,5 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointLevel: 00000000000000000000000000000000
   fade: {fileID: 0}
+  currentLevel: 1
   usesTimer: 1
   maxTimer: 5
+  timerObject: {fileID: 0}

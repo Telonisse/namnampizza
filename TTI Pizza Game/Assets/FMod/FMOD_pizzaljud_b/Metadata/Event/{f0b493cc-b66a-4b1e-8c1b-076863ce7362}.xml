@@ -189,13 +189,13 @@
 	<object class="MixerBusFader" id="{7067067d-0c47-408a-992c-f80bc5e7e49d}" />
 	<object class="LimiterEffect" id="{55cb2ab0-9183-4607-8ce1-5027d71e4058}">
 		<property name="boost">
-			<value>2.70000005</value>
+			<value>3.4000001</value>
 		</property>
 		<property name="ceiling">
-			<value>-9.60000038</value>
+			<value>-8.30000019</value>
 		</property>
 		<property name="release">
-			<value>440</value>
+			<value>500</value>
 		</property>
 	</object>
 </objects>

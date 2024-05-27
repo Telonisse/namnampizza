@@ -58,10 +58,10 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{5a1ab9ed-ff64-4b60-870e-28d2a45eaaa4}">
 		<property name="minimumDistance">
-			<value>0.800000012</value>
+			<value>2.20000005</value>
 		</property>
 		<property name="maximumDistance">
-			<value>1</value>
+			<value>4</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{39027c82-d1a9-4fba-b66d-317385f393af}" />
@@ -179,10 +179,10 @@
 	<object class="MixerBusFader" id="{19ffa7b6-6c0e-4975-9dcc-281054b1854c}" />
 	<object class="SpatialiserEffect" id="{289f224d-326a-46c8-bf78-0deeeb2ffb3d}">
 		<property name="minimumDistance">
-			<value>0.800000012</value>
+			<value>2.20000005</value>
 		</property>
 		<property name="maximumDistance">
-			<value>1</value>
+			<value>4</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{9f47d849-9d8b-4810-af6c-6339bb63d9b6}">
@@ -226,10 +226,10 @@
 	<object class="MixerBusFader" id="{47c030c7-43e3-4ce3-92b7-37674af436a1}" />
 	<object class="LimiterEffect" id="{90ad378e-7c5a-447d-821a-2da34de2ba24}">
 		<property name="boost">
-			<value>0.900000036</value>
+			<value>1.30000007</value>
 		</property>
 		<property name="ceiling">
-			<value>-8.60000038</value>
+			<value>-7.70000029</value>
 		</property>
 		<property name="release">
 			<value>820</value>

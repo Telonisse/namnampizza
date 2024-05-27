@@ -124,7 +124,7 @@ public class FindSpawnPos : MonoBehaviour
                 Debug.Log(hit.transform.name);
                 currentPreview.transform.position = hit.point;
                 currentPreview.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-                if (OVRInput.GetDown(OVRInput.Button.One) && !fridgeDone && !wasButtonPressed && isButtonPressed && hit.transform.CompareTag("FLOOR")) //&& hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR")
+                if (OVRInput.GetDown(OVRInput.Button.One) && !fridgeDone && !wasButtonPressed && isButtonPressed) //&& hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR")
                 {
                     if (true)
                     {

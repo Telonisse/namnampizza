@@ -4334,7 +4334,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: FadeScreen
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7957509572507477334, guid: 10b5b577ed6525f46856ff3ded908e0f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

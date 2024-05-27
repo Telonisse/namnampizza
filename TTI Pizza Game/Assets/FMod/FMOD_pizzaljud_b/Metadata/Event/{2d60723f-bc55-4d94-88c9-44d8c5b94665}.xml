@@ -105,6 +105,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{6e270682-6753-4e9c-917e-e3a0e5218938}">
+		<property name="volume">
+			<value>-9.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -121,6 +124,7 @@
 	<object class="MixerBusEffectChain" id="{443f7314-0859-49dc-a87f-dd719a39a93c}">
 		<relationship name="effects">
 			<destination>{d8a8a9b5-275f-4dd2-9df0-9a9ecd15a7d2}</destination>
+			<destination>{0afe0a58-f675-419d-8f3f-c7f829d3c259}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{e4ab29fa-004f-45ae-981f-bea07ae1a695}" />
@@ -163,6 +167,17 @@
 	</object>
 	<object class="MixerBusPanner" id="{c010ba97-7bec-4d06-8643-ce36cd66cd63}" />
 	<object class="MixerBusFader" id="{d8a8a9b5-275f-4dd2-9df0-9a9ecd15a7d2}" />
+	<object class="LimiterEffect" id="{0afe0a58-f675-419d-8f3f-c7f829d3c259}">
+		<property name="boost">
+			<value>0.200000003</value>
+		</property>
+		<property name="ceiling">
+			<value>-10.6000004</value>
+		</property>
+		<property name="release">
+			<value>220</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{87755818-a40f-48d4-889d-8e0d8103af08}">
 		<property name="position">
 			<value>0.60000000000000009</value>

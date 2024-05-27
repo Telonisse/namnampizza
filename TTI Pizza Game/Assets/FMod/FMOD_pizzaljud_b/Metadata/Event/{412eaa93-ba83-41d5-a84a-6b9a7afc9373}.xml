@@ -104,9 +104,6 @@
 		<property name="length">
 			<value>52.790566893424035</value>
 		</property>
-		<property name="volume">
-			<value>2.5</value>
-		</property>
 		<relationship name="fadeOutCurve">
 			<destination>{b61a83b1-39e7-4d3c-92ba-34bc734fee0f}</destination>
 		</relationship>
@@ -167,6 +164,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{2b168782-a7aa-4df4-8027-b4132ecdc824}">
 		<relationship name="effects">
+			<destination>{5ab87f9a-f261-49f7-b0fc-b2eca4c5f6b6}</destination>
 			<destination>{81064ad2-83dc-4b0e-82bf-1a39f795612c}</destination>
 			<destination>{cdced963-b961-4681-92a3-69c033c08d34}</destination>
 		</relationship>
@@ -209,6 +207,17 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{b8496023-e802-4c54-b6da-126f38c8b89c}" />
+	<object class="LimiterEffect" id="{5ab87f9a-f261-49f7-b0fc-b2eca4c5f6b6}">
+		<property name="boost">
+			<value>0.400000006</value>
+		</property>
+		<property name="ceiling">
+			<value>-10.6000004</value>
+		</property>
+		<property name="release">
+			<value>220</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{81064ad2-83dc-4b0e-82bf-1a39f795612c}" />
 	<object class="SpatialiserEffect" id="{cdced963-b961-4681-92a3-69c033c08d34}">
 		<property name="minimumDistance">

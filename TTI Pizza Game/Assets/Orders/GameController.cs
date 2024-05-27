@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour
         if (currentLevel > 0)
         {
             usesTimer = true;
-            maxTimer = 300;
+            maxTimer = 600;
         }
         else
         {
@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        if (timer >= 290 && timer <= 291)
+        if (timer >= 590 && timer <= 591)
         {
             timerObject.SetActive(true);
         }

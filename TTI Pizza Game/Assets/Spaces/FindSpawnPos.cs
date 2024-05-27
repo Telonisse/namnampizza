@@ -128,7 +128,7 @@ public class FindSpawnPos : MonoBehaviour
                 {
                     if (true)
                     {
-                        if (hit.transform.tag == "FLOOR")
+                        if (hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR"))
                         {
                             spawnedFridge = Instantiate(fridge, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
                             //save pos
@@ -143,7 +143,7 @@ public class FindSpawnPos : MonoBehaviour
                 {
                     if (true)
                     {
-                        if (hit.transform.tag == "FLOOR")
+                        if (hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR"))
                         {
                             Debug.Log("STOP SPAWN OVEN PLSPSLPSL");
                             spawnedOven = Instantiate(oven, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
@@ -159,7 +159,7 @@ public class FindSpawnPos : MonoBehaviour
                 {
                     if (true)
                     {
-                        if (hit.transform.CompareTag("FLOOR"))
+                        if (hit.transform.GetComponentInParent<MRUKAnchor>().HasLabel("FLOOR"))
                         {
                             spawnedDoor = Instantiate(door, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
                             //save pos

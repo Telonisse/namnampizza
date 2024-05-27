@@ -103,11 +103,11 @@ MonoBehaviour:
   - {fileID: 4181820228769015215}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2400
+  Length: 3030
 --- !u!114 &-5889543646423071493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
   Path: Assets/FMod/FMOD_pizzaljud_b/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638521683680000000
+  lastModified: 638524072660000000
   FileSizes:
   - Name: Desktop
     Value: 1692
@@ -414,7 +414,7 @@ MonoBehaviour:
   - {fileID: 4181820228769015215}
   StringsBanks:
   - {fileID: -2899389959563599579}
-  cacheTime: 638521683680000000
+  cacheTime: 638524072660000000
   cacheVersion: 131603
 --- !u!114 &861308656205344396
 MonoBehaviour:
@@ -512,10 +512,10 @@ MonoBehaviour:
   Path: Assets/FMod/FMOD_pizzaljud_b/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638521683680000000
+  lastModified: 638524072660000000
   FileSizes:
   - Name: Desktop
-    Value: 3457248
+    Value: 3380064
   Exists: 1
 --- !u!114 &4679302148420355700
 MonoBehaviour:

@@ -54,33 +54,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
---- !u!114 &-6391696178113743128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/lvl end
-  m_EditorClassIdentifier: 
-  Path: event:/lvl end
-  Guid:
-    Data1: -1034946914
-    Data2: 1317300621
-    Data3: 1092034707
-    Data4: -2113439463
-  Banks:
-  - {fileID: 4181820228769015215}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1600
 --- !u!114 &-6314831312812238372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,10 +231,10 @@ MonoBehaviour:
   Path: Assets/FMod/FMOD_pizzaljud_b/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638524075160000000
+  lastModified: 638524080180000000
   FileSizes:
   - Name: Desktop
-    Value: 1692
+    Value: 1704
   Exists: 1
 --- !u!114 &-2649811258425316694
 MonoBehaviour:
@@ -344,6 +317,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 450
+--- !u!114 &-1143727152978060864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/music
+  m_EditorClassIdentifier: 
+  Path: event:/music
+  Guid:
+    Data1: -1590579518
+    Data2: 1154114383
+    Data3: -1647715678
+    Data4: -976618119
+  Banks:
+  - {fileID: 4181820228769015215}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 64000
 --- !u!114 &-821227800148860400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,15 +406,15 @@ MonoBehaviour:
   - {fileID: 4959947963184296289}
   - {fileID: 3793140846611691673}
   - {fileID: 8848959265855243360}
-  - {fileID: -6391696178113743128}
   - {fileID: -5319696388635378070}
   - {fileID: 4679302148420355700}
+  - {fileID: -1143727152978060864}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4181820228769015215}
   StringsBanks:
   - {fileID: -2899389959563599579}
-  cacheTime: 638524075160000000
+  cacheTime: 638524080180000000
   cacheVersion: 131603
 --- !u!114 &861308656205344396
 MonoBehaviour:
@@ -512,10 +512,10 @@ MonoBehaviour:
   Path: Assets/FMod/FMOD_pizzaljud_b/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638524075160000000
+  lastModified: 638524080180000000
   FileSizes:
   - Name: Desktop
-    Value: 3380064
+    Value: 4170976
   Exists: 1
 --- !u!114 &4679302148420355700
 MonoBehaviour:

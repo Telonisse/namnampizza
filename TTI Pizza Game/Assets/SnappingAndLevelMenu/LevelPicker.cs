@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelPicker : MonoBehaviour
 {
-    public int whichLevel = 1;
+    public int whichLevel = 2;
 
     // fix numbers for  right scene 
     public void PickLevel1()
